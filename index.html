@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Услуги разноробочих в Усть-Каменогорске</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Фавиконка -->
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/hammer.svg" type="image/svg+xml" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS CSS (анимации при скролле) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Навигация -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="#">Разноробочие Усть-Каменогорск</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fs-5">
+          <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Хедер -->
+  <header>
+    <div class="container" data-aos="fade-up" data-aos-duration="1500">
+      <h1>Профессиональные услуги разноробочих в Усть-Каменогорске</h1>
+      <p>Быстро, качественно и по доступной цене</p>
+      <a href="#contact" class="btn btn-primary btn-lg">Заказать сейчас</a>
+    </div>
+  </header>
+
+  <!-- Услуги -->
+  <section id="services" class="container">
+    <h2 data-aos="fade-up" data-aos-duration="1000">Наши услуги</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+        <div class="card service-card h-100 text-center p-3">
+          <i class="bi bi-hammer service-icon"></i>
+          <div class="card-body">
+            <h5 class="card-title">Ремонт и строительство</h5>
+            <p class="card-text">Помощь в мелком ремонте, сборке мебели, строительных работах и демонтаже.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <div class="card service-card h-100 text-center p-3">
+          <i class="bi bi-truck service-icon"></i>
+          <div class="card-body">
+            <h5 class="card-title">Переезды и грузоперевозки</h5>
+            <p class="card-text">Помощь с погрузкой, разгрузкой и перевозкой любых грузов по городу и области.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+        <div class="card service-card h-100 text-center p-3">
+          <i class="bi bi-broom service-icon"></i>
+          <div class="card-body">
+            <h5 class="card-title">Уборка и помощь по хозяйству</h5>
+            <p class="card-text">Уборка помещений, помощь в саду, вынос мусора и другие бытовые задачи.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contact">
+    <div class="container" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Свяжитесь с нами</h2>
+      <form id="contactForm" class="mx-auto" style="max-width: 500px;">
+        <input type="text" class="form-control" id="name" placeholder="Ваше имя" required />
+        <input type="tel" class="form-control" id="phone" placeholder="Телефон" required pattern="[\d\s\+\-$$]{7,}" />
+        <input type="email" class="form-control" id="email" placeholder="Email" required />
+        <textarea class="form-control" id="message" rows="4" placeholder="Сообщение" required></textarea>
+        <button type="submit" class="btn w-100">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <div class="container">
+      &copy; 2025 Услуги разноробочих в Усть-Каменогорске. Все права защищены.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
