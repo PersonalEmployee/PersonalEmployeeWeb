@@ -1,247 +1,255 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>АГЕНСТВО SUPER.ПРОФ</title>
-  
-  <!-- Подключение шрифта Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>АГЕНТСТВО SUPER.ПРОФ</title>
 
-  <style>
-    /* Общее оформление */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f0f4f8;
-      color: #333;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
-    /* Хедер */
-    header {
-      background-color: #2c3e50;
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-    }
+<style>
+  /* Сброс и базовые стили */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+  }
+
+  header {
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    border-bottom: 4px solid #4b6cb7;
+    padding-bottom: 8px;
+    color: #222;
+  }
+
+  ul.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 20px;
+  }
+
+  ul.services-list li {
+    background: #f5f7fa;
+    border-radius: 12px;
+    padding: 20px 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+
+  ul.services-list li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+
+  .image-section {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .image-section img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+  }
+
+  .image-section img:hover {
+    transform: scale(1.02);
+  }
+
+  .contacts {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .contacts a {
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+
+  .call-button {
+    background-color: #4b6cb7;
+  }
+  .call-button:hover {
+    background-color: #3a54a4;
+  }
+
+  .whatsapp-button {
+    background-color: #25D366;
+  }
+  .whatsapp-button:hover {
+    background-color: #1ebe5b;
+  }
+
+  .callback-form {
+    max-width: 400px;
+    margin: 0 auto 80px auto;
+    padding: 30px 25px;
+    background: #f9fbfd;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 16px;
+  }
+
+  .callback-form h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #333;
+  }
+
+  .callback-form input[type="tel"] {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    outline-offset: 3px;
+    transition: border-color 0.3s ease;
+  }
+  .callback-form input[type="tel"]:focus {
+    border-color: #4b6cb7;
+    outline: none;
+  }
+
+  .callback-form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    background-color: #4b6cb7;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .callback-form button:hover {
+    background-color: #3a54a4;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px 15px;
+    background-color: #f5f7fa;
+    font-size: 1rem;
+    color: #777;
+  }
+
+  /* Адаптивность */
+  @media (max-width: 600px) {
     header h1 {
-      margin: 0;
-      font-size: 2.5em;
+      font-size: 2.25rem;
+      padding: 0 10px;
     }
 
-    /* Основной контент с разделами */
-    section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
+    ul.services-list {
+      grid-template-columns: 1fr;
     }
 
-    h2 {
-      color: #34495e;
-      margin-bottom: 20px;
-      font-size: 2em;
-      border-bottom: 2px solid #bdc3c7;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-
-    li {
-      background: #e8f0f7;
-      margin-bottom: 10px;
-      padding: 12px 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: background 0.3s;
-    }
-
-    li:hover {
-      background: #d0e2ef;
-    }
-
-    /* Блок контактов и кнопок */
-    .contacts {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .buttons a {
-      padding: 14px 25px;
-      font-size: 1.2em;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-
-    /* Цвет кнопок */
-    .callBtn {
-      background-color: #2980b9;
-      color: #fff;
-    }
-    .callBtn:hover {
-      background-color: #3498db;
-    }
-
-    .whatsappBtn {
-      background-color: #25D366;
-      color: #fff;
-    }
-    .whatsappBtn:hover {
-      background-color: #1DA851;
-    }
-
-    /* Форма для обратной связи */
-    .callback-form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      max-width: 400px;
-      margin: 30px auto;
-    }
-
-    .callback-form h3 {
-      margin-top: 0;
-      margin-bottom: 20px;
+    .contacts a {
+      flex: 1 1 100%;
       text-align: center;
-      color: #34495e;
+      margin-bottom: 15px;
     }
+  }
+</style>
 
-    input[type="tel"] {
-      width: 100%;
-      padding: 14px;
-      font-size: 1em;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    button.submit-btn {
-      width: 100%;
-      padding: 14px;
-      margin-top: 15px;
-      background-color: #27ae60;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button.submit-btn:hover {
-      background-color: #2ecc71;
-    }
-
-    /* Изображение с рабочими */
-    .team-image {
-      width: 100%;
-      max-width: 1000px;
-      display: block;
-      margin: 40px auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    /* Футер */
-    footer {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-
-    /* Адаптивность */
-    @media(max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      h2 {
-        font-size: 1.5em;
-      }
-
-      .contacts {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .buttons a {
-        width: 80%;
-        text-align: center;
-        font-size: 1em;
-      }
-
-      .callback-form {
-        width: 90%;
-        padding: 15px;
-      }
-    }
-  </style>
 </head>
 <body>
 
 <header>
-  <h1>АГЕНСТВО SUPER.ПРОФ</h1>
+  <h1>АГЕНТСТВО SUPER.ПРОФ</h1>
 </header>
 
-<section>
-  <h2>Наши услуги</h2>
-  <ul>
-    <li>Разнорабочие для любых объектов</li>
-    <li>Подсобные рабочие</li>
-    <li>Рабочие для земельных работ</li>
-    <li>Грузчики</li>
-    <li>Сварщики</li>
-    <li>Электрики</li>
-    <li>и т.п.</li>
-  </ul>
-</section>
+<main>
+  <section>
+    <h2>Наши услуги</h2>
+    <ul class="services-list">
+      <li>Разнорабочие для любых объектов</li>
+      <li>Подсобные рабочие</li>
+      <li>Рабочие для земельных работ</li>
+      <li>Грузчики</li>
+      <li>Сварщики</li>
+      <li>Электрики</li>
+      <li>и т.п.</li>
+    </ul>
+  </section>
 
-<!-- Добавим изображение с рабочими -->
-<section>
-  <img src="https://images.unsplash.com/photo-1595424189603-cf5369e33f20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Рабочие на объекте" class="team-image" />
-</section>
+  <section class="image-section">
+    <img src="https://images.unsplash.com/photo-1595424189603-cf5369e33f20?auto=format&fit=crop&w=1200&q=80" alt="Рабочие на объекте" />
+  </section>
 
-<section>
-  <h2>Контакты</h2>
-  <div class="contacts">
-    <a href="tel:+70000000000" class="buttons callBtn">Позвонить</a>
-    <a href="https://wa.me/70000000000" target="_blank" class="buttons whatsappBtn">Написать в WhatsApp</a>
-  </div>
+  <section>
+    <div class="contacts">
+      <a href="tel:+70000000000" class="call-button" aria-label="Позвонить">Позвонить</a>
+      <a href="https://wa.me/70000000000" target="_blank" rel="noopener" class="whatsapp-button" aria-label="Написать в WhatsApp">WhatsApp</a>
+    </div>
 
-  <div class="callback-form">
-    <h3>Оставьте свой номер для обратного звонка</h3>
-    <form id="callbackForm">
-      <input type="tel" name="phone" placeholder="Ваш номер телефона" required />
-      <button type="submit" class="submit-btn">Отправить</button>
-    </form>
-  </div>
-</section>
+    <div class="callback-form" aria-label="Форма обратного звонка">
+      <h3>Оставьте свой номер для обратного звонка</h3>
+      <form id="callbackForm">
+        <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" pattern="\+7\s?$?\d{3}$?\s?\d{3}-?\d{2}-?\d{2}" required />
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>&copy; 2025 Агентство SUPER.ПРОФ</p>
+  <p>&copy; 2024 Агентство SUPER.ПРОФ</p>
 </footer>
 
 <script>
   document.getElementById('callbackForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const phone = e.target.elements['phone'].value;
-    alert('Спасибо! Ваша заявка на обратный звонок принята: ' + phone);
-    e.target.reset();
-    // Тут можно добавить отправку данных на сервер
+    const phone = e.target.elements['phone'].value.trim();
+    if(phone) {
+      alert('Спасибо! Ваша заявка принята: ' + phone);
+      e.target.reset();
+    }
   });
 </script>
 
