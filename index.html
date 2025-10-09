@@ -2,257 +2,288 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Super.ПРОФ - Услуги и Контакты</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Агентство — Качественный ремонт и строительство</title>
+<!-- Подключение иконок Font Awesome для иконок -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <style>
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to right, #ece9e6, #ffffff);
-    color: #333;
-    line-height: 1.6;
+/* Общие стили */
+body {
+  margin: 0;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Анимация градиента для хедера */
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Хедер с градиентом и анимацией */
+header {
+  background: linear-gradient(135deg, #f96d00, #ff6f00, #ffa000);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Заголовок с эффектом пульсации */
+header h1 {
+  font-size: 3em;
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+
+/* Эффект пульсации для заголовка */
+@keyframes pulse {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.05);}
+}
+
+/* Краткий текст в хедере */
+header p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* Стили для секции "Что мы предлагаем" */
+.offer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f0f0f0;
+}
+
+/* Карточки услуг с эффектами */
+.service-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  width: 250px;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+/* При наведении — эффект подъема и тени */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Иконки в карточках */
+.service-card i {
+  font-size: 3em;
+  color: #ff6f00;
+  margin-bottom: 10px;
+}
+
+/* Заголовки карточек */
+.service-card h3 {
+  margin-bottom: 10px;
+}
+
+/* Кнопка "Позвонить" с эффектом сияния */
+.call-button {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 15px 30px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 1.4em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: pulseBorder 2s infinite;
+}
+
+/* Пульсация внешней тени кнопки */
+@keyframes pulseBorder {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
   }
-  header {
-    background: linear-gradient(135deg, #f96d00, #ff6f00);
-    padding: 40px 20px;
-    text-align: center;
-    color: #fff;
+  50% {
+    box-shadow: 0 0 25px rgba(40, 167, 69, 1);
   }
-  header h1 {
-    font-size: 3em;
-    margin: 0;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Эффект при наведении на кнопку */
+.call-button:hover {
+  transform: scale(1.05);
+}
+
+/* Контактная форма */
+#contact {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f96d00, #ff6f00, #ffa000);
+  background-size: 600% 600%;
+  animation: backgroundWave 20s ease infinite;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+@keyframes backgroundWave {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Форма обратной связи */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Поля формы */
+#contact input, #contact textarea {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  outline: none;
+}
+
+/* Кнопка отправки формы */
+#contact button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+#contact button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Футер с эффектом "подпрыгивания" WhatsApp */
+footer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Стиль для WhatsApp кнопки */
+.whatsapp-btn {
+  background-color: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  transition: transform 0.2s;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  .agency-section {
-    max-width: 1200px;
-    margin: 50px auto 30px;
-    padding: 0 20px;
+  40% {
+    transform: translateY(-10px);
   }
-  .agency-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    font-weight: 700;
-    color: #f96d00;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  }
-  .services {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    padding: 50px 30px;
-    max-width: 1000px;
-    margin: 0 auto 60px;
-    transition: all 0.3s ease;
-  }
-  .services:hover {
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  60% {
     transform: translateY(-5px);
   }
-  .services-header {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 40px;
-    font-weight: 700;
-    color: #444;
-  }
- .services ul {
-    list-style: none;
-    padding-left: 0;
-  }
+}
 
-  /* Стиль для каждого пункта */
-  .services ul li {
-    position: relative;
-    padding-left: 20px; /* Отступ для кружка */
-    margin-bottom: 10px; /* Расстояние между пунктами */
-  }
-
-  /* Псевдоэлемент для оранжевого кружка */
-  .services ul li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px; /* Размер кружка */
-    height: 10px;
-    background-color: orange; /* Цвет кружка */
-    border-radius: 50%; /* Формируем круг */
-  }
-  /* Кнопка "Позвонить" */
-  .call-button {
-    display: inline-block;
-    background-color: #28a745;
-    color: white;
-    font-size: 1.25em;
-    padding: 15px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 20px auto;
-    display: block;
-    max-width: 220px;
-    text-align: center;
-  }
-  .call-button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
-  }
-  /* Форма обратной связи */
-  #contact {
-    max-width: 700px;
-    margin: 0 auto 80px;
-    padding: 40px 30px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-  #contact h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #444;
-  }
-  #contact form {
-    display: flex;
-    flex-direction: column;
-  }
-  #contact label {
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-  #contact input, #contact textarea {
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-    resize: vertical;
-    transition: border-color 0.3s ease;
-  }
-  #contact input:focus, #contact textarea:focus {
-    outline: none;
-    border-color: #ff6f00;
-  }
-  #contact button {
-    background-color: #ff6f00;
-    color: white;
-    font-size: 1.2em;
-    padding: 15px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  #contact button:hover {
-    background-color: #f96d00;
-  }
-  /* Плавающая кнопка WhatsApp */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    width: 60px; height: 60px;
-    text-align: center;
-    font-size: 30px;
-    line-height: 60px;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: background-color 0.3s ease;
-  }
-  .whatsapp-float:hover {
-    background-color: #1ebe57;
-  }
-  /* Футер */
-  footer {
-    background-color: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-  }
-  /* Адаптив */
-  @media(max-width: 768px) {
-    header h1 { font-size: 2em; }
-    .agency-title { font-size: 2em; }
-    .services { padding: 30px 20px; }
-    li { font-size: 1.2em; }
-    .call-button { max-width: 100%; }
-    #contact { padding: 30px 15px; }
-  }
+/* Иконка WhatsApp внутри кнопки */
+.whatsapp-btn i {
+  color: #fff;
+  font-size: 2em;
+}
 </style>
 </head>
 <body>
 
+<!-- Хедер с градиентом и анимацией -->
 <header>
   <h1>Агентство</h1>
+  <p>Качественный ремонт и строительство</p>
 </header>
 
-<div class="agency-section">
-  <div class="agency-title">Super.ПРОФ</div>
-</div>
-
-<section class="services">
-  <div class="services-header">Наши услуги</div>
-  <ul>
-    <li>Разнорабочих для любых объектов</li>
-    <li>Подсобных рабочих</li>
-    <li>Рабочих для земельных работ</li>
-    <li>Грузчиков</li>
-    <li>Сварщиков</li>
-    <li>Электриков</li>
-  </ul>
-
-  <a href="tel:+79991234567" class="call-button" title="Позвонить нам"><i class="fas fa-phone"></i> Позвонить</a>
+<!-- Блок услуг с карточками -->
+<section class="offer">
+  <div class="service-card">
+    <i class="fas fa-hammer"></i>
+    <h3>Разнорабочие</h3>
+    <p>Быстро и качественно для любых объектов</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-wrench"></i>
+    <h3>Ремонт квартир</h3>
+    <p>Экспертные услуги по внутренней отделке</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-warehouse"></i>
+    <h3>Строительные работы</h3>
+    <p>Комплексное строительство и возведение объектов</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-balance-scale"></i>
+    <h3>Обеспечение качества</h3>
+    <p>Гарантия и контроль на всех этапах</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-file-contract"></i>
+    <h3>Договор и гарантия</h3>
+    <p>Договорные обязательства и гарантийное обслуживание</p>
+  </div>
 </section>
 
+<!-- Кнопка "Позвонить" -->
+<div style="text-align:center;">
+  <a href="tel:8-800-444-55-66" class="call-button">Позвонить</a>
+</div>
+
+<!-- Контактная форма -->
 <section id="contact">
   <h2>Обратная связь</h2>
-  <form id="contactForm" action="mailto:your-email@example.com" method="POST" enctype="text/plain" onsubmit="return validateForm()">
-    <label for="name">Ваше имя*</label>
-    <input type="text" id="name" name="name" placeholder="Введите имя" required />
-
-    <label for="phone">Телефон*</label>
-    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" pattern="^(\+7|8)?\s?$?\d{3}$?[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$" required />
-
-    <label for="message">Сообщение</label>
-    <textarea id="message" name="message" placeholder="Ваше сообщение" rows="5"></textarea>
-
-    <button type="submit"><i class="fas fa-paper-plane"></i> Отправить</button>
+  <form>
+    <input type="text" placeholder="Ваше имя" required>
+    <input type="tel" placeholder="Ваш телефон" required>
+    <textarea rows="4" placeholder="Ваш отзыв" required></textarea>
+    <button type="submit">Отправить</button>
   </form>
 </section>
 
-<!-- Кнопка WhatsApp -->
-<a href="https://wa.me/79991234567" target="_blank" aria-label="Написать в WhatsApp" class="whatsapp-float">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
+<!-- Футер с WhatsApp -->
 <footer>
-  <p>&copy; 2025 Агентство Super.ПРОФ. Все права защищены.</p>
+  <div class="whatsapp-btn" title="Написать в WhatsApp" onclick="window.open('https://wa.me/78999999999', '_blank')">
+    <i class="fab fa-whatsapp"></i>
+  </div>
 </footer>
-
-<script>
-  // Простая валидация формы перед отправкой
-  function validateForm() {
-    const phoneInput = document.getElementById('phone');
-    const phonePattern = /^(\+7|8)?\s?$?\d{3}$?[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/;
-    if (!phonePattern.test(phoneInput.value.trim())) {
-      alert('Пожалуйста, введите корректный номер телефона.');
-      phoneInput.focus();
-      return false;
-    }
-    return true;
-  }
-</script>
 
 </body>
 </html>
-
-
-
