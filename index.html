@@ -59,27 +59,29 @@
     font-weight: 700;
     color: #444;
   }
-  ul {
+ .services ul {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
   }
-  li {
-    font-size: 1.4em;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
+
+  /* Стиль для каждого пункта */
+  .services ul li {
+    position: relative;
+    padding-left: 20px; /* Отступ для кружка */
+    margin-bottom: 10px; /* Расстояние между пунктами */
   }
-  li::before {
-    content: "\f0ca";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 15px;
-    color: #ff6f00;
-    font-size: 1.5em;
-  }
-  li:hover {
-    color: #f96d00;
+
+  /* Псевдоэлемент для оранжевого кружка */
+  .services ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px; /* Размер кружка */
+    height: 10px;
+    background-color: orange; /* Цвет кружка */
+    border-radius: 50%; /* Формируем круг */
   }
   /* Кнопка "Позвонить" */
   .call-button {
@@ -251,4 +253,5 @@
 
 </body>
 </html>
+
 
