@@ -1,289 +1,319 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Агентство — Качественный ремонт и строительство</title>
-<!-- Подключение иконок Font Awesome для иконок -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-<style>
-/* Общие стили */
-body {
-  margin: 0;
-  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-  background: #fff;
-  color: #333;
-}
-
-/* Анимация градиента для хедера */
-@keyframes gradientShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* Хедер с градиентом и анимацией */
-header {
-  background: linear-gradient(135deg, #f96d00, #ff6f00, #ffa000);
-  background-size: 600% 600%;
-  animation: gradientShift 15s ease infinite;
-  padding: 40px 20px;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Заголовок с эффектом пульсации */
-header h1 {
-  font-size: 3em;
-  margin: 0 0 10px 0;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-  animation: pulse 2s infinite;
-}
-
-/* Эффект пульсации для заголовка */
-@keyframes pulse {
-  0%, 100% {transform: scale(1);}
-  50% {transform: scale(1.05);}
-}
-
-/* Краткий текст в хедере */
-header p {
-  font-size: 1.2em;
-  margin: 0;
-}
-
-/* Стили для секции "Что мы предлагаем" */
-.offer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 40px 20px;
-  background: #f0f0f0;
-}
-
-/* Карточки услуг с эффектами */
-.service-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-  width: 250px;
-  margin: 15px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-/* При наведении — эффект подъема и тени */
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-/* Иконки в карточках */
-.service-card i {
-  font-size: 3em;
-  color: #ff6f00;
-  margin-bottom: 10px;
-}
-
-/* Заголовки карточек */
-.service-card h3 {
-  margin-bottom: 10px;
-}
-
-/* Кнопка "Позвонить" с эффектом сияния */
-.call-button {
-  display: inline-block;
-  margin: 30px auto;
-  padding: 15px 30px;
-  background-color: #28a745;
-  color: #fff;
-  font-size: 1.4em;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
-  transition: box-shadow 0.3s, transform 0.3s;
-  animation: pulseBorder 2s infinite;
-}
-
-/* Пульсация внешней тени кнопки */
-@keyframes pulseBorder {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(40, 167, 69, 1);
-  }
-}
-
-/* Эффект при наведении на кнопку */
-.call-button:hover {
-  transform: scale(1.05);
-}
-
-/* Контактная форма */
-#contact {
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #f96d00, #ff6f00, #ffa000);
-  background-size: 600% 600%;
-  animation: backgroundWave 20s ease infinite;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  max-width: 600px;
-  margin: 40px auto;
-}
-
-@keyframes backgroundWave {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* Форма обратной связи */
-#contact form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Поля формы */
-#contact input, #contact textarea {
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1em;
-  outline: none;
-}
-
-/* Кнопка отправки формы */
-#contact button {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  padding: 15px;
-  border-radius: 50px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-#contact button:hover {
-  background-color: #218838;
-  transform: scale(1.05);
-}
-
-/* Футер с эффектом "подпрыгивания" WhatsApp */
-footer {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-/* Стиль для WhatsApp кнопки */
-.whatsapp-btn {
-  background-color: #25D366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  transition: transform 0.2s;
-}
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Иконка WhatsApp внутри кнопки */
-.whatsapp-btn i {
-  color: #fff;
-  font-size: 2em;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агентство - Услуги разнорабочих</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .header-image {
+            width: 100%;
+            max-width: 800px;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .services {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .services h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .services ul {
+            list-style-type: none;
+        }
+        
+        .services li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .services li:last-child {
+            border-bottom: none;
+        }
+        
+        .services li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 10px;
+        }
+        
+        .contact {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .contact-option:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .contact-form {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .services, .contact {
+                width: 100%;
+            }
+            
+            .header-image {
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .services, .contact {
+                padding: 15px;
+            }
+            
+            .header-image {
+                height: 120px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- Хедер с градиентом и анимацией -->
-<header>
-  <h1>Агентство</h1>
-  <p>Качественный ремонт и строительство</p>
-</header>
-
-<!-- Блок услуг с карточками -->
-<section class="offer">
-  <div class="service-card">
-    <i class="fas fa-hammer"></i>
-    <h3>Разнорабочие</h3>
-    <p>Быстро и качественно для любых объектов</p>
-  </div>
-  <div class="service-card">
-    <i class="fas fa-wrench"></i>
-    <h3>Ремонт квартир</h3>
-    <p>Экспертные услуги по внутренней отделке</p>
-  </div>
-  <div class="service-card">
-    <i class="fas fa-warehouse"></i>
-    <h3>Строительные работы</h3>
-    <p>Комплексное строительство и возведение объектов</p>
-  </div>
-  <div class="service-card">
-    <i class="fas fa-balance-scale"></i>
-    <h3>Обеспечение качества</h3>
-    <p>Гарантия и контроль на всех этапах</p>
-  </div>
-  <div class="service-card">
-    <i class="fas fa-file-contract"></i>
-    <h3>Договор и гарантия</h3>
-    <p>Договорные обязательства и гарантийное обслуживание</p>
-  </div>
-</section>
-
-<!-- Кнопка "Позвонить" -->
-<div style="text-align:center;">
-  <a href="tel:8-800-444-55-66" class="call-button">Позвонить</a>
-</div>
-
-<!-- Контактная форма -->
-<section id="contact">
-  <h2>Обратная связь</h2>
-  <form>
-    <input type="text" placeholder="Ваше имя" required>
-    <input type="tel" placeholder="Ваш телефон" required>
-    <textarea rows="4" placeholder="Ваш отзыв" required></textarea>
-    <button type="submit">Отправить</button>
-  </form>
-</section>
-
-<!-- Футер с WhatsApp -->
-<footer>
-  <div class="whatsapp-btn" title="Написать в WhatsApp" onclick="window.open('https://wa.me/78999999999', '_blank')">
-    <i class="fab fa-whatsapp"></i>
-  </div>
-</footer>
-
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Агентство</div>
+                <div class="header-image">Изображение агентства</div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <div class="services">
+                <h2>УСЛУГИ:</h2>
+                <ul>
+                    <li>Разнорабочих для любых объектов</li>
+                    <li>Подсобных рабочих</li>
+                    <li>Рабочих для земельных работ</li>
+                    <li>Грузчиков</li>
+                    <li>Сварщиков</li>
+                    <li>Электриков</li>
+                    <li>и т.п.</li>
+                </ul>
+            </div>
+            
+            <div class="contact">
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <div class="icon">T</div>
+                        <div>Позвонить</div>
+                    </div>
+                    <div class="contact-option">
+                        <div class="icon">M</div>
+                        <div>Написать</div>
+                    </div>
+                    <div class="contact-option">
+                        <div class="icon">F</div>
+                        <div>Оставить заявку</div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Оставьте номер телефона мы перезвоним Вам:</h3>
+                    <form id="phone-form">
+                        <div class="form-group">
+                            <label for="phone">Номер телефона:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Агентство. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('phone-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('phone').value;
+            if (phone) {
+                alert('Спасибо! Мы перезвоним Вам по номеру: ' + phone);
+                document.getElementById('phone').value = '';
+            }
+        });
+        
+        // Добавляем обработчики для кнопок связи
+        document.querySelectorAll('.contact-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const action = this.querySelector('div:last-child').textContent;
+                if (action === 'Позвонить') {
+                    alert('Позвонить по номеру: +7 (XXX) XXX-XX-XX');
+                } else if (action === 'Написать') {
+                    alert('Написать на email: info@агентство.ru');
+                } else if (action === 'Оставить заявку') {
+                    document.getElementById('phone').focus();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
