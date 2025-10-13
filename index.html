@@ -24,6 +24,31 @@
             padding: 20px;
         }
         
+        /* Добавленные стили для верхнего заголовка */
+        .top-header {
+            background-color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .agency-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .agency-subtitle {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
+        
         header {
             background-color: #fff;
             padding: 20px 0;
@@ -55,6 +80,13 @@
             color: #777;
             margin-bottom: 20px;
             border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .content {
@@ -213,6 +245,14 @@
             .header-image {
                 height: 150px;
             }
+            
+            .agency-title {
+                font-size: 36px;
+            }
+            
+            .agency-subtitle {
+                font-size: 20px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -227,18 +267,37 @@
             .header-image {
                 height: 120px;
             }
+            
+            .agency-title {
+                font-size: 28px;
+            }
+            
+            .agency-subtitle {
+                font-size: 18px;
+            }
+            
+            .top-header {
+                padding: 20px 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Добавленный верхний заголовок -->
+    <div class="top-header">
+        <div class="container">
+            <div class="agency-title">Агентство</div>
+            <div class="agency-subtitle">SUPER.ПРОФ</div>
+        </div>
+    </div>
+    
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">Агентство</div>
                 <div class="header-image">
-                <img src="assets/images/2208_w048_n005_238b_p1_238.jpg" alt="Агентство" width="1300" height="300">
-                    
-            </div>
+                    <img src="assets/images/2208_w048_n005_238b_p1_238.jpg" alt="Агентство" width="1300" height="300">
+                </div>
             </div>
         </div>
     </header>
@@ -320,14 +379,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
