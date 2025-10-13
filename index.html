@@ -24,20 +24,25 @@
             padding: 20px;
         }
         
-        /* Добавленные стили для верхнего заголовка */
-        .top-header {
+        /* Объединяем заголовок и картинку в один блок */
+        .main-header {
             background-color: #fff;
-            padding: 30px 0;
-            text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px 0 0 0; /* Отступ только сверху */
         }
         
         .agency-title {
             font-size: 48px;
             font-weight: bold;
             color: #3498db;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -47,21 +52,8 @@
             font-weight: bold;
             color: #f0cc2b;
             letter-spacing: 1px;
+            margin-bottom: 0;
         }
-        
-        header {
-            background-color: #fff;
-            padding: 0 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
         
         .header-image {
             width: 100%;
@@ -72,8 +64,8 @@
             align-items: center;
             justify-content: center;
             color: #777;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            margin-top: 0; /* Убрано расстояние сверху */
+            border-radius: 0 0 5px 5px;
             overflow: hidden;
         }
         
@@ -270,30 +262,25 @@
                 font-size: 18px;
             }
             
-            .top-header {
-                padding: 20px 0;
+            .header-content {
+                padding: 15px 0 0 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Добавленный верхний заголовок -->
-    <div class="top-header">
-        <div class="container">
-            <div class="agency-title">Агентство</div>
-            <div class="agency-subtitle">SUPER.ПРОФ</div>
-        </div>
-    </div>
-    
-    <header>
+    <!-- Объединенный блок заголовка и картинки -->
+    <div class="main-header">
         <div class="container">
             <div class="header-content">
+                <div class="agency-title">АГЕНТСТВО</div>
+                <div class="agency-subtitle">SUPER.ПРОФ</div>
                 <div class="header-image">
-                    <img src="assets/images/2208_w048_n005_238b_p1_238.jpg" alt="Агентство" width="1300" height="350">
+                    <img src="assets/images/2208_w048_n005_238b_p1_238.jpg" alt="Агентство" width="1300" height="300">
                 </div>
             </div>
         </div>
-    </header>
+    </div>
     
     <div class="container">
         <div class="content">
@@ -342,7 +329,7 @@
     
     <footer>
         <div class="container">
-            <p>© 2025 Агентство SUPER.ПРОФ. Все права защищены.</p>
+            <p>© 2025 АГЕНТСТВО SUPER.ПРОФ. Все права защищены.</p>
         </div>
     </footer>
     
@@ -372,9 +359,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
