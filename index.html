@@ -33,6 +33,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             overflow: hidden;
             position: relative;
+            min-height: 90vh;
         }
 
         .container {
@@ -100,14 +101,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 100;
             border-radius: 30px;
-            padding: 20px;
+            padding: 30px;
             transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
@@ -118,17 +119,17 @@
         }
 
         .welcome-card {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
-            border-radius: 32px;
+            border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            box-shadow: 0 60px 120px rgba(0,0,0,0.6);
         }
 
         /* БОЛЬШАЯ КАРТИНКА ВО ВСЮ ШИРИНУ */
         .welcome-image {
             width: 100%;
-            height: 380px;
+            height: 500px;
             background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
             position: relative;
             overflow: hidden;
@@ -145,32 +146,32 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 65%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            height: 70%;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
         }
 
         /* ТЕКСТ ПОВЕРХ КАРТИНКИ */
         .welcome-text {
             position: absolute;
-            bottom: 30px;
-            left: 35px;
-            right: 35px;
+            bottom: 40px;
+            left: 45px;
+            right: 45px;
             color: white;
             z-index: 2;
             text-align: left;
         }
 
         .welcome-text .emoji {
-            font-size: 48px;
+            font-size: 60px;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .welcome-text h2 {
-            font-size: 38px;
+            font-size: 48px;
             font-weight: 900;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.6);
-            margin-bottom: 8px;
+            text-shadow: 0 4px 40px rgba(0,0,0,0.7);
+            margin-bottom: 10px;
             line-height: 1.2;
         }
 
@@ -179,9 +180,9 @@
         }
 
         .welcome-text p {
-            font-size: 17px;
+            font-size: 20px;
             opacity: 0.95;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 20px rgba(0,0,0,0.7);
             max-width: 80%;
             line-height: 1.6;
         }
@@ -189,32 +190,32 @@
         /* КНОПКИ ПОД КАРТИНКОЙ */
         .welcome-buttons-wrap {
             background: white;
-            padding: 30px 35px 35px;
+            padding: 40px 45px 45px;
         }
 
         .welcome-buttons {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 18px;
         }
 
         .btn-choice {
-            padding: 20px;
+            padding: 24px;
             border: none;
             border-radius: 60px;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.25s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
+            gap: 16px;
             letter-spacing: 0.5px;
         }
 
         .btn-choice i {
-            font-size: 22px;
+            font-size: 26px;
         }
 
         .btn-choice.primary {
@@ -244,7 +245,7 @@
             display: none;
             animation: fadeUp 0.5s ease;
             background: #f8fafc;
-            padding: 80px 50px;
+            padding: 60px 50px;
             border-radius: 20px;
             margin: 30px 20px 30px 20px;
         }
@@ -458,14 +459,16 @@
             .header-image { height: 150px; }
             .agency-title { font-size: 36px; }
             .agency-subtitle { font-size: 22px; }
-            .welcome-image { height: 280px; }
-            .welcome-text h2 { font-size: 30px; }
-            .welcome-text p { font-size: 15px; max-width: 100%; }
-            .welcome-text { left: 25px; right: 25px; bottom: 25px; }
-            .welcome-buttons-wrap { padding: 22px; }
-            .btn-choice { font-size: 18px; padding: 18px; }
+            .welcome-image { height: 350px; }
+            .welcome-text h2 { font-size: 36px; }
+            .welcome-text p { font-size: 17px; max-width: 100%; }
+            .welcome-text { left: 30px; right: 30px; bottom: 30px; }
+            .welcome-text .emoji { font-size: 48px; }
+            .welcome-buttons-wrap { padding: 28px 30px 30px; }
+            .btn-choice { font-size: 20px; padding: 20px; }
             .main-content { padding: 40px 25px; margin: 20px 10px 20px 10px; }
             .container { padding: 20px; }
+            .main-wrapper { min-height: 80vh; }
             #workerContent { padding: 30px 25px; }
         }
 
@@ -475,14 +478,15 @@
             .header-image { height: 120px; }
             .agency-title { font-size: 28px; }
             .agency-subtitle { font-size: 18px; }
-            .welcome-image { height: 220px; }
-            .welcome-text h2 { font-size: 24px; }
-            .welcome-text p { font-size: 14px; }
-            .welcome-text { left: 18px; right: 18px; bottom: 18px; }
-            .welcome-text .emoji { font-size: 34px; }
-            .welcome-buttons-wrap { padding: 18px; }
-            .btn-choice { font-size: 16px; padding: 15px; }
+            .welcome-image { height: 280px; }
+            .welcome-text h2 { font-size: 28px; }
+            .welcome-text p { font-size: 15px; }
+            .welcome-text { left: 20px; right: 20px; bottom: 20px; }
+            .welcome-text .emoji { font-size: 40px; }
+            .welcome-buttons-wrap { padding: 20px; }
+            .btn-choice { font-size: 17px; padding: 16px; }
             .main-content { padding: 30px 15px; margin: 15px 5px 15px 5px; }
+            .main-wrapper { min-height: 70vh; }
             #workerContent { padding: 20px 15px; }
             .services li { font-size: 16px; }
             .contact-option { font-size: 15px; }
