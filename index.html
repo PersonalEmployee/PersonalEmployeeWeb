@@ -22,7 +22,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px;
+            padding: 20px;
         }
 
         .main-wrapper {
@@ -33,8 +33,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             overflow: hidden;
             position: relative;
-            min-height: 95vh;
-            max-height: 98vh;
+            min-height: 90vh;
         }
 
         .container {
@@ -102,14 +101,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 100;
             border-radius: 30px;
-            padding: 25px;
+            padding: 30px;
             transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
@@ -120,17 +119,17 @@
         }
 
         .welcome-card {
-            max-width: 1000px;
+            max-width: 900px;
             width: 100%;
-            border-radius: 50px;
+            border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 80px 160px rgba(0,0,0,0.7);
+            box-shadow: 0 60px 120px rgba(0,0,0,0.6);
         }
 
         /* БОЛЬШАЯ КАРТИНКА ВО ВСЮ ШИРИНУ */
         .welcome-image {
             width: 100%;
-            height: 620px;
+            height: 500px;
             background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
             position: relative;
             overflow: hidden;
@@ -147,33 +146,33 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 75%;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            height: 70%;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
         }
 
         /* ТЕКСТ ПОВЕРХ КАРТИНКИ */
         .welcome-text {
             position: absolute;
-            bottom: 55px;
-            left: 55px;
-            right: 55px;
+            bottom: 40px;
+            left: 45px;
+            right: 45px;
             color: white;
             z-index: 2;
             text-align: left;
         }
 
         .welcome-text .emoji {
-            font-size: 80px;
+            font-size: 60px;
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .welcome-text h2 {
-            font-size: 62px;
+            font-size: 48px;
             font-weight: 900;
-            text-shadow: 0 4px 50px rgba(0,0,0,0.8);
-            margin-bottom: 12px;
-            line-height: 1.15;
+            text-shadow: 0 4px 40px rgba(0,0,0,0.7);
+            margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .welcome-text h2 span {
@@ -181,42 +180,42 @@
         }
 
         .welcome-text p {
-            font-size: 24px;
+            font-size: 20px;
             opacity: 0.95;
-            text-shadow: 0 2px 25px rgba(0,0,0,0.8);
-            max-width: 75%;
-            line-height: 1.7;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+            max-width: 80%;
+            line-height: 1.6;
         }
 
         /* КНОПКИ ПОД КАРТИНКОЙ */
         .welcome-buttons-wrap {
             background: white;
-            padding: 50px 55px 55px;
+            padding: 40px 45px 45px;
         }
 
         .welcome-buttons {
             display: flex;
             flex-direction: column;
-            gap: 22px;
+            gap: 18px;
         }
 
         .btn-choice {
-            padding: 30px;
+            padding: 24px;
             border: none;
-            border-radius: 70px;
-            font-size: 28px;
+            border-radius: 60px;
+            font-size: 24px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.25s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 18px;
+            gap: 16px;
             letter-spacing: 0.5px;
         }
 
         .btn-choice i {
-            font-size: 32px;
+            font-size: 26px;
         }
 
         .btn-choice.primary {
@@ -454,34 +453,23 @@
             border-top: 1px solid #eef2f6;
         }
 
-        @media (max-width: 992px) {
-            .welcome-image { height: 480px; }
-            .welcome-text h2 { font-size: 48px; }
-            .welcome-text p { font-size: 20px; max-width: 100%; }
-            .welcome-text .emoji { font-size: 60px; }
-            .btn-choice { font-size: 22px; padding: 24px; }
-            .welcome-buttons-wrap { padding: 35px 40px 40px; }
-            .main-wrapper { min-height: 90vh; }
-        }
-
         @media (max-width: 768px) {
             .content { flex-direction: column; gap: 25px; }
             .services, .contact { width: 100%; min-width: unset; padding: 30px 25px; }
             .header-image { height: 150px; }
             .agency-title { font-size: 36px; }
             .agency-subtitle { font-size: 22px; }
-            .welcome-image { height: 380px; }
+            .welcome-image { height: 350px; }
             .welcome-text h2 { font-size: 36px; }
-            .welcome-text p { font-size: 17px; }
+            .welcome-text p { font-size: 17px; max-width: 100%; }
             .welcome-text { left: 30px; right: 30px; bottom: 30px; }
             .welcome-text .emoji { font-size: 48px; }
             .welcome-buttons-wrap { padding: 28px 30px 30px; }
             .btn-choice { font-size: 20px; padding: 20px; }
             .main-content { padding: 40px 25px; margin: 20px 10px 20px 10px; }
             .container { padding: 20px; }
-            .main-wrapper { min-height: 85vh; }
+            .main-wrapper { min-height: 80vh; }
             #workerContent { padding: 30px 25px; }
-            .welcome-card { border-radius: 35px; }
         }
 
         @media (max-width: 480px) {
@@ -490,7 +478,7 @@
             .header-image { height: 120px; }
             .agency-title { font-size: 28px; }
             .agency-subtitle { font-size: 18px; }
-            .welcome-image { height: 300px; }
+            .welcome-image { height: 280px; }
             .welcome-text h2 { font-size: 28px; }
             .welcome-text p { font-size: 15px; }
             .welcome-text { left: 20px; right: 20px; bottom: 20px; }
@@ -498,11 +486,10 @@
             .welcome-buttons-wrap { padding: 20px; }
             .btn-choice { font-size: 17px; padding: 16px; }
             .main-content { padding: 30px 15px; margin: 15px 5px 15px 5px; }
-            .main-wrapper { min-height: 80vh; max-height: 100vh; }
+            .main-wrapper { min-height: 70vh; }
             #workerContent { padding: 20px 15px; }
             .services li { font-size: 16px; }
             .contact-option { font-size: 15px; }
-            .welcome-card { border-radius: 25px; }
         }
     </style>
 </head>
