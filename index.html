@@ -95,6 +95,679 @@
             object-fit: cover;
         }
 
+        /* ===== ПРИВЕТСТВЕННОЕ ОКНО (картинка на весь экран) ===== */
+        .welcome-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            border-radius: 30px;
+            padding: 20px;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .welcome-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .welcome-card {
+            background: white;
+            max-width: 650px;
+            width: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        /* === КАРТИНКА ВО ВСЮ ШИРИНУ, БОЛЬШАЯ === */
+        .welcome-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Тёмный градиент поверх картинки для читаемости текста */
+        .welcome-image .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);
+        }
+
+        /* Текст поверх картинки */
+        .welcome-image .image-text {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            color: white;
+            z-index: 2;
+        }
+
+        .welcome-image .image-text h2 {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .welcome-image .image-text h2 span {
+            color: #facc15;
+        }
+
+        .welcome-image .image-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 90%;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Кнопки внизу карточки */
+        .welcome-buttons-wrap {
+            padding: 25px 30px 35px;
+            background: white;
+        }
+
+        .welcome-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .btn-choice {
+            padding: 18px;
+            border: none;
+            border-radius: 60px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .btn-choice i {
+            font-size: 24px;
+        }
+
+        .btn-choice.primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-choice.primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px -8px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-choice.secondary {
+            background: #facc15;
+            color: #1e293b;
+        }
+
+        .btn-choice.secondary:hover {
+            background: #fde047;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px -8px rgba(250, 204, 21, 0.4);
+        }
+
+        /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+        .main-content {
+            display: none;
+            animation: fadeUp 0.6s ease;
+        }
+
+        .main-content.active {
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ----- СТИЛИ ДЛЯ КОНТЕНТА ----- */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px 0 20px 0;
+        }
+
+        .services {
+            flex: 1;
+            min-width: 280px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .services h2 {
+            margin-bottom: 20px;
+            color: #1e293b;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .services ul {
+            list-style-type: none;
+        }
+
+        .services li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9edf2;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .services li:last-child {
+            border-bottom: none;
+        }
+
+        .services li:before {
+            content: "•";
+            color: #2563eb;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.2em;
+            margin-right: 10px;
+            font-size: 22px;
+        }
+
+        .contact {
+            flex: 1;
+            min-width: 280px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eef2f6;
+        }
+
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            background: #f8fafc;
+            border-radius: 14px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            font-weight: 500;
+        }
+
+        .contact-option:hover {
+            background: #eef2ff;
+            border-color: #2563eb;
+            transform: translateX(4px);
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: #2563eb;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: #f8fafc;
+            padding: 22px;
+            border-radius: 18px;
+            margin-top: 8px;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 18px;
+            color: #1e293b;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #334155;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 16px;
+            background: white;
+            transition: 0.25s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 700;
+            width: 100%;
+            transition: 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.4);
+        }
+
+        #workerContent {
+            display: none;
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px 0 10px;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #eef2f6;
+        }
+
+        /* ----- АДАПТИВНОСТЬ ----- */
+        @media (max-width: 768px) {
+            .content { flex-direction: column; }
+            .services, .contact { width: 100%; }
+            .header-image { height: 150px; }
+            .agency-title { font-size: 36px; }
+            .agency-subtitle { font-size: 22px; }
+            .welcome-image { height: 200px; }
+            .welcome-image .image-text h2 { font-size: 28px; }
+            .welcome-buttons-wrap { padding: 20px; }
+            .btn-choice { font-size: 17px; padding: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 10px; }
+            .services, .contact { padding: 18px; }
+            .header-image { height: 120px; }
+            .agency-title { font-size: 28px; }
+            .agency-subtitle { font-size: 18px; }
+            .welcome-image { height: 160px; }
+            .welcome-image .image-text { left: 20px; right: 20px; bottom: 20px; }
+            .welcome-image .image-text h2 { font-size: 22px; }
+            .welcome-image .image-text p { font-size: 14px; }
+            .welcome-buttons-wrap { padding: 16px; }
+            .btn-choice { font-size: 16px; padding: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <!-- ===== ШАПКА ===== -->
+    <div class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="agency-title">АГЕНТСТВО</div>
+                <div class="agency-subtitle">SUPER.ПРОФ</div>
+                <div class="header-image">
+                    <img src="assets/images/2208_w048_n005_238b_p1_238.jpg" alt="Агентство" width="1300" height="300">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ПРИВЕТСТВЕННОЕ ОКНО С БОЛЬШОЙ КАРТИНКОЙ ===== -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-card">
+            <!-- КАРТИНКА ВО ВСЮ ШИРИНУ, 280px высотой -->
+            <div class="welcome-image">
+                <!-- Замените src на свою картинку -->
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Строительная бригада">
+                <div class="image-overlay"></div>
+                <div class="image-text">
+                    <h2>Добро пожаловать в <span>SUPER.ПРОФ</span></h2>
+                    <p>Бизнес размещает заявку — проверенные специалисты выполняют работы</p>
+                </div>
+            </div>
+
+            <!-- КНОПКИ ПОД КАРТИНКОЙ -->
+            <div class="welcome-buttons-wrap">
+                <div class="welcome-buttons">
+                    <button class="btn-choice primary" id="btnCustomer">
+                        <i class="fas fa-building"></i> Я заказчик
+                    </button>
+                    <button class="btn-choice secondary" id="btnWorker">
+                        <i class="fas fa-hard-hat"></i> Ищу работу
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+    <div class="container main-content" id="mainContent">
+        <div class="content">
+            <div class="services" id="servicesBlock">
+                <h2>УСЛУГИ:</h2>
+                <ul>
+                    <li>Разнорабочих для любых объектов</li>
+                    <li>Подсобных рабочих</li>
+                    <li>Рабочих для земельных работ</li>
+                    <li>Грузчиков</li>
+                    <li>Сварщиков</li>
+                    <li>Электриков</li>
+                    <li>и т.п.</li>
+                </ul>
+            </div>
+
+            <div class="contact" id="contactBlock">
+                <div class="contact-options">
+                    <div class="contact-option" onclick="alert('Позвонить по номеру: +7 (XXX) XXX-XX-XX')">
+                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>Позвонить</div>
+                    </div>
+                    <div class="contact-option" onclick="alert('Написать на email: info@superprof.ru')">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div>Написать</div>
+                    </div>
+                    <div class="contact-option" onclick="document.getElementById('phone').focus()">
+                        <div class="icon"><i class="fas fa-pen"></i></div>
+                        <div>Оставить заявку</div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane" style="color:#2563eb; margin-right:8px;"></i>Оставьте заявку — мы перезвоним</h3>
+                    <form id="phone-form">
+                        <div class="form-group">
+                            <label for="fullName"><i class="fas fa-user" style="color:#2563eb; margin-right:6px;"></i>Ваше имя</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Иванов Иван" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone-alt" style="color:#2563eb; margin-right:6px;"></i>Номер телефона</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city"><i class="fas fa-map-pin" style="color:#2563eb; margin-right:6px;"></i>Ваш город</label>
+                            <input type="text" id="city" name="city" placeholder="Москва, СПб..." required>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Отправить заявку
+                        </button>
+                    </form>
+                    <div id="successMessage" style="display:none; margin-top:18px; background:#dcfce7; color:#166534; border-radius:14px; padding:16px; text-align:center; font-weight:500; border:2px solid #86efac;">
+                        <i class="fas fa-check-circle" style="font-size:28px; display:block; margin-bottom:6px;"></i>
+                        <strong>Спасибо!</strong> Ваша заявка принята.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="workerContent">
+            <h2 style="color: #1e293b; margin-bottom: 15px;"><i class="fas fa-search" style="color: #2563eb;"></i> Вы ищете работу</h2>
+            <p style="font-size: 18px; color: #334155;">Заполните форму ниже, и мы подберём для вас подходящие заказы в вашем городе.</p>
+            <div style="margin-top: 20px; background: white; padding: 25px; border-radius: 16px;">
+                <div class="form-group">
+                    <label for="workerName"><i class="fas fa-user" style="color:#2563eb;"></i> Ваше имя</label>
+                    <input type="text" id="workerName" placeholder="Иванов Иван" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
+                </div>
+                <div class="form-group">
+                    <label for="workerPhone"><i class="fas fa-phone-alt" style="color:#2563eb;"></i> Телефон</label>
+                    <input type="tel" id="workerPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
+                </div>
+                <div class="form-group">
+                    <label for="workerCity"><i class="fas fa-map-pin" style="color:#2563eb;"></i> Город</label>
+                    <input type="text" id="workerCity" placeholder="Москва" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
+                </div>
+                <button class="submit-btn" onclick="alert('Спасибо! Мы свяжемся с вами по поводу работы.')">
+                    <i class="fas fa-paper-plane"></i> Отправить
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 АГЕНТСТВО SUPER.ПРОФ. Все права защищены.</p>
+        </footer>
+    </div>
+
+</div>
+
+<script>
+    // Элементы
+    const overlay = document.getElementById('welcomeOverlay');
+    const mainContent = document.getElementById('mainContent');
+    const servicesBlock = document.getElementById('servicesBlock');
+    const contactBlock = document.getElementById('contactBlock');
+    const workerBlock = document.getElementById('workerContent');
+
+    // Кнопки
+    const btnCustomer = document.getElementById('btnCustomer');
+    const btnWorker = document.getElementById('btnWorker');
+
+    function showContent(role) {
+        overlay.classList.add('hidden');
+        mainContent.classList.add('active');
+
+        servicesBlock.style.display = 'block';
+        contactBlock.style.display = 'block';
+        workerBlock.style.display = 'none';
+
+        if (role === 'customer') {
+            servicesBlock.style.display = 'block';
+            contactBlock.style.display = 'block';
+            workerBlock.style.display = 'none';
+            document.querySelector('.services h2').textContent = 'УСЛУГИ ДЛЯ ЗАКАЗЧИКА:';
+        } else if (role === 'worker') {
+            servicesBlock.style.display = 'none';
+            contactBlock.style.display = 'none';
+            workerBlock.style.display = 'block';
+        }
+
+        setTimeout(() => {
+            mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
+    }
+
+    btnCustomer.addEventListener('click', function() {
+        showContent('customer');
+    });
+
+    btnWorker.addEventListener('click', function() {
+        showContent('worker');
+    });
+
+    // Обработка формы
+    document.getElementById('phone-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const city = document.getElementById('city').value.trim();
+
+        if (!name || !phone || !city) {
+            alert('Пожалуйста, заполните все поля.');
+            return;
+        }
+
+        const btn = this.querySelector('.submit-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            const successDiv = document.getElementById('successMessage');
+            successDiv.style.display = 'block';
+            this.reset();
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => { successDiv.style.display = 'none'; }, 6000);
+        }, 1500);
+    });
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPER.ПРОФ — Работа для разнорабочих</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ----- СБРОС И БАЗА ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px;
+        }
+
+        /* ----- ШАПКА (ваша) ----- */
+        .main-header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 2px solid #eef2f6;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 25px 0 5px 0;
+        }
+
+        .agency-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: #2563eb;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .agency-subtitle {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f0cc2b;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .header-image {
+            width: 100%;
+            max-width: 800px;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-top: 5px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* ===== ПРИВЕТСТВЕННОЕ ОКНО (с улучшенной картинкой) ===== */
         .welcome-overlay {
             position: absolute;
