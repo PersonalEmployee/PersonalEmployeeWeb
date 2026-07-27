@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ----- СБРОС И БАЗА (сохранён ваш стиль) ----- */
+        /* ----- СБРОС И БАЗА ----- */
         * {
             margin: 0;
             padding: 0;
@@ -95,15 +95,15 @@
             object-fit: cover;
         }
 
-        /* ===== ПРИВЕТСТВЕННОЕ ОКНО (поверх всего) ===== */
+        /* ===== ПРИВЕТСТВЕННОЕ ОКНО (с улучшенной картинкой) ===== */
         .welcome-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -121,14 +121,55 @@
 
         .welcome-card {
             background: white;
-            max-width: 550px;
+            max-width: 620px;
             width: 100%;
-            padding: 45px 35px;
+            padding: 40px 35px 45px;
             border-radius: 30px;
             text-align: center;
             box-shadow: 0 30px 60px rgba(0,0,0,0.3);
             transform: scale(1);
             transition: transform 0.3s ease;
+        }
+
+        /* === НОВАЯ КРУПНАЯ КАРТИНКА === */
+        .welcome-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .welcome-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Если картинка не загрузилась — показываем яркий градиент с иконкой */
+        .welcome-image .fallback-icon {
+            position: absolute;
+            font-size: 80px;
+            color: rgba(255,255,255,0.4);
+            z-index: 1;
+        }
+
+        .welcome-image .gradient-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+            border-radius: 0 0 20px 20px;
+            z-index: 2;
         }
 
         .welcome-card h2 {
@@ -197,7 +238,7 @@
             box-shadow: 0 12px 25px -8px rgba(250, 204, 21, 0.4);
         }
 
-        /* ===== ОСНОВНОЙ КОНТЕНТ (скрыт по умолчанию) ===== */
+        /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
         .main-content {
             display: none;
             animation: fadeUp 0.6s ease;
@@ -212,7 +253,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ----- СТИЛИ ДЛЯ КОНТЕНТА (ваш .content и т.д.) ----- */
+        /* ----- СТИЛИ ДЛЯ КОНТЕНТА ----- */
         .content {
             display: flex;
             flex-wrap: wrap;
@@ -377,6 +418,14 @@
             box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.4);
         }
 
+        #workerContent {
+            display: none;
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 10px;
+        }
+
         footer {
             margin-top: 30px;
             text-align: center;
@@ -396,6 +445,7 @@
             .welcome-card { padding: 30px 20px; }
             .welcome-card h2 { font-size: 28px; }
             .btn-choice { font-size: 17px; padding: 15px; }
+            .welcome-image { height: 150px; }
         }
 
         @media (max-width: 480px) {
@@ -407,6 +457,7 @@
             .welcome-card { padding: 25px 15px; }
             .welcome-card h2 { font-size: 24px; }
             .btn-choice { font-size: 16px; }
+            .welcome-image { height: 120px; }
         }
     </style>
 </head>
@@ -414,7 +465,7 @@
 
 <div class="main-wrapper">
 
-    <!-- ===== ШАПКА (всегда видна) ===== -->
+    <!-- ===== ШАПКА ===== -->
     <div class="main-header">
         <div class="container">
             <div class="header-content">
@@ -427,9 +478,17 @@
         </div>
     </div>
 
-    <!-- ===== ПРИВЕТСТВЕННОЕ ОКНО (поверх всего) ===== -->
+    <!-- ===== ПРИВЕТСТВЕННОЕ ОКНО С КРУПНОЙ КАРТИНКОЙ ===== -->
     <div class="welcome-overlay" id="welcomeOverlay">
         <div class="welcome-card">
+            <!-- НОВАЯ БОЛЬШАЯ И ЯРКАЯ КАРТИНКА -->
+            <div class="welcome-image">
+                <!-- Замените src на путь к вашей красивой картинке -->
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Строители работают">
+                <div class="fallback-icon"><i class="fas fa-hard-hat"></i></div>
+                <div class="gradient-overlay"></div>
+            </div>
+
             <h2>Добро пожаловать в <span>SUPER.ПРОФ</span></h2>
             <p>Бизнес размещает заявку — проверенные специалисты выполняют работы. Кто вы — выберите, и покажем, как всё устроено именно для вас.</p>
             <div class="welcome-buttons">
@@ -443,10 +502,9 @@
         </div>
     </div>
 
-    <!-- ===== ОСНОВНОЙ КОНТЕНТ (появляется после выбора) ===== -->
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
     <div class="container main-content" id="mainContent">
         <div class="content">
-            <!-- Блок Услуги (для заказчика) -->
             <div class="services" id="servicesBlock">
                 <h2>УСЛУГИ:</h2>
                 <ul>
@@ -460,7 +518,6 @@
                 </ul>
             </div>
 
-            <!-- Блок Контакты + форма (для заказчика) -->
             <div class="contact" id="contactBlock">
                 <div class="contact-options">
                     <div class="contact-option" onclick="alert('Позвонить по номеру: +7 (XXX) XXX-XX-XX')">
@@ -504,8 +561,7 @@
             </div>
         </div>
 
-        <!-- Дополнительный блок для "Ищу работу" (появляется вместо услуг) -->
-        <div id="workerContent" style="display: none; background: #f8fafc; border-radius: 20px; padding: 30px; margin-top: 10px;">
+        <div id="workerContent">
             <h2 style="color: #1e293b; margin-bottom: 15px;"><i class="fas fa-search" style="color: #2563eb;"></i> Вы ищете работу</h2>
             <p style="font-size: 18px; color: #334155;">Заполните форму ниже, и мы подберём для вас подходящие заказы в вашем городе.</p>
             <div style="margin-top: 20px; background: white; padding: 25px; border-radius: 16px;">
@@ -546,41 +602,30 @@
     const btnCustomer = document.getElementById('btnCustomer');
     const btnWorker = document.getElementById('btnWorker');
 
-    // Функция показа контента
     function showContent(role) {
-        // Скрываем оверлей
         overlay.classList.add('hidden');
-
-        // Показываем основной контент
         mainContent.classList.add('active');
 
-        // Сбрасываем видимость блоков
         servicesBlock.style.display = 'block';
         contactBlock.style.display = 'block';
         workerBlock.style.display = 'none';
 
-        // Меняем содержимое в зависимости от роли
         if (role === 'customer') {
-            // Для заказчика показываем услуги и контакты
             servicesBlock.style.display = 'block';
             contactBlock.style.display = 'block';
             workerBlock.style.display = 'none';
-            // Можно обновить заголовок
             document.querySelector('.services h2').textContent = 'УСЛУГИ ДЛЯ ЗАКАЗЧИКА:';
         } else if (role === 'worker') {
-            // Для работника скрываем услуги и контакты, показываем блок для соискателя
             servicesBlock.style.display = 'none';
             contactBlock.style.display = 'none';
             workerBlock.style.display = 'block';
         }
 
-        // Прокручиваем к началу контента
         setTimeout(() => {
             mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 200);
     }
 
-    // Обработчики кнопок
     btnCustomer.addEventListener('click', function() {
         showContent('customer');
     });
@@ -589,7 +634,7 @@
         showContent('worker');
     });
 
-    // Обработка формы (для заказчика)
+    // Обработка формы
     document.getElementById('phone-form').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('fullName').value.trim();
