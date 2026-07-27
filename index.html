@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUPER.ПРОФ — Работа для разнорабочих</title>
-    <!-- Подключаем шрифты и иконки (как в новом примере) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -27,7 +26,6 @@
             padding: 20px;
         }
 
-        /* ----- ГЛАВНЫЙ КОНТЕЙНЕР (как у вас, но адаптирован) ----- */
         .main-wrapper {
             max-width: 1200px;
             width: 100%;
@@ -35,16 +33,16 @@
             border-radius: 30px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             overflow: hidden;
+            position: relative;
         }
 
-        /* Внутренний контейнер (как ваш .container) */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 30px;
         }
 
-        /* ----- БЛОК ШАПКИ (ваш .main-header, но с улучшенной стилистикой) ----- */
+        /* ----- ШАПКА (ваша) ----- */
         .main-header {
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -62,7 +60,7 @@
         .agency-title {
             font-size: 48px;
             font-weight: 900;
-            color: #2563eb; /* ваш синий, но насыщеннее */
+            color: #2563eb;
             margin-bottom: 2px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -97,97 +95,124 @@
             object-fit: cover;
         }
 
-        /* ----- ПРИВЕТСТВЕННЫЙ БЛОК (как на сайте-образце) ----- */
-        .welcome-block {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            border-radius: 24px;
-            padding: 40px 30px;
-            margin: 25px 0 30px 0;
-            color: white;
+        /* ===== ПРИВЕТСТВЕННОЕ ОКНО (поверх всего) ===== */
+        .welcome-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            border-radius: 30px;
+            padding: 20px;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .welcome-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .welcome-card {
+            background: white;
+            max-width: 550px;
+            width: 100%;
+            padding: 45px 35px;
+            border-radius: 30px;
             text-align: center;
-            box-shadow: 0 10px 25px -8px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            transform: scale(1);
+            transition: transform 0.3s ease;
         }
 
-        .welcome-block h2 {
-            font-size: 38px;
+        .welcome-card h2 {
+            font-size: 36px;
             font-weight: 900;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
+            color: #1e293b;
+            margin-bottom: 12px;
         }
 
-        .welcome-block p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 25px auto;
+        .welcome-card h2 span {
+            color: #2563eb;
+        }
+
+        .welcome-card p {
+            color: #64748b;
+            font-size: 17px;
+            margin-bottom: 30px;
             line-height: 1.5;
         }
 
         .welcome-buttons {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
+            flex-direction: column;
+            gap: 14px;
         }
 
-        .btn-welcome {
-            padding: 14px 34px;
+        .btn-choice {
+            padding: 18px;
             border: none;
             border-radius: 60px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.25s ease;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            background: white;
+            justify-content: center;
+            gap: 12px;
+            background: #f1f5f9;
             color: #1e293b;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
-        .btn-welcome i {
-            font-size: 20px;
+        .btn-choice i {
+            font-size: 24px;
         }
 
-        .btn-welcome.primary {
+        .btn-choice.primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-choice.primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px -8px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-choice.secondary {
             background: #facc15;
             color: #1e293b;
         }
 
-        .btn-welcome.primary:hover {
+        .btn-choice.secondary:hover {
             background: #fde047;
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px -8px rgba(0,0,0,0.3);
+            box-shadow: 0 12px 25px -8px rgba(250, 204, 21, 0.4);
         }
 
-        .btn-welcome.secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            backdrop-filter: blur(4px);
+        /* ===== ОСНОВНОЙ КОНТЕНТ (скрыт по умолчанию) ===== */
+        .main-content {
+            display: none;
+            animation: fadeUp 0.6s ease;
         }
 
-        .btn-welcome.secondary:hover {
-            background: rgba(255,255,255,0.35);
-            transform: translateY(-3px);
+        .main-content.active {
+            display: block;
         }
 
-        .skip-link {
-            display: inline-block;
-            margin-top: 18px;
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            text-decoration: none;
-            border-bottom: 1px dashed rgba(255,255,255,0.3);
-            transition: 0.2s;
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .skip-link:hover {
-            color: white;
-            border-bottom-color: white;
-        }
-
-        /* ----- СОДЕРЖАНИЕ (ваш .content) ----- */
+        /* ----- СТИЛИ ДЛЯ КОНТЕНТА (ваш .content и т.д.) ----- */
         .content {
             display: flex;
             flex-wrap: wrap;
@@ -238,7 +263,6 @@
             font-size: 22px;
         }
 
-        /* ----- БЛОК КОНТАКТОВ (ваш .contact) ----- */
         .contact {
             flex: 1;
             min-width: 280px;
@@ -353,7 +377,6 @@
             box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.4);
         }
 
-        /* ----- ФУТЕР (ваш) ----- */
         footer {
             margin-top: 30px;
             text-align: center;
@@ -363,68 +386,35 @@
             border-top: 1px solid #eef2f6;
         }
 
-        /* ----- АДАПТИВНОСТЬ (сохранена ваша логика) ----- */
+        /* ----- АДАПТИВНОСТЬ ----- */
         @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-            }
-            .services, .contact {
-                width: 100%;
-            }
-            .header-image {
-                height: 150px;
-            }
-            .agency-title {
-                font-size: 36px;
-            }
-            .agency-subtitle {
-                font-size: 22px;
-            }
-            .welcome-block h2 {
-                font-size: 28px;
-            }
-            .welcome-block {
-                padding: 30px 20px;
-            }
-            .btn-welcome {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
-            .container {
-                padding: 15px;
-            }
+            .content { flex-direction: column; }
+            .services, .contact { width: 100%; }
+            .header-image { height: 150px; }
+            .agency-title { font-size: 36px; }
+            .agency-subtitle { font-size: 22px; }
+            .welcome-card { padding: 30px 20px; }
+            .welcome-card h2 { font-size: 28px; }
+            .btn-choice { font-size: 17px; padding: 15px; }
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-            .services, .contact {
-                padding: 18px;
-            }
-            .header-image {
-                height: 120px;
-            }
-            .agency-title {
-                font-size: 28px;
-            }
-            .agency-subtitle {
-                font-size: 18px;
-            }
-            .welcome-block h2 {
-                font-size: 24px;
-            }
-            .btn-welcome {
-                width: 100%;
-                justify-content: center;
-            }
+            .container { padding: 10px; }
+            .services, .contact { padding: 18px; }
+            .header-image { height: 120px; }
+            .agency-title { font-size: 28px; }
+            .agency-subtitle { font-size: 18px; }
+            .welcome-card { padding: 25px 15px; }
+            .welcome-card h2 { font-size: 24px; }
+            .btn-choice { font-size: 16px; }
         }
     </style>
 </head>
 <body>
 
 <div class="main-wrapper">
-    <!-- ====== ШАПКА (ваша, объединённая с картинкой) ====== -->
+
+    <!-- ===== ШАПКА (всегда видна) ===== -->
     <div class="main-header">
         <div class="container">
             <div class="header-content">
@@ -437,26 +427,27 @@
         </div>
     </div>
 
-    <div class="container">
-        <!-- ====== ПРИВЕТСТВЕННЫЙ БЛОК (как на rab.bystrostroy.pro) ====== -->
-        <div class="welcome-block">
-            <h2>Добро пожаловать в SUPER.ПРОФ</h2>
-            <p>Надёжные разнорабочие для любых задач. Оставьте заявку и получите исполнителя уже сегодня.</p>
+    <!-- ===== ПРИВЕТСТВЕННОЕ ОКНО (поверх всего) ===== -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-card">
+            <h2>Добро пожаловать в <span>SUPER.ПРОФ</span></h2>
+            <p>Бизнес размещает заявку — проверенные специалисты выполняют работы. Кто вы — выберите, и покажем, как всё устроено именно для вас.</p>
             <div class="welcome-buttons">
-                <button class="btn-welcome primary" onclick="document.getElementById('contact-form-scroll').scrollIntoView({behavior:'smooth'})">
-                    <i class="fas fa-hammer"></i> Заказать работы
+                <button class="btn-choice primary" id="btnCustomer">
+                    <i class="fas fa-building"></i> Я заказчик
                 </button>
-                <button class="btn-welcome secondary" onclick="document.getElementById('contact-form-scroll').scrollIntoView({behavior:'smooth'})">
-                    <i class="fas fa-user-check"></i> Ищу работу
+                <button class="btn-choice secondary" id="btnWorker">
+                    <i class="fas fa-hard-hat"></i> Ищу работу
                 </button>
             </div>
-            <a href="#" class="skip-link" onclick="document.getElementById('services-section').scrollIntoView({behavior:'smooth'}); return false;">пропустить →</a>
         </div>
+    </div>
 
-        <!-- ====== ОСНОВНОЙ КОНТЕНТ (ваш) ====== -->
-        <div class="content" id="services-section">
-            <!-- Блок Услуги -->
-            <div class="services">
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ (появляется после выбора) ===== -->
+    <div class="container main-content" id="mainContent">
+        <div class="content">
+            <!-- Блок Услуги (для заказчика) -->
+            <div class="services" id="servicesBlock">
                 <h2>УСЛУГИ:</h2>
                 <ul>
                     <li>Разнорабочих для любых объектов</li>
@@ -469,8 +460,8 @@
                 </ul>
             </div>
 
-            <!-- Блок Контакты + форма (обновлённая, как в вашем втором примере) -->
-            <div class="contact" id="contact-form-scroll">
+            <!-- Блок Контакты + форма (для заказчика) -->
+            <div class="contact" id="contactBlock">
                 <div class="contact-options">
                     <div class="contact-option" onclick="alert('Позвонить по номеру: +7 (XXX) XXX-XX-XX')">
                         <div class="icon"><i class="fas fa-phone-alt"></i></div>
@@ -486,7 +477,6 @@
                     </div>
                 </div>
 
-                <!-- Форма (расширенная, как во втором примере) -->
                 <div class="contact-form">
                     <h3><i class="fas fa-paper-plane" style="color:#2563eb; margin-right:8px;"></i>Оставьте заявку — мы перезвоним</h3>
                     <form id="phone-form">
@@ -508,25 +498,100 @@
                     </form>
                     <div id="successMessage" style="display:none; margin-top:18px; background:#dcfce7; color:#166534; border-radius:14px; padding:16px; text-align:center; font-weight:500; border:2px solid #86efac;">
                         <i class="fas fa-check-circle" style="font-size:28px; display:block; margin-bottom:6px;"></i>
-                        <strong>Спасибо!</strong> Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
+                        <strong>Спасибо!</strong> Ваша заявка принята.
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ====== ФУТЕР (ваш) ====== -->
+        <!-- Дополнительный блок для "Ищу работу" (появляется вместо услуг) -->
+        <div id="workerContent" style="display: none; background: #f8fafc; border-radius: 20px; padding: 30px; margin-top: 10px;">
+            <h2 style="color: #1e293b; margin-bottom: 15px;"><i class="fas fa-search" style="color: #2563eb;"></i> Вы ищете работу</h2>
+            <p style="font-size: 18px; color: #334155;">Заполните форму ниже, и мы подберём для вас подходящие заказы в вашем городе.</p>
+            <div style="margin-top: 20px; background: white; padding: 25px; border-radius: 16px;">
+                <div class="form-group">
+                    <label for="workerName"><i class="fas fa-user" style="color:#2563eb;"></i> Ваше имя</label>
+                    <input type="text" id="workerName" placeholder="Иванов Иван" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
+                </div>
+                <div class="form-group">
+                    <label for="workerPhone"><i class="fas fa-phone-alt" style="color:#2563eb;"></i> Телефон</label>
+                    <input type="tel" id="workerPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
+                </div>
+                <div class="form-group">
+                    <label for="workerCity"><i class="fas fa-map-pin" style="color:#2563eb;"></i> Город</label>
+                    <input type="text" id="workerCity" placeholder="Москва" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
+                </div>
+                <button class="submit-btn" onclick="alert('Спасибо! Мы свяжемся с вами по поводу работы.')">
+                    <i class="fas fa-paper-plane"></i> Отправить
+                </button>
+            </div>
+        </div>
+
         <footer>
             <p>© 2025 АГЕНТСТВО SUPER.ПРОФ. Все права защищены.</p>
         </footer>
     </div>
+
 </div>
 
 <script>
-    // Обработка формы (как в вашем примере, но с расширенными полями)
+    // Элементы
+    const overlay = document.getElementById('welcomeOverlay');
+    const mainContent = document.getElementById('mainContent');
+    const servicesBlock = document.getElementById('servicesBlock');
+    const contactBlock = document.getElementById('contactBlock');
+    const workerBlock = document.getElementById('workerContent');
+
+    // Кнопки
+    const btnCustomer = document.getElementById('btnCustomer');
+    const btnWorker = document.getElementById('btnWorker');
+
+    // Функция показа контента
+    function showContent(role) {
+        // Скрываем оверлей
+        overlay.classList.add('hidden');
+
+        // Показываем основной контент
+        mainContent.classList.add('active');
+
+        // Сбрасываем видимость блоков
+        servicesBlock.style.display = 'block';
+        contactBlock.style.display = 'block';
+        workerBlock.style.display = 'none';
+
+        // Меняем содержимое в зависимости от роли
+        if (role === 'customer') {
+            // Для заказчика показываем услуги и контакты
+            servicesBlock.style.display = 'block';
+            contactBlock.style.display = 'block';
+            workerBlock.style.display = 'none';
+            // Можно обновить заголовок
+            document.querySelector('.services h2').textContent = 'УСЛУГИ ДЛЯ ЗАКАЗЧИКА:';
+        } else if (role === 'worker') {
+            // Для работника скрываем услуги и контакты, показываем блок для соискателя
+            servicesBlock.style.display = 'none';
+            contactBlock.style.display = 'none';
+            workerBlock.style.display = 'block';
+        }
+
+        // Прокручиваем к началу контента
+        setTimeout(() => {
+            mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
+    }
+
+    // Обработчики кнопок
+    btnCustomer.addEventListener('click', function() {
+        showContent('customer');
+    });
+
+    btnWorker.addEventListener('click', function() {
+        showContent('worker');
+    });
+
+    // Обработка формы (для заказчика)
     document.getElementById('phone-form').addEventListener('submit', function(e) {
         e.preventDefault();
-
-        // Собираем данные
         const name = document.getElementById('fullName').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const city = document.getElementById('city').value.trim();
@@ -536,40 +601,20 @@
             return;
         }
 
-        // Показываем индикацию отправки
         const btn = this.querySelector('.submit-btn');
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
         btn.disabled = true;
 
-        // Имитация отправки
         setTimeout(() => {
-            // Показываем сообщение об успехе
             const successDiv = document.getElementById('successMessage');
             successDiv.style.display = 'block';
             this.reset();
             btn.innerHTML = originalText;
             btn.disabled = false;
             successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // Скрыть сообщение через 6 секунд (опционально)
-            setTimeout(() => {
-                successDiv.style.display = 'none';
-            }, 6000);
+            setTimeout(() => { successDiv.style.display = 'none'; }, 6000);
         }, 1500);
-
-        // Здесь можно добавить реальную отправку на сервер / Telegram
-        // Например, как в вашем втором примере (закомментировано)
-        /*
-        const TELEGRAM_TOKEN = 'ваш_токен';
-        const CHAT_ID = 'ваш_chat_id';
-        const message = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nГород: ${city}`;
-        fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: CHAT_ID, text: message })
-        }).catch(err => console.error(err));
-        */
     });
 </script>
 
