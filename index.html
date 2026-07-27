@@ -3,127 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Агентство - Услуги разнорабочих</title>
+    <title>SUPER.ПРОФ — Работа для разнорабочих</title>
+    <!-- Подключаем шрифты и иконки (как в новом примере) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ----- СБРОС И БАЗА (сохранён ваш стиль) ----- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
         }
-        
+
         body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
 
-        /* Экран приветствия */
+        /* ----- ГЛАВНЫЙ КОНТЕЙНЕР (как у вас, но адаптирован) ----- */
+        .main-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
 
-.welcome-screen{
-    position:fixed;
-    inset:0;
-    background:linear-gradient(135deg,#3498db,#1f5f99);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    transition:.5s;
-}
+        /* Внутренний контейнер (как ваш .container) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px;
+        }
 
-.welcome-screen.hide{
-    opacity:0;
-    visibility:hidden;
-}
-
-.welcome-box{
-    text-align:center;
-    color:white;
-    width:90%;
-    max-width:420px;
-}
-
-.welcome-box h1{
-    font-size:42px;
-    margin-bottom:50px;
-    line-height:1.2;
-}
-
-.welcome-box span{
-    color:#ffd54a;
-}
-
-.welcome-btn{
-    width:100%;
-    padding:18px;
-    margin:12px 0;
-    font-size:22px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    background:#ffd54a;
-    color:#222;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.welcome-btn:hover{
-    transform:translateY(-3px);
-    background:#ffca28;
-}
-
-.welcome-btn.secondary{
-    background:white;
-}
-
-.skip{
-    margin-top:35px;
-    font-size:14px;
-    color:#ddd;
-    cursor:pointer;
-}
-
-.skip:hover{
-    color:white;
-}
-        
-        /* Объединяем заголовок и картинку в один блок */
+        /* ----- БЛОК ШАПКИ (ваш .main-header, но с улучшенной стилистикой) ----- */
         .main-header {
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 2px solid #eef2f6;
         }
-        
+
         .header-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 20px 0 0 0;
+            padding: 25px 0 5px 0;
         }
-        
+
         .agency-title {
             font-size: 48px;
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 2px; /* Уменьшено с 5px до 2px */
+            font-weight: 900;
+            color: #2563eb; /* ваш синий, но насыщеннее */
+            margin-bottom: 2px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        
+
         .agency-subtitle {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 28px;
+            font-weight: 700;
             color: #f0cc2b;
             letter-spacing: 1px;
-            margin-bottom: 0;
+            margin-bottom: 10px;
         }
-        
+
         .header-image {
             width: 100%;
             max-width: 800px;
@@ -133,214 +85,346 @@
             align-items: center;
             justify-content: center;
             color: #777;
-            margin-top: 0;
-            border-radius: 0 0 5px 5px;
+            margin-top: 5px;
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        
+
         .header-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
+        /* ----- ПРИВЕТСТВЕННЫЙ БЛОК (как на сайте-образце) ----- */
+        .welcome-block {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin: 25px 0 30px 0;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 25px -8px rgba(37, 99, 235, 0.4);
+        }
+
+        .welcome-block h2 {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-block p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            line-height: 1.5;
+        }
+
+        .welcome-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn-welcome {
+            padding: 14px 34px;
+            border: none;
+            border-radius: 60px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: #1e293b;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .btn-welcome i {
+            font-size: 20px;
+        }
+
+        .btn-welcome.primary {
+            background: #facc15;
+            color: #1e293b;
+        }
+
+        .btn-welcome.primary:hover {
+            background: #fde047;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px -8px rgba(0,0,0,0.3);
+        }
+
+        .btn-welcome.secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-welcome.secondary:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-3px);
+        }
+
+        .skip-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255,255,255,0.3);
+            transition: 0.2s;
+        }
+
+        .skip-link:hover {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        /* ----- СОДЕРЖАНИЕ (ваш .content) ----- */
         .content {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 25px;
+            margin: 20px 0 20px 0;
         }
-        
+
         .services {
             flex: 1;
-            min-width: 300px;
-            background-color: #fff;
+            min-width: 280px;
+            background: #f8fafc;
             padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
-        
+
         .services h2 {
             margin-bottom: 20px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            color: #1e293b;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 12px;
+            font-weight: 700;
         }
-        
+
         .services ul {
             list-style-type: none;
         }
-        
+
         .services li {
             padding: 12px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #e9edf2;
             display: flex;
             align-items: center;
+            font-weight: 500;
         }
-        
+
         .services li:last-child {
             border-bottom: none;
         }
-        
+
         .services li:before {
             content: "•";
-            color: #3498db;
+            color: #2563eb;
             font-weight: bold;
             display: inline-block;
-            width: 1em;
+            width: 1.2em;
             margin-right: 10px;
+            font-size: 22px;
         }
-        
+
+        /* ----- БЛОК КОНТАКТОВ (ваш .contact) ----- */
         .contact {
             flex: 1;
-            min-width: 300px;
-            background-color: #fff;
+            min-width: 280px;
+            background: #ffffff;
             padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eef2f6;
         }
-        
+
         .contact-options {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: 14px;
+            margin-bottom: 25px;
         }
-        
+
         .contact-option {
             display: flex;
             align-items: center;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            padding: 14px 18px;
+            background: #f8fafc;
+            border-radius: 14px;
+            transition: all 0.25s ease;
             cursor: pointer;
+            border: 1px solid transparent;
+            font-weight: 500;
         }
-        
+
         .contact-option:hover {
-            background-color: #e9ecef;
-            transform: translateY(-2px);
+            background: #eef2ff;
+            border-color: #2563eb;
+            transform: translateX(4px);
         }
-        
+
         .icon {
-            width: 30px;
-            height: 30px;
-            background-color: #3498db;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: #2563eb;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 16px;
             color: white;
-            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
         }
-        
+
         .contact-form {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
+            background: #f8fafc;
+            padding: 22px;
+            border-radius: 18px;
+            margin-top: 8px;
         }
-        
+
         .contact-form h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
+            margin-bottom: 18px;
+            color: #1e293b;
+            font-weight: 700;
+            font-size: 18px;
         }
-        
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 14px;
+            color: #334155;
         }
-        
+
         .form-group input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
             font-size: 16px;
+            background: white;
+            transition: 0.25s;
         }
-        
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+
         .submit-btn {
-            background-color: #3498db;
+            background: #2563eb;
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
+            padding: 14px 20px;
+            border-radius: 14px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 17px;
+            font-weight: 700;
             width: 100%;
-            transition: background-color 0.3s;
+            transition: 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        
+
         .submit-btn:hover {
-            background-color: #2980b9;
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.4);
         }
-        
+
+        /* ----- ФУТЕР (ваш) ----- */
         footer {
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
-            padding: 20px;
+            padding: 20px 0 10px;
             color: #777;
             font-size: 14px;
+            border-top: 1px solid #eef2f6;
         }
-        
+
+        /* ----- АДАПТИВНОСТЬ (сохранена ваша логика) ----- */
         @media (max-width: 768px) {
             .content {
                 flex-direction: column;
             }
-            
             .services, .contact {
                 width: 100%;
             }
-            
             .header-image {
                 height: 150px;
             }
-            
             .agency-title {
                 font-size: 36px;
-                margin-bottom: 1px; /* Также уменьшено для мобильных */
             }
-            
             .agency-subtitle {
-                font-size: 20px;
+                font-size: 22px;
+            }
+            .welcome-block h2 {
+                font-size: 28px;
+            }
+            .welcome-block {
+                padding: 30px 20px;
+            }
+            .btn-welcome {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+            .container {
+                padding: 15px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 padding: 10px;
             }
-            
             .services, .contact {
-                padding: 15px;
+                padding: 18px;
             }
-            
             .header-image {
                 height: 120px;
             }
-            
             .agency-title {
                 font-size: 28px;
-                margin-bottom: 1px; /* Также уменьшено для мобильных */
             }
-            
             .agency-subtitle {
                 font-size: 18px;
             }
-            
-            .header-content {
-                padding: 15px 0 0 0;
+            .welcome-block h2 {
+                font-size: 24px;
+            }
+            .btn-welcome {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Объединенный блок заголовка и картинки -->
+
+<div class="main-wrapper">
+    <!-- ====== ШАПКА (ваша, объединённая с картинкой) ====== -->
     <div class="main-header">
         <div class="container">
             <div class="header-content">
@@ -352,9 +436,26 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container">
-        <div class="content">
+        <!-- ====== ПРИВЕТСТВЕННЫЙ БЛОК (как на rab.bystrostroy.pro) ====== -->
+        <div class="welcome-block">
+            <h2>Добро пожаловать в SUPER.ПРОФ</h2>
+            <p>Надёжные разнорабочие для любых задач. Оставьте заявку и получите исполнителя уже сегодня.</p>
+            <div class="welcome-buttons">
+                <button class="btn-welcome primary" onclick="document.getElementById('contact-form-scroll').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-hammer"></i> Заказать работы
+                </button>
+                <button class="btn-welcome secondary" onclick="document.getElementById('contact-form-scroll').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-user-check"></i> Ищу работу
+                </button>
+            </div>
+            <a href="#" class="skip-link" onclick="document.getElementById('services-section').scrollIntoView({behavior:'smooth'}); return false;">пропустить →</a>
+        </div>
+
+        <!-- ====== ОСНОВНОЙ КОНТЕНТ (ваш) ====== -->
+        <div class="content" id="services-section">
+            <!-- Блок Услуги -->
             <div class="services">
                 <h2>УСЛУГИ:</h2>
                 <ul>
@@ -367,106 +468,110 @@
                     <li>и т.п.</li>
                 </ul>
             </div>
-            
-            <div class="contact">
+
+            <!-- Блок Контакты + форма (обновлённая, как в вашем втором примере) -->
+            <div class="contact" id="contact-form-scroll">
                 <div class="contact-options">
-                    <div class="contact-option">
-                        <div class="icon"></div>
+                    <div class="contact-option" onclick="alert('Позвонить по номеру: +7 (XXX) XXX-XX-XX')">
+                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
                         <div>Позвонить</div>
                     </div>
-                    <div class="contact-option">
-                        <div class="icon"></div>
+                    <div class="contact-option" onclick="alert('Написать на email: info@superprof.ru')">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
                         <div>Написать</div>
                     </div>
-                    <div class="contact-option">
-                        <div class="icon"></div>
+                    <div class="contact-option" onclick="document.getElementById('phone').focus()">
+                        <div class="icon"><i class="fas fa-pen"></i></div>
                         <div>Оставить заявку</div>
                     </div>
                 </div>
-                
+
+                <!-- Форма (расширенная, как во втором примере) -->
                 <div class="contact-form">
-                    <h3>Оставьте номер телефона мы перезвоним Вам:</h3>
+                    <h3><i class="fas fa-paper-plane" style="color:#2563eb; margin-right:8px;"></i>Оставьте заявку — мы перезвоним</h3>
                     <form id="phone-form">
                         <div class="form-group">
-                            <label for="phone">Номер телефона:</label>
+                            <label for="fullName"><i class="fas fa-user" style="color:#2563eb; margin-right:6px;"></i>Ваше имя</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Иванов Иван" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone-alt" style="color:#2563eb; margin-right:6px;"></i>Номер телефона</label>
                             <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
                         </div>
-                        <button type="submit" class="submit-btn">Отправить</button>
+                        <div class="form-group">
+                            <label for="city"><i class="fas fa-map-pin" style="color:#2563eb; margin-right:6px;"></i>Ваш город</label>
+                            <input type="text" id="city" name="city" placeholder="Москва, СПб..." required>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Отправить заявку
+                        </button>
                     </form>
+                    <div id="successMessage" style="display:none; margin-top:18px; background:#dcfce7; color:#166534; border-radius:14px; padding:16px; text-align:center; font-weight:500; border:2px solid #86efac;">
+                        <i class="fas fa-check-circle" style="font-size:28px; display:block; margin-bottom:6px;"></i>
+                        <strong>Спасибо!</strong> Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <footer>
-        <div class="container">
+
+        <!-- ====== ФУТЕР (ваш) ====== -->
+        <footer>
             <p>© 2025 АГЕНТСТВО SUPER.ПРОФ. Все права защищены.</p>
-        </div>
-    </footer>
-    
-    <script>
-        document.getElementById('phone-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const phone = document.getElementById('phone').value;
-            if (phone) {
-                alert('Спасибо! Мы перезвоним Вам по номеру: ' + phone);
-                document.getElementById('phone').value = '';
-            }
-        });
-        
-        // Добавляем обработчики для кнопок связи
-        document.querySelectorAll('.contact-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const action = this.querySelector('div:last-child').textContent;
-                if (action === 'Позвонить') {
-                    alert('Позвонить по номеру: +7 (XXX) XXX-XX-XX');
-                } else if (action === 'Написать') {
-                    alert('Написать на email: info@агентство.ru');
-                } else if (action === 'Оставить заявку') {
-                    document.getElementById('phone').focus();
-                }
-            });
-        });
-        const welcome = document.getElementById("welcome-screen");
-
-document.getElementById("skip-btn").onclick = () => {
-    welcome.classList.add("hide");
-};
-
-document.getElementById("order-btn").onclick = () => {
-    welcome.classList.add("hide");
-
-    // Переходим к форме заявки
-    document.querySelector(".contact").scrollIntoView({
-        behavior: "smooth"
-    });
-};
-
-document.getElementById("job-btn").onclick = () => {
-    welcome.classList.add("hide");
-
-    // Пока просто сообщение.
-    // Позже можно открыть отдельную страницу с вакансиями.
-    alert("Раздел «Ищу работу» скоро будет доступен.");
-};
-    </script>
-</body>
-    <!-- Стартовое окно -->
-<div id="welcome-screen" class="welcome-screen">
-    <div class="welcome-box">
-        <h1>Добро пожаловать<br>в <span>SUPER.PROF</span></h1>
-
-        <button class="welcome-btn" id="order-btn">
-            Заказать работы
-        </button>
-
-        <button class="welcome-btn secondary" id="job-btn">
-            Ищу работу
-        </button>
-
-        <div class="skip" id="skip-btn">
-            Пропустить
-        </div>
+        </footer>
     </div>
 </div>
+
+<script>
+    // Обработка формы (как в вашем примере, но с расширенными полями)
+    document.getElementById('phone-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Собираем данные
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const city = document.getElementById('city').value.trim();
+
+        if (!name || !phone || !city) {
+            alert('Пожалуйста, заполните все поля.');
+            return;
+        }
+
+        // Показываем индикацию отправки
+        const btn = this.querySelector('.submit-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+        btn.disabled = true;
+
+        // Имитация отправки
+        setTimeout(() => {
+            // Показываем сообщение об успехе
+            const successDiv = document.getElementById('successMessage');
+            successDiv.style.display = 'block';
+            this.reset();
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Скрыть сообщение через 6 секунд (опционально)
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+            }, 6000);
+        }, 1500);
+
+        // Здесь можно добавить реальную отправку на сервер / Telegram
+        // Например, как в вашем втором примере (закомментировано)
+        /*
+        const TELEGRAM_TOKEN = 'ваш_токен';
+        const CHAT_ID = 'ваш_chat_id';
+        const message = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nГород: ${city}`;
+        fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+        }).catch(err => console.error(err));
+        */
+    });
+</script>
+
+</body>
 </html>
