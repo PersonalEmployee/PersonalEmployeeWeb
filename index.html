@@ -26,7 +26,7 @@
         }
 
         .main-wrapper {
-            max-width: 1200px;
+            max-width: 1400px;
             width: 100%;
             background: #ffffff;
             border-radius: 30px;
@@ -36,9 +36,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px 30px;
+            padding: 20px 40px;
         }
 
         /* ШАПКА */
@@ -75,7 +75,7 @@
 
         .header-image {
             width: 100%;
-            max-width: 800px;
+            max-width: 1000px;
             height: 200px;
             background-color: #e0e0e0;
             display: flex;
@@ -243,6 +243,10 @@
         .main-content {
             display: none;
             animation: fadeUp 0.5s ease;
+            background: #f8fafc;
+            padding: 30px 40px;
+            border-radius: 20px;
+            margin: 0 20px 20px 20px;
         }
 
         .main-content.active {
@@ -257,16 +261,17 @@
         .content {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
-            margin: 20px 0;
+            gap: 30px;
+            margin: 10px 0;
         }
 
         .services {
             flex: 1;
-            min-width: 280px;
-            background: #f8fafc;
-            padding: 25px;
+            min-width: 300px;
+            background: #ffffff;
+            padding: 30px;
             border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .services h2 {
@@ -305,11 +310,12 @@
 
         .contact {
             flex: 1;
-            min-width: 280px;
+            min-width: 300px;
             background: #ffffff;
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
             border: 1px solid #eef2f6;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .contact-options {
@@ -417,10 +423,11 @@
 
         #workerContent {
             display: none;
-            background: #f8fafc;
+            background: #ffffff;
             border-radius: 20px;
             padding: 30px;
             margin-top: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         footer {
@@ -434,7 +441,7 @@
 
         @media (max-width: 768px) {
             .content { flex-direction: column; }
-            .services, .contact { width: 100%; }
+            .services, .contact { width: 100%; min-width: unset; }
             .header-image { height: 150px; }
             .agency-title { font-size: 36px; }
             .agency-subtitle { font-size: 22px; }
@@ -444,6 +451,8 @@
             .welcome-text { left: 25px; right: 25px; bottom: 25px; }
             .welcome-buttons-wrap { padding: 22px; }
             .btn-choice { font-size: 18px; padding: 18px; }
+            .main-content { padding: 20px; margin: 0 10px 10px 10px; }
+            .container { padding: 20px; }
         }
 
         @media (max-width: 480px) {
@@ -459,6 +468,7 @@
             .welcome-text .emoji { font-size: 34px; }
             .welcome-buttons-wrap { padding: 18px; }
             .btn-choice { font-size: 16px; padding: 15px; }
+            .main-content { padding: 15px; margin: 0 5px 5px 5px; }
         }
     </style>
 </head>
@@ -569,7 +579,7 @@
         <div id="workerContent">
             <h2 style="color: #1e293b; margin-bottom: 15px;"><i class="fas fa-search" style="color: #2563eb;"></i> Вы ищете работу</h2>
             <p style="font-size: 18px; color: #334155;">Заполните форму ниже, и мы подберём для вас подходящие заказы в вашем городе.</p>
-            <div style="margin-top: 20px; background: white; padding: 25px; border-radius: 16px;">
+            <div style="margin-top: 20px; background: #f8fafc; padding: 25px; border-radius: 16px;">
                 <div class="form-group">
                     <label for="workerName"><i class="fas fa-user" style="color:#2563eb;"></i> Ваше имя</label>
                     <input type="text" id="workerName" placeholder="Иванов Иван" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
