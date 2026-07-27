@@ -93,7 +93,7 @@
             object-fit: cover;
         }
 
-        /* ===== ПРИВЕТСТВЕННОЕ ОКНО (КАК НА ОБРАЗЦЕ) ===== */
+        /* ===== ПРИВЕТСТВЕННОЕ ОКНО (БОЛЬШОЕ) ===== */
         .welcome-overlay {
             position: absolute;
             top: 0;
@@ -107,7 +107,7 @@
             align-items: center;
             z-index: 100;
             border-radius: 30px;
-            padding: 20px;
+            padding: 30px;
             transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
@@ -117,27 +117,28 @@
             pointer-events: none;
         }
 
+        /* КАРТОЧКА — БОЛЬШАЯ */
         .welcome-card {
             background: white;
-            max-width: 480px;
+            max-width: 640px;  /* было 480px — шире */
             width: 100%;
-            padding: 40px 30px 35px;
-            border-radius: 24px;
+            padding: 55px 45px 45px;  /* больше отступы */
+            border-radius: 28px;
             text-align: center;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.35);
         }
 
         .welcome-card .emoji {
-            font-size: 56px;
-            margin-bottom: 12px;
+            font-size: 72px;  /* крупнее */
+            margin-bottom: 16px;
             display: block;
         }
 
         .welcome-card h2 {
-            font-size: 28px;
+            font-size: 36px;  /* крупнее */
             font-weight: 900;
             color: #1e293b;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
         }
 
         .welcome-card h2 span {
@@ -146,35 +147,38 @@
 
         .welcome-card p {
             color: #64748b;
-            font-size: 15px;
-            margin-bottom: 28px;
-            line-height: 1.6;
+            font-size: 18px;  /* крупнее */
+            margin-bottom: 35px;
+            line-height: 1.7;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .welcome-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .btn-choice {
-            padding: 16px;
+            padding: 20px;  /* больше */
             border: none;
             border-radius: 60px;
-            font-size: 18px;
+            font-size: 22px;  /* крупнее */
             font-weight: 700;
             cursor: pointer;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 14px;
             background: #f1f5f9;
             color: #1e293b;
         }
 
         .btn-choice i {
-            font-size: 18px;
+            font-size: 22px;
         }
 
         .btn-choice.primary {
@@ -396,10 +400,14 @@
             .header-image { height: 150px; }
             .agency-title { font-size: 36px; }
             .agency-subtitle { font-size: 22px; }
-            .welcome-card { padding: 30px 20px; }
-            .welcome-card h2 { font-size: 24px; }
-            .welcome-card .emoji { font-size: 44px; }
-            .btn-choice { font-size: 16px; padding: 14px; }
+            .welcome-card {
+                max-width: 100%;
+                padding: 35px 25px 30px;
+            }
+            .welcome-card h2 { font-size: 28px; }
+            .welcome-card .emoji { font-size: 56px; }
+            .welcome-card p { font-size: 16px; }
+            .btn-choice { font-size: 18px; padding: 16px; }
         }
 
         @media (max-width: 480px) {
@@ -408,11 +416,13 @@
             .header-image { height: 120px; }
             .agency-title { font-size: 28px; }
             .agency-subtitle { font-size: 18px; }
-            .welcome-card { padding: 25px 16px; }
-            .welcome-card h2 { font-size: 20px; }
-            .welcome-card .emoji { font-size: 38px; }
+            .welcome-card {
+                padding: 28px 18px 24px;
+            }
+            .welcome-card h2 { font-size: 22px; }
+            .welcome-card .emoji { font-size: 44px; }
             .welcome-card p { font-size: 14px; }
-            .btn-choice { font-size: 15px; padding: 12px; }
+            .btn-choice { font-size: 16px; padding: 14px; }
         }
     </style>
 </head>
@@ -433,7 +443,7 @@
         </div>
     </div>
 
-    <!-- ПРИВЕТСТВЕННОЕ ОКНО -->
+    <!-- ПРИВЕТСТВЕННОЕ ОКНО (БОЛЬШОЕ) -->
     <div class="welcome-overlay" id="welcomeOverlay">
         <div class="welcome-card">
             <span class="emoji">👷</span>
