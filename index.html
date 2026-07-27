@@ -23,6 +23,75 @@
             margin: 0 auto;
             padding: 20px;
         }
+
+        /* Экран приветствия */
+
+.welcome-screen{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#3498db,#1f5f99);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:.5s;
+}
+
+.welcome-screen.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.welcome-box{
+    text-align:center;
+    color:white;
+    width:90%;
+    max-width:420px;
+}
+
+.welcome-box h1{
+    font-size:42px;
+    margin-bottom:50px;
+    line-height:1.2;
+}
+
+.welcome-box span{
+    color:#ffd54a;
+}
+
+.welcome-btn{
+    width:100%;
+    padding:18px;
+    margin:12px 0;
+    font-size:22px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#ffd54a;
+    color:#222;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.welcome-btn:hover{
+    transform:translateY(-3px);
+    background:#ffca28;
+}
+
+.welcome-btn.secondary{
+    background:white;
+}
+
+.skip{
+    margin-top:35px;
+    font-size:14px;
+    color:#ddd;
+    cursor:pointer;
+}
+
+.skip:hover{
+    color:white;
+}
         
         /* Объединяем заголовок и картинку в один блок */
         .main-header {
@@ -358,6 +427,46 @@
                 }
             });
         });
+        const welcome = document.getElementById("welcome-screen");
+
+document.getElementById("skip-btn").onclick = () => {
+    welcome.classList.add("hide");
+};
+
+document.getElementById("order-btn").onclick = () => {
+    welcome.classList.add("hide");
+
+    // Переходим к форме заявки
+    document.querySelector(".contact").scrollIntoView({
+        behavior: "smooth"
+    });
+};
+
+document.getElementById("job-btn").onclick = () => {
+    welcome.classList.add("hide");
+
+    // Пока просто сообщение.
+    // Позже можно открыть отдельную страницу с вакансиями.
+    alert("Раздел «Ищу работу» скоро будет доступен.");
+};
     </script>
 </body>
+    <!-- Стартовое окно -->
+<div id="welcome-screen" class="welcome-screen">
+    <div class="welcome-box">
+        <h1>Добро пожаловать<br>в <span>SUPER.PROF</span></h1>
+
+        <button class="welcome-btn" id="order-btn">
+            Заказать работы
+        </button>
+
+        <button class="welcome-btn secondary" id="job-btn">
+            Ищу работу
+        </button>
+
+        <div class="skip" id="skip-btn">
+            Пропустить
+        </div>
+    </div>
+</div>
 </html>
