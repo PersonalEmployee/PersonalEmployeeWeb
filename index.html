@@ -362,10 +362,9 @@
             transform: translateX(4px);
         }
 
-        .icon {
+        .contact-option .icon {
             width: 44px;
             height: 44px;
-            background: #2563eb;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -374,6 +373,22 @@
             color: white;
             font-size: 20px;
             flex-shrink: 0;
+        }
+
+        .icon-telegram {
+            background: #0088cc;
+        }
+
+        .icon-whatsapp {
+            background: #25d366;
+        }
+
+        .icon-email {
+            background: #ea4335;
+        }
+
+        .icon-phone {
+            background: #2563eb;
         }
 
         .contact-form {
@@ -577,21 +592,32 @@
                     <li>Подсобных рабочих</li>
                     <li>Рабочих для земельных работ</li>
                     <li>Грузчиков</li>
+                    <li>Сварщиков</li>
+                    <li>Электриков</li>
+                    <li>и т.п.</li>
                 </ul>
             </div>
 
             <div class="contact" id="contactBlock">
                 <div class="contact-options">
-                    <div class="contact-option" onclick="alert('Позвонить по номеру: +7 (XXX) XXX-XX-XX')">
-                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                        <div>Позвонить</div>
+                    <!-- Telegram -->
+                    <div class="contact-option" onclick="window.open('https://t.me/superprof_bot', '_blank')">
+                        <div class="icon icon-telegram"><i class="fab fa-telegram-plane"></i></div>
+                        <div>Telegram</div>
                     </div>
+                    <!-- WhatsApp -->
+                    <div class="contact-option" onclick="window.open('https://wa.me/79991234567', '_blank')">
+                        <div class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></div>
+                        <div>WhatsApp</div>
+                    </div>
+                    <!-- Email -->
                     <div class="contact-option" onclick="alert('Написать на email: info@superprof.ru')">
-                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="icon icon-email"><i class="fas fa-envelope"></i></div>
                         <div>Написать</div>
                     </div>
+                    <!-- Оставить заявку -->
                     <div class="contact-option" onclick="document.getElementById('phone').focus()">
-                        <div class="icon"><i class="fas fa-pen"></i></div>
+                        <div class="icon icon-phone"><i class="fas fa-pen"></i></div>
                         <div>Оставить заявку</div>
                     </div>
                 </div>
