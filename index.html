@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+стоп, вноси новые изменения в новый код: <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ВСЕ СТИЛИ ОСТАЮТСЯ ТАКИМИ ЖЕ, КАК В ПРЕДЫДУЩЕМ ВАРИАНТЕ */
         * {
             margin: 0;
             padding: 0;
@@ -155,23 +156,21 @@
             object-fit: cover;
         }
 
-        /* ============================================================ */
-        /* ===== НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО (ВЕСЬ ЭКРАН) ===== */
-        /* ============================================================ */
         .welcome-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 100;
             border-radius: 30px;
-            padding: 20px;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
+            padding: 15px;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
         .welcome-overlay.hidden {
@@ -180,172 +179,139 @@
             pointer-events: none;
         }
 
-        /* Фоновые декоративные круги */
-        .welcome-overlay .bg-circle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.08;
-            pointer-events: none;
-        }
-
-        .welcome-overlay .bg-circle:nth-child(1) {
-            width: 600px;
-            height: 600px;
-            background: #facc15;
-            top: -200px;
-            right: -100px;
-        }
-
-        .welcome-overlay .bg-circle:nth-child(2) {
-            width: 400px;
-            height: 400px;
-            background: #2563eb;
-            bottom: -150px;
-            left: -100px;
-        }
-
-        .welcome-overlay .bg-circle:nth-child(3) {
-            width: 200px;
-            height: 200px;
-            background: #7c3aed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
         .welcome-card {
-            max-width: 750px;
+            max-width: 1000px;
             width: 100%;
-            text-align: center;
-            color: white;
-            position: relative;
-            z-index: 2;
-            animation: welcomeFadeIn 0.8s ease;
-        }
-
-        @keyframes welcomeFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(40px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .welcome-card .logo-icon {
-            font-size: 72px;
-            background: linear-gradient(135deg, #facc15, #fde047);
-            width: 120px;
-            height: 120px;
-            line-height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 25px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 80px 160px rgba(0,0,0,0.7);
+            height: 85vh;
+            max-height: 85vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 60px rgba(250, 204, 21, 0.3);
-            color: #0f172a;
+            flex-direction: column;
+            background: white;
         }
 
-        .welcome-card .logo-icon i {
-            font-size: 56px;
+        .welcome-image {
+            width: 100%;
+            height: 55%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
-        .welcome-card h1 {
-            font-size: 52px;
+        .welcome-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .welcome-image .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+        }
+
+        .welcome-text {
+            position: absolute;
+            bottom: 30px;
+            left: 35px;
+            right: 35px;
+            color: white;
+            z-index: 2;
+            text-align: left;
+        }
+
+        .welcome-text .emoji {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .welcome-text h2 {
+            font-size: 40px;
             font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 12px;
-            background: linear-gradient(to right, #ffffff, #facc15);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-shadow: 0 4px 50px rgba(0,0,0,0.8);
+            margin-bottom: 8px;
+            line-height: 1.15;
         }
 
-        .welcome-card .subtitle {
-            font-size: 20px;
-            color: rgba(255,255,255,0.7);
-            max-width: 550px;
-            margin: 0 auto 35px;
-            line-height: 1.7;
+        .welcome-text h2 span {
+            color: #facc15;
+        }
+
+        .welcome-text p {
+            font-size: 18px;
+            opacity: 0.95;
+            text-shadow: 0 2px 25px rgba(0,0,0,0.8);
+            max-width: 80%;
+            line-height: 1.6;
+        }
+
+        .welcome-buttons-wrap {
+            background: white;
+            padding: 25px 35px 30px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 45%;
+            min-height: 200px;
         }
 
         .welcome-buttons {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            max-width: 420px;
-            margin: 0 auto;
+            gap: 15px;
+            justify-content: center;
+            height: 100%;
         }
 
         .btn-choice {
-            padding: 20px 30px;
+            padding: 20px;
             border: none;
             border-radius: 60px;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 14px;
             letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-choice i {
-            font-size: 22px;
+            font-size: 24px;
         }
 
         .btn-choice.primary {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: #2563eb;
             color: white;
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
         }
 
         .btn-choice.primary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.6);
+            background: #1d4ed8;
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
         }
 
         .btn-choice.secondary {
-            background: linear-gradient(135deg, #facc15, #fde047);
-            color: #0f172a;
-            box-shadow: 0 8px 30px rgba(250, 204, 21, 0.3);
+            background: #facc15;
+            color: #1e293b;
         }
 
         .btn-choice.secondary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(250, 204, 21, 0.5);
+            background: #fde047;
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(250, 204, 21, 0.4);
         }
 
-        .welcome-card .footer-text {
-            margin-top: 30px;
-            font-size: 14px;
-            color: rgba(255,255,255,0.35);
-            letter-spacing: 0.5px;
-        }
-
-        .welcome-card .footer-text a {
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            border-bottom: 1px dashed rgba(255,255,255,0.2);
-            transition: 0.2s;
-            cursor: pointer;
-        }
-
-        .welcome-card .footer-text a:hover {
-            color: #facc15;
-            border-bottom-color: #facc15;
-        }
-
-        /* ============================================================ */
-        /* ===== ОСТАЛЬНЫЕ СТИЛИ (ВАШИ) ===== */
-        /* ============================================================ */
         .main-content {
             display: none;
             animation: fadeUp 0.5s ease;
@@ -793,18 +759,21 @@
         }
 
         @media (max-width: 992px) {
-            .welcome-card h1 { font-size: 40px; }
-            .welcome-card .logo-icon { width: 100px; height: 100px; font-size: 48px; }
-            .welcome-card .logo-icon i { font-size: 44px; }
-            .welcome-card .subtitle { font-size: 17px; }
-            .btn-choice { font-size: 18px; padding: 18px 25px; }
+            .welcome-image { height: 50%; }
+            .welcome-text h2 { font-size: 34px; }
+            .welcome-text p { font-size: 16px; max-width: 100%; }
+            .welcome-text .emoji { font-size: 40px; }
+            .btn-choice { font-size: 20px; padding: 18px; }
+            .welcome-buttons-wrap { padding: 20px 30px 25px; min-height: 180px; }
+            .main-wrapper { height: 92vh; max-height: 92vh; }
+            .welcome-card { height: 82vh; max-height: 82vh; }
+            .top-bar { padding: 8px 20px; font-size: 13px; }
             .prices-block { padding: 30px 25px; }
             .prices-block h2 { font-size: 28px; }
             .prices-table th, .prices-table td { padding: 12px 10px; font-size: 14px; }
             .btn-order { padding: 6px 18px; font-size: 13px; }
             .info-block { padding: 35px 30px; }
             .info-block h2 { font-size: 28px; }
-            .top-bar { padding: 8px 20px; font-size: 13px; }
         }
 
         @media (max-width: 768px) {
@@ -813,15 +782,17 @@
             .header-image { height: 150px; }
             .agency-title { font-size: 36px; }
             .agency-subtitle { font-size: 22px; }
-            .welcome-card h1 { font-size: 32px; }
-            .welcome-card .logo-icon { width: 80px; height: 80px; font-size: 36px; }
-            .welcome-card .logo-icon i { font-size: 36px; }
-            .welcome-card .subtitle { font-size: 15px; }
-            .btn-choice { font-size: 16px; padding: 16px 20px; }
+            .welcome-image { height: 45%; }
+            .welcome-text h2 { font-size: 28px; }
+            .welcome-text p { font-size: 15px; }
+            .welcome-text { left: 25px; right: 25px; bottom: 25px; }
+            .welcome-text .emoji { font-size: 36px; }
+            .welcome-buttons-wrap { padding: 15px 20px 20px; min-height: 160px; }
+            .btn-choice { font-size: 18px; padding: 16px; }
             .main-content { padding: 40px 25px; margin: 20px 10px 20px 10px; }
             .container { padding: 20px; }
-            .main-wrapper { min-height: 90vh; }
-            .welcome-overlay { border-radius: 30px; }
+            .main-wrapper { height: 88vh; max-height: 88vh; }
+            .welcome-card { border-radius: 30px; height: 78vh; max-height: 78vh; }
             .top-bar { flex-direction: column; align-items: stretch; gap: 6px; padding: 8px 16px; }
             .top-bar .left-group { justify-content: center; }
             .top-bar .right-group { justify-content: center; flex-wrap: wrap; }
@@ -835,9 +806,6 @@
             .info-block .price-tag { font-size: 18px; padding: 8px 20px; }
             .info-features { grid-template-columns: 1fr 1fr; }
             .cases-grid { grid-template-columns: 1fr; }
-            .welcome-overlay .bg-circle:nth-child(1) { width: 300px; height: 300px; top: -100px; right: -50px; }
-            .welcome-overlay .bg-circle:nth-child(2) { width: 250px; height: 250px; bottom: -80px; left: -60px; }
-            .welcome-overlay .bg-circle:nth-child(3) { width: 150px; height: 150px; }
         }
 
         @media (max-width: 480px) {
@@ -846,15 +814,17 @@
             .header-image { height: 120px; }
             .agency-title { font-size: 28px; }
             .agency-subtitle { font-size: 18px; }
-            .welcome-card h1 { font-size: 26px; }
-            .welcome-card .logo-icon { width: 70px; height: 70px; font-size: 28px; }
-            .welcome-card .logo-icon i { font-size: 30px; }
-            .welcome-card .subtitle { font-size: 14px; }
-            .btn-choice { font-size: 15px; padding: 14px 16px; gap: 10px; }
+            .welcome-image { height: 40%; }
+            .welcome-text h2 { font-size: 22px; }
+            .welcome-text p { font-size: 13px; }
+            .welcome-text { left: 18px; right: 18px; bottom: 18px; }
+            .welcome-text .emoji { font-size: 30px; }
+            .welcome-buttons-wrap { padding: 12px 15px 15px; min-height: 140px; }
+            .btn-choice { font-size: 15px; padding: 14px; gap: 10px; }
             .btn-choice i { font-size: 18px; }
             .main-content { padding: 30px 15px; margin: 15px 5px 15px 5px; }
-            .main-wrapper { min-height: 85vh; }
-            .welcome-overlay { border-radius: 25px; padding: 15px; }
+            .main-wrapper { height: 85vh; max-height: 85vh; }
+            .welcome-card { border-radius: 25px; height: 75vh; max-height: 75vh; }
             .top-bar { font-size: 12px; padding: 6px 12px; }
             .top-bar .left-group { gap: 4px 10px; flex-wrap: wrap; justify-content: center; }
             .top-bar .right-group { gap: 4px 10px; justify-content: center; }
@@ -876,10 +846,6 @@
             .info-block .case-item p { font-size: 14px; }
             .info-block .price-details { padding: 18px 16px; }
             .info-block .price-details p { font-size: 14px; }
-            .welcome-card .footer-text { font-size: 12px; }
-            .welcome-overlay .bg-circle:nth-child(1) { width: 200px; height: 200px; top: -60px; right: -30px; }
-            .welcome-overlay .bg-circle:nth-child(2) { width: 180px; height: 180px; bottom: -50px; left: -40px; }
-            .welcome-overlay .bg-circle:nth-child(3) { width: 100px; height: 100px; }
         }
     </style>
 </head>
@@ -923,31 +889,27 @@
         </div>
     </div>
 
-    <!-- ===== НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО (ВЕСЬ ЭКРАН) ===== -->
+    <!-- ===== ПРИВЕТСТВЕННОЕ ОКНО ===== -->
     <div class="welcome-overlay" id="welcomeOverlay">
-        <!-- Декоративные круги -->
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
-
         <div class="welcome-card">
-            <div class="logo-icon">
-                <i class="fas fa-hard-hat"></i>
+            <div class="welcome-image">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Строительная бригада">
+                <div class="overlay"></div>
+                <div class="welcome-text">
+                    <span class="emoji">👷</span>
+                    <h2>Добро пожаловать в <span>SUPER.ПРОФ</span></h2>
+                    <p>Бизнес размещает заявку — проверенные специалисты выполняют работы</p>
+                </div>
             </div>
-            <h1>Добро пожаловать в SUPER.ПРОФ</h1>
-            <p class="subtitle">
-                Бизнес размещает заявку — проверенные специалисты выполняют работы. Кто вы — выберите, и покажем, как всё устроено именно для вас.
-            </p>
-            <div class="welcome-buttons">
-                <button class="btn-choice primary" id="btnCustomer">
-                    <i class="fas fa-building"></i> Я заказчик
-                </button>
-                <button class="btn-choice secondary" id="btnWorker">
-                    <i class="fas fa-hard-hat"></i> Ищу работу
-                </button>
-            </div>
-            <div class="footer-text">
-                <a onclick="document.getElementById('welcomeOverlay').classList.add('hidden'); document.getElementById('mainContent').classList.add('active'); return false;">пропустить →</a>
+            <div class="welcome-buttons-wrap">
+                <div class="welcome-buttons">
+                    <button class="btn-choice primary" id="btnCustomer">
+                        <i class="fas fa-building"></i> Я заказчик
+                    </button>
+                    <button class="btn-choice secondary" id="btnWorker">
+                        <i class="fas fa-hard-hat"></i> Ищу работу
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -962,6 +924,7 @@
                     <li>Разнорабочие для любых объектов</li>
                     <li>Подсобные услуги</li>
                     <li>Уборка помещений после строительства и ремонта</li>
+                    
                 </ul>
             </div>
 
@@ -1180,8 +1143,8 @@
     // ============================================================
     //  НАСТРОЙКА TELEGRAM (ЗАМЕНИТЕ НА СВОИ ДАННЫЕ)
     // ============================================================
-    const TELEGRAM_BOT_TOKEN = '8884427046:AAEE0aLvJHzGm3dONrpu4aAS0FDR7V7wYBY';
-    const TELEGRAM_CHAT_ID = '8633133808';
+    const TELEGRAM_BOT_TOKEN = '8884427046:AAEE0aLvJHzGm3dONrpu4aAS0FDR7V7wYBY';  // например: '1234567890:ABCdefGHIjklMNOpqrsTUVwxyz'
+    const TELEGRAM_CHAT_ID = '8633133808';      // например: ''
 
     // ============================================================
     //  ФУНКЦИЯ ОТПРАВКИ В TELEGRAM
@@ -1236,11 +1199,13 @@
                     return;
                 }
 
+                // Блокируем кнопку
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
                 successDiv.style.display = 'none';
                 errorDiv.style.display = 'none';
 
+                // Отправляем в Telegram
                 const success = await sendToTelegram(name, phone, 'заявка');
 
                 if (success) {
@@ -1285,6 +1250,7 @@
                 workerSuccess.style.display = 'none';
                 workerError.style.display = 'none';
 
+                const fullMessage = `Имя: ${name}\nТелефон: ${phone}\nГород: ${city || 'Не указан'}`;
                 const success = await sendToTelegram(name, phone, 'заявка на работу');
 
                 if (success) {
