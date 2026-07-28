@@ -42,7 +42,6 @@
             padding: 20px 40px;
         }
 
-        /* ===== ВЕРХНЯЯ ИНФОРМАЦИОННАЯ СТРОКА ===== */
         .top-bar {
             background: #0f172a;
             color: #e2e8f0;
@@ -67,16 +66,11 @@
             font-weight: 700;
             color: #facc15;
         }
-
-        .top-bar .city i {
-            margin-right: 6px;
-        }
-
+        .top-bar .city i { margin-right: 6px; }
         .top-bar .service {
             font-weight: 500;
             color: #94a3b8;
         }
-
         .top-bar .service i {
             color: #facc15;
             margin-right: 6px;
@@ -97,26 +91,18 @@
             align-items: center;
             gap: 6px;
         }
-
-        .top-bar .right-group a:hover {
-            color: #facc15;
-        }
-
+        .top-bar .right-group a:hover { color: #facc15; }
         .top-bar .right-group i {
             color: #facc15;
             width: 16px;
         }
-
         .top-bar .right-group .time {
             display: flex;
             align-items: center;
             gap: 6px;
             color: #94a3b8;
         }
-
-        .top-bar .right-group .time i {
-            color: #facc15;
-        }
+        .top-bar .right-group .time i { color: #facc15; }
 
         /* ШАПКА */
         .main-header {
@@ -450,15 +436,12 @@
         .icon-telegram {
             background: #0088cc;
         }
-
         .icon-whatsapp {
             background: #25d366;
         }
-
         .icon-email {
             background: #ea4335;
         }
-
         .icon-phone {
             background: #2563eb;
         }
@@ -534,16 +517,6 @@
             padding: 40px 35px;
             margin-top: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        #workerContent h2 {
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
-
-        #workerContent p {
-            font-size: 19px;
-            margin-bottom: 25px;
         }
 
         /* ===== НОВЫЙ БЛОК С ИНФОРМАЦИЕЙ ===== */
@@ -672,7 +645,6 @@
             border-top: 1px solid #eef2f6;
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 992px) {
             .welcome-image { height: 50%; }
             .welcome-text h2 { font-size: 34px; }
@@ -683,8 +655,6 @@
             .main-wrapper { height: 92vh; max-height: 92vh; }
             .welcome-card { height: 82vh; max-height: 82vh; }
             .top-bar { padding: 8px 20px; font-size: 13px; }
-            .top-bar .left-group { gap: 8px 15px; }
-            .top-bar .right-group { gap: 10px 15px; }
             .info-block { padding: 35px 30px; }
             .info-block h2 { font-size: 28px; }
         }
@@ -705,7 +675,6 @@
             .main-content { padding: 40px 25px; margin: 20px 10px 20px 10px; }
             .container { padding: 20px; }
             .main-wrapper { height: 88vh; max-height: 88vh; }
-            #workerContent { padding: 30px 25px; }
             .welcome-card { border-radius: 30px; height: 78vh; max-height: 78vh; }
             .top-bar { flex-direction: column; align-items: stretch; gap: 6px; padding: 8px 16px; }
             .top-bar .left-group { justify-content: center; }
@@ -733,9 +702,6 @@
             .btn-choice i { font-size: 18px; }
             .main-content { padding: 30px 15px; margin: 15px 5px 15px 5px; }
             .main-wrapper { height: 85vh; max-height: 85vh; }
-            #workerContent { padding: 20px 15px; }
-            .services li { font-size: 16px; }
-            .contact-option { font-size: 15px; }
             .welcome-card { border-radius: 25px; height: 75vh; max-height: 75vh; }
             .top-bar { font-size: 12px; padding: 6px 12px; }
             .top-bar .left-group { gap: 4px 10px; flex-wrap: wrap; justify-content: center; }
@@ -796,7 +762,7 @@
         </div>
     </div>
 
-    <!-- ПРИВЕТСТВЕННОЕ ОКНО -->
+    <!-- ===== ПРИВЕТСТВЕННОЕ ОКНО ===== -->
     <div class="welcome-overlay" id="welcomeOverlay">
         <div class="welcome-card">
             <div class="welcome-image">
@@ -821,7 +787,7 @@
         </div>
     </div>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
     <div class="container main-content" id="mainContent">
         <div class="content">
             <div class="services" id="servicesBlock">
@@ -831,6 +797,9 @@
                     <li>Подсобных рабочих</li>
                     <li>Рабочих для земельных работ</li>
                     <li>Грузчиков</li>
+                    <li>Сварщиков</li>
+                    <li>Электриков</li>
+                    <li>и т.п.</li>
                 </ul>
             </div>
 
@@ -844,7 +813,7 @@
                         <div class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></div>
                         <div>WhatsApp</div>
                     </div>
-                    <div class="contact-option" onclick="alert('Написать на email: info@superprof.ru')">
+                    <div class="contact-option" onclick="alert('Написать на email: tsarenko77@list.ru')">
                         <div class="icon icon-email"><i class="fas fa-envelope"></i></div>
                         <div>Написать</div>
                     </div>
@@ -877,6 +846,7 @@
             </div>
         </div>
 
+        <!-- ===== БЛОК ДЛЯ "ИЩУ РАБОТУ" ===== -->
         <div id="workerContent">
             <h2 style="color: #1e293b; margin-bottom: 15px;"><i class="fas fa-search" style="color: #2563eb;"></i> Вы ищете работу</h2>
             <p style="font-size: 18px; color: #334155;">Заполните форму ниже, и мы подберём для вас подходящие заказы в вашем городе.</p>
@@ -891,7 +861,7 @@
                 </div>
                 <div class="form-group">
                     <label for="workerCity"><i class="fas fa-map-pin" style="color:#2563eb;"></i> Город</label>
-                    <input type="text" id="workerCity" placeholder="Москва" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
+                    <input type="text" id="workerCity" placeholder="Усть-Каменогорск" style="width:100%; padding:14px 16px; border:2px solid #e2e8f0; border-radius:14px; font-size:16px;">
                 </div>
                 <button class="submit-btn" onclick="alert('Спасибо! Мы свяжемся с вами по поводу работы.')">
                     <i class="fas fa-paper-plane"></i> Отправить
@@ -915,4 +885,9 @@
                 <div class="feature"><i class="fas fa-clock"></i> Прибытие на заказ в течение 1 часа</div>
                 <div class="feature"><i class="fas fa-handshake"></i> Работаем с физ. и юр. лицами</div>
                 <div class="feature"><i class="fas fa-lock"></i> Цена фиксируется и не меняется</div>
-                <div class
+                <div class="feature"><i class="fas fa-credit-card"></i> Оплата любым удобным способом</div>
+            </div>
+
+            <h3>В каких случаях вам потребуются услуги разнорабочих?</h3>
+            <p style="color: #64748b; font-size: 16px; margin-bottom: 15px;">
+                Наши сотрудники эффективно справляются с широким спектром задач. Вы сможете заказать услуги
