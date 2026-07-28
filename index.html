@@ -890,4 +890,152 @@
 
             <h3>В каких случаях вам потребуются услуги разнорабочих?</h3>
             <p style="color: #64748b; font-size: 16px; margin-bottom: 15px;">
-                Наши сотрудники эффективно справляются с широким спектром задач. Вы сможете заказать услуги
+                Наши сотрудники эффективно справляются с широким спектром задач. Вы сможете заказать услуги разнорабочих на следующие объекты:
+            </p>
+
+            <div class="cases-grid">
+                <div class="case-item">
+                    <strong>🏢 На склад</strong>
+                    <p>Аккуратно выполним погрузо-разгрузочные работы, расставим имущество в соответствии с планом.</p>
+                </div>
+                <div class="case-item">
+                    <strong>🏭 В цех или на производство</strong>
+                    <p>Нам по силам различные задачи на производстве.</p>
+                </div>
+                <div class="case-item">
+                    <strong>🌳 На дачу</strong>
+                    <p>Разнорабочие требуются при строительных, земляных работах и прочих задачах.</p>
+                </div>
+                <div class="case-item">
+                    <strong>🏗️ На стройку</strong>
+                    <p>Монтируем конструкции, проводим кровельные работы, помогаем с цементными растворами, монтируем леса, выполняем отделку.</p>
+                </div>
+                <div class="case-item">
+                    <strong>🛒 В магазин</strong>
+                    <p>Пригодятся услуги грузчиков-разнорабочих. Аккуратно переместим и правильно расставим короба.</p>
+                </div>
+                <div class="case-item">
+                    <strong>🔨 На демонтаж</strong>
+                    <p>Разберём перегородки из дерева или бетона, кирпичную кладку, уберем напольные покрытия.</p>
+                </div>
+            </div>
+
+            <h3>Стоимость услуг разнорабочих и подсобников в Усть-Каменогорске</h3>
+            <p style="color: #64748b; font-size: 16px; margin-bottom: 15px;">
+                Мы предлагаем вам помощь на день или на час. При расчете цены мы ориентируемся на следующие критерии:
+            </p>
+
+            <div class="price-details">
+                <p>
+                    <strong>✓ сложность задач;</strong><br>
+                    <strong>✓ квалификация персонала;</strong><br>
+                    <strong>✓ применяемое оборудование и необходимые инструменты.</strong>
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 АГЕНТСТВО SUPER.ПРОФ. Все права защищены.</p>
+        </footer>
+    </div>
+
+</div>
+
+<script>
+    // Ждём полной загрузки DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        // Находим элементы
+        const overlay = document.getElementById('welcomeOverlay');
+        const mainContent = document.getElementById('mainContent');
+        const servicesBlock = document.getElementById('servicesBlock');
+        const contactBlock = document.getElementById('contactBlock');
+        const workerBlock = document.getElementById('workerContent');
+        const btnCustomer = document.getElementById('btnCustomer');
+        const btnWorker = document.getElementById('btnWorker');
+
+        // Проверяем, что все элементы найдены
+        console.log('overlay:', overlay);
+        console.log('btnCustomer:', btnCustomer);
+        console.log('btnWorker:', btnWorker);
+
+        // Функция для кнопки "Я заказчик"
+        function showCustomer() {
+            console.log('Нажата кнопка Я заказчик');
+            if (overlay) overlay.classList.add('hidden');
+            if (mainContent) mainContent.classList.add('active');
+            if (servicesBlock) servicesBlock.style.display = 'block';
+            if (contactBlock) contactBlock.style.display = 'block';
+            if (workerBlock) workerBlock.style.display = 'none';
+            if (servicesBlock) {
+                const h2 = servicesBlock.querySelector('h2');
+                if (h2) h2.textContent = 'УСЛУГИ:';
+            }
+            setTimeout(() => {
+                if (mainContent) mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 200);
+        }
+
+        // Функция для кнопки "Ищу работу"
+        function showWorker() {
+            console.log('Нажата кнопка Ищу работу');
+            if (overlay) overlay.classList.add('hidden');
+            if (mainContent) mainContent.classList.add('active');
+            if (servicesBlock) servicesBlock.style.display = 'none';
+            if (contactBlock) contactBlock.style.display = 'none';
+            if (workerBlock) workerBlock.style.display = 'block';
+            setTimeout(() => {
+                if (mainContent) mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 200);
+        }
+
+        // Назначаем обработчики
+        if (btnCustomer) {
+            btnCustomer.addEventListener('click', showCustomer);
+        } else {
+            console.error('Кнопка btnCustomer не найдена!');
+        }
+
+        if (btnWorker) {
+            btnWorker.addEventListener('click', showWorker);
+        } else {
+            console.error('Кнопка btnWorker не найдена!');
+        }
+
+        // Обработка формы
+        const form = document.getElementById('phone-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('fullName').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+
+                if (!name || !phone) {
+                    alert('Пожалуйста, заполните имя и телефон.');
+                    return;
+                }
+
+                const btn = this.querySelector('.submit-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    const successDiv = document.getElementById('successMessage');
+                    if (successDiv) {
+                        successDiv.style.display = 'block';
+                    }
+                    this.reset();
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    if (successDiv) {
+                        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        setTimeout(() => { successDiv.style.display = 'none'; }, 6000);
+                    }
+                }, 1500);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
