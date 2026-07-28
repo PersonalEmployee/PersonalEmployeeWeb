@@ -519,7 +519,90 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        /* ===== НОВЫЙ БЛОК С ИНФОРМАЦИЕЙ ===== */
+        /* ===== НОВЫЙ БЛОК "ЦЕНЫ НА УСЛУГИ" ===== */
+        .prices-block {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 45px;
+            margin: 30px 0 20px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eef2f6;
+        }
+
+        .prices-block h2 {
+            font-size: 32px;
+            font-weight: 900;
+            color: #1e293b;
+            margin-bottom: 25px;
+        }
+
+        .prices-block h2 span {
+            color: #2563eb;
+        }
+
+        .prices-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .prices-table th {
+            text-align: left;
+            padding: 16px 12px;
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 16px;
+            border-bottom: 2px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        .prices-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 16px;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .prices-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .prices-table .service-name {
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .prices-table .service-price {
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .btn-order {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-order:hover {
+            background: #1d4ed8;
+            transform: scale(1.04);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-order i {
+            font-size: 13px;
+        }
+
+        /* ===== ИНФО-БЛОК (был) ===== */
         .info-block {
             background: #ffffff;
             border-radius: 24px;
@@ -655,6 +738,11 @@
             .main-wrapper { height: 92vh; max-height: 92vh; }
             .welcome-card { height: 82vh; max-height: 82vh; }
             .top-bar { padding: 8px 20px; font-size: 13px; }
+            .prices-block { padding: 30px 25px; }
+            .prices-block h2 { font-size: 28px; }
+            .prices-table th,
+            .prices-table td { padding: 12px 10px; font-size: 14px; }
+            .btn-order { padding: 6px 18px; font-size: 13px; }
             .info-block { padding: 35px 30px; }
             .info-block h2 { font-size: 28px; }
         }
@@ -679,6 +767,16 @@
             .top-bar { flex-direction: column; align-items: stretch; gap: 6px; padding: 8px 16px; }
             .top-bar .left-group { justify-content: center; }
             .top-bar .right-group { justify-content: center; flex-wrap: wrap; }
+            .prices-block { padding: 25px 20px; }
+            .prices-block h2 { font-size: 24px; }
+            .prices-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .prices-table th,
+            .prices-table td { padding: 10px 8px; font-size: 13px; }
+            .btn-order { padding: 5px 14px; font-size: 12px; }
             .info-block { padding: 30px 20px; }
             .info-block h2 { font-size: 24px; }
             .info-block .price-tag { font-size: 18px; padding: 8px 20px; }
@@ -707,6 +805,12 @@
             .top-bar .left-group { gap: 4px 10px; flex-wrap: wrap; justify-content: center; }
             .top-bar .right-group { gap: 4px 10px; justify-content: center; }
             .top-bar .right-group a { font-size: 12px; }
+            .prices-block { padding: 20px 14px; }
+            .prices-block h2 { font-size: 20px; }
+            .prices-table th,
+            .prices-table td { padding: 8px 6px; font-size: 12px; }
+            .btn-order { padding: 4px 12px; font-size: 11px; }
+            .btn-order i { font-size: 10px; }
             .info-block { padding: 25px 16px; }
             .info-block h2 { font-size: 21px; }
             .info-block .subtitle { font-size: 15px; }
@@ -793,9 +897,9 @@
             <div class="services" id="servicesBlock">
                 <h2>УСЛУГИ:</h2>
                 <ul>
-                    <li>Разнорабочих для любых объектов</li> 
-                    <li>Подсобных рабочих</li> 
-                    <li>Рабочих для земельных работ</li> 
+                    <li>Разнорабочих для любых объектов</li>
+                    <li>Подсобных рабочих</li>
+                    <li>Рабочих для земельных работ</li>
                     <li>Грузчиков</li>
                 </ul>
             </div>
@@ -820,7 +924,7 @@
                     </div>
                 </div>
 
-                <div class="contact-form">
+                <div class="contact-form" id="orderForm">
                     <h3><i class="fas fa-paper-plane" style="color:#2563eb; margin-right:8px;"></i>Оставьте заявку — мы перезвоним</h3>
                     <form id="phone-form">
                         <div class="form-group">
@@ -866,7 +970,59 @@
             </div>
         </div>
 
-        <!-- ===== НОВЫЙ БЛОК С ИНФОРМАЦИЕЙ ===== -->
+        <!-- ===== НОВЫЙ БЛОК "ЦЕНЫ НА УСЛУГИ" ===== -->
+        <div class="prices-block">
+            <h2>Цены на <span>услуги</span></h2>
+            <table class="prices-table">
+                <thead>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Стоимость</th>
+                        <th style="text-align: center;">Заказать</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="service-name"><i class="fas fa-truck" style="color:#2563eb; margin-right:8px;"></i>Грузчики</td>
+                        <td class="service-price">от 2250 тг./чел.ч</td>
+                        <td style="text-align: center;">
+                            <button class="btn-order" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth', block:'center'})">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="service-name"><i class="fas fa-hard-hat" style="color:#2563eb; margin-right:8px;"></i>Разнорабочие</td>
+                        <td class="service-price">от 2250 тг./чел.ч</td>
+                        <td style="text-align: center;">
+                            <button class="btn-order" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth', block:'center'})">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="service-name"><i class="fas fa-building" style="color:#2563eb; margin-right:8px;"></i>Подсобные услуги — офисный переезд</td>
+                        <td class="service-price">от 2500 тг.</td>
+                        <td style="text-align: center;">
+                            <button class="btn-order" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth', block:'center'})">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="service-name"><i class="fas fa-dumpster" style="color:#2563eb; margin-right:8px;"></i>Грузчики по безналичному расчету — вывоз строительного мусора</td>
+                        <td class="service-price">от 3200 тг.</td>
+                        <td style="text-align: center;">
+                            <button class="btn-order" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth', block:'center'})">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== БЛОК С ИНФОРМАЦИЕЙ (был) ===== -->
         <div class="info-block">
             <h2>Аренда <span>разнорабочих</span></h2>
             <p class="subtitle">
@@ -949,11 +1105,6 @@
         const workerBlock = document.getElementById('workerContent');
         const btnCustomer = document.getElementById('btnCustomer');
         const btnWorker = document.getElementById('btnWorker');
-
-        // Проверяем, что все элементы найдены
-        console.log('overlay:', overlay);
-        console.log('btnCustomer:', btnCustomer);
-        console.log('btnWorker:', btnWorker);
 
         // Функция для кнопки "Я заказчик"
         function showCustomer() {
