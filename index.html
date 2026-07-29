@@ -162,22 +162,25 @@
             object-fit: cover;
         }
 
-        /* ---------- WELCOME OVERLAY (НОВЫЙ ДИЗАЙН) ---------- */
+        /* ======================================================
+                   НОВЫЙ ДИЗАЙН ПРИВЕТСТВЕННОГО ОКНА
+                   ====================================================== */
         .welcome-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(8, 18, 38, 0.70);
-            backdrop-filter: blur(14px) saturate(1.2);
+            background: rgba(6, 14, 30, 0.75);
+            backdrop-filter: blur(20px) saturate(1.3);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 200;
             border-radius: 40px;
-            padding: 20px;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            padding: 24px;
+            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        visibility 0.6s ease;
         }
 
         .welcome-overlay.hidden {
@@ -186,165 +189,192 @@
             pointer-events: none;
         }
 
-        /* КАРТОЧКА — шире и воздушнее */
+        /* Главная карточка — минималистичный стеклянный дизайн */
         .welcome-card {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(4px);
-            border-radius: 48px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-radius: 56px;
             overflow: hidden;
-            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 80px 160px rgba(0, 0, 0, 0.5),
+                        0 0 0 1px rgba(255, 255, 255, 0.15);
             display: flex;
             flex-direction: row;
-            height: 78vh;
-            max-height: 680px;
-            transition: all 0.3s ease;
+            height: 75vh;
+            max-height: 620px;
+            transition: all 0.4s ease;
         }
 
-        /* Левая часть — изображение + текст */
-        .welcome-image-wrap {
-            flex: 1.3;
-            background: linear-gradient(135deg, #0b1e3a, #1d3b6b);
+        /* ---- ЛЕВАЯ ЧАСТЬ: ТЕКСТ + ДЕКОР ---- */
+        .welcome-brand {
+            flex: 1.2;
+            background: linear-gradient(145deg, #0b1e3a, #1a3a6a);
+            padding: 48px 44px 52px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            padding: 40px 44px 48px;
         }
 
-        .welcome-image-wrap img {
+        .welcome-brand::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-        }
-
-        .welcome-image-wrap .overlay-gradient {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80%;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+            top: -30%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(252, 211, 77, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
             pointer-events: none;
         }
 
-        .welcome-text {
-            position: relative;
-            z-index: 3;
-            color: white;
-            max-width: 90%;
+        .welcome-brand .brand-icon {
+            font-size: 56px;
+            color: #fcd34d;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 8px 24px rgba(252, 211, 77, 0.2));
         }
 
-        .welcome-text .emoji-big {
-            font-size: 52px;
-            display: block;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
-        }
-
-        .welcome-text h2 {
+        .welcome-brand h1 {
             font-size: 44px;
             font-weight: 900;
-            line-height: 1.15;
-            text-shadow: 0 6px 30px rgba(0,0,0,0.6);
-            margin-bottom: 10px;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
         }
 
-        .welcome-text h2 span {
-            color: #fcd34d;
-            background: linear-gradient(145deg, #fcd34d, #fbbf24);
+        .welcome-brand h1 span {
+            background: linear-gradient(135deg, #fcd34d, #fbbf24);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .welcome-text p {
-            font-size: 19px;
-            opacity: 0.95;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.6);
-            line-height: 1.6;
-            max-width: 90%;
+        .welcome-brand p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            max-width: 85%;
             font-weight: 400;
         }
 
-        /* Правая часть — кнопки */
+        .welcome-brand .features-mini {
+            display: flex;
+            gap: 24px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .welcome-brand .features-mini span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .welcome-brand .features-mini i {
+            color: #fcd34d;
+            font-size: 16px;
+        }
+
+        /* ---- ПРАВАЯ ЧАСТЬ: КНОПКИ ---- */
         .welcome-actions {
             flex: 1;
-            background: #fafcff;
+            background: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 30px 40px;
-            gap: 28px;
-            min-width: 280px;
+            padding: 44px 48px;
+            gap: 20px;
         }
 
-        .welcome-actions .greeting {
+        .welcome-actions .action-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8a9bb5;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .welcome-actions h2 {
             font-size: 26px;
             font-weight: 700;
             color: #0b1e3a;
-            letter-spacing: -0.3px;
-            text-align: center;
-            line-height: 1.3;
+            margin-bottom: 4px;
         }
 
-        .welcome-actions .greeting small {
-            display: block;
-            font-size: 16px;
-            font-weight: 400;
-            color: #556b86;
-            margin-top: 6px;
+        .welcome-actions .sub-label {
+            color: #6a7f9e;
+            font-size: 15px;
+            margin-bottom: 12px;
         }
 
         .btn-choice {
             width: 100%;
-            padding: 22px 20px;
+            padding: 20px 24px;
             border: none;
             border-radius: 60px;
-            font-size: 22px;
+            font-size: 19px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            letter-spacing: 0.5px;
+            gap: 14px;
             font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
         }
 
         .btn-choice i {
-            font-size: 26px;
+            font-size: 22px;
         }
 
         .btn-choice.primary {
             background: #1e4f8a;
             color: white;
-            box-shadow: 0 6px 18px rgba(30, 79, 138, 0.35);
+            box-shadow: 0 4px 16px rgba(30, 79, 138, 0.30);
         }
 
         .btn-choice.primary:hover {
             background: #143a65;
-            transform: scale(1.02) translateY(-2px);
-            box-shadow: 0 14px 30px rgba(30, 79, 138, 0.45);
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 12px 32px rgba(30, 79, 138, 0.40);
         }
 
         .btn-choice.secondary {
             background: #fcd34d;
             color: #0b1e3a;
-            box-shadow: 0 6px 18px rgba(252, 211, 77, 0.35);
+            box-shadow: 0 4px 16px rgba(252, 211, 77, 0.30);
         }
 
         .btn-choice.secondary:hover {
             background: #fbbf24;
-            transform: scale(1.02) translateY(-2px);
-            box-shadow: 0 14px 30px rgba(252, 211, 77, 0.5);
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 12px 32px rgba(252, 211, 77, 0.45);
+        }
+
+        .btn-choice .badge {
+            font-size: 12px;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 12px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+
+        .btn-choice.primary .badge {
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.85);
+        }
+        .btn-choice.secondary .badge {
+            background: rgba(0,0,0,0.06);
+            color: #1e2f45;
         }
 
         /* ---------- MAIN CONTENT ---------- */
@@ -747,7 +777,8 @@
             color: #0b1e3a;
         }
 
-        .success-message, .error-message {
+        .success-message,
+        .error-message {
             display: none;
             margin-top: 18px;
             border-radius: 16px;
@@ -768,7 +799,8 @@
             border: 2px solid #fca5a5;
         }
 
-        .success-message i, .error-message i {
+        .success-message i,
+        .error-message i {
             font-size: 28px;
             display: block;
             margin-bottom: 6px;
@@ -788,51 +820,68 @@
             .welcome-card {
                 flex-direction: column;
                 height: auto;
-                max-height: 90vh;
+                max-height: 92vh;
             }
-            .welcome-image-wrap {
+            .welcome-brand {
+                padding: 36px 32px 32px;
                 flex: none;
-                height: 44vh;
-                padding: 30px 32px 36px;
             }
-            .welcome-text h2 { font-size: 36px; }
-            .welcome-text p { font-size: 17px; max-width: 100%; }
+            .welcome-brand h1 { font-size: 36px; }
+            .welcome-brand p { max-width: 100%; }
+            .welcome-brand .features-mini { gap: 16px; }
             .welcome-actions {
-                padding: 28px 32px;
-                gap: 20px;
-                min-width: unset;
+                padding: 32px 36px;
+                gap: 16px;
             }
-            .welcome-actions .greeting { font-size: 22px; }
-            .btn-choice { font-size: 20px; padding: 18px; }
-            .main-wrapper { min-height: 90vh; }
+            .welcome-actions h2 { font-size: 22px; }
+            .btn-choice { font-size: 17px; padding: 18px; }
         }
 
         @media (max-width: 768px) {
             .container { padding: 16px; }
-            .top-bar { flex-direction: column; align-items: stretch; gap: 6px; padding: 10px 18px; font-size: 13px; }
-            .top-bar .left-group { justify-content: center; flex-wrap: wrap; }
-            .top-bar .right-group { justify-content: center; flex-wrap: wrap; }
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+                padding: 10px 18px;
+                font-size: 13px;
+            }
+            .top-bar .left-group { justify-content: center;
+                flex-wrap: wrap; }
+            .top-bar .right-group { justify-content: center;
+                flex-wrap: wrap; }
             .header-image { height: 160px; }
             .agency-title { font-size: 38px; }
             .agency-subtitle { font-size: 24px; }
 
+            .welcome-overlay { padding: 16px; }
             .welcome-card { border-radius: 32px; }
-            .welcome-image-wrap { height: 38vh; padding: 24px 24px 28px; }
-            .welcome-text h2 { font-size: 30px; }
-            .welcome-text p { font-size: 15px; }
-            .welcome-text .emoji-big { font-size: 40px; }
-            .welcome-actions { padding: 24px 24px; gap: 16px; }
-            .welcome-actions .greeting { font-size: 20px; }
-            .btn-choice { font-size: 18px; padding: 16px; }
+            .welcome-brand { padding: 28px 24px; }
+            .welcome-brand h1 { font-size: 30px; }
+            .welcome-brand .brand-icon { font-size: 40px; }
+            .welcome-brand .features-mini span { font-size: 13px; }
+            .welcome-actions { padding: 24px 24px; }
+            .welcome-actions h2 { font-size: 20px; }
+            .btn-choice { font-size: 16px; padding: 16px; gap: 10px; }
+            .btn-choice i { font-size: 18px; }
 
-            .main-content { padding: 30px 20px; margin: 16px 10px; }
-            .content { flex-direction: column; gap: 24px; }
-            .services, .contact { min-width: unset; padding: 28px 20px; }
+            .main-content { padding: 30px 20px;
+                margin: 16px 10px; }
+            .content { flex-direction: column;
+                gap: 24px; }
+            .services,
+            .contact { min-width: unset;
+                padding: 28px 20px; }
             .prices-block { padding: 24px 20px; }
             .prices-block h2 { font-size: 26px; }
-            .prices-table { display: block; overflow-x: auto; white-space: nowrap; }
-            .prices-table th, .prices-table td { padding: 10px 8px; font-size: 14px; }
-            .btn-order { padding: 6px 16px; font-size: 13px; }
+            .prices-table { display: block;
+                overflow-x: auto;
+                white-space: nowrap; }
+            .prices-table th,
+            .prices-table td { padding: 10px 8px;
+                font-size: 14px; }
+            .btn-order { padding: 6px 16px;
+                font-size: 13px; }
             .info-block { padding: 30px 20px; }
             .info-block h2 { font-size: 26px; }
             .info-features { grid-template-columns: 1fr 1fr; }
@@ -840,29 +889,42 @@
         }
 
         @media (max-width: 480px) {
-            .welcome-image-wrap { height: 32vh; padding: 18px 18px 22px; }
-            .welcome-text h2 { font-size: 24px; }
-            .welcome-text p { font-size: 14px; }
-            .welcome-text .emoji-big { font-size: 32px; }
-            .welcome-actions .greeting { font-size: 18px; }
-            .welcome-actions .greeting small { font-size: 14px; }
-            .btn-choice { font-size: 16px; padding: 14px; gap: 10px; }
-            .btn-choice i { font-size: 20px; }
+            .welcome-brand { padding: 22px 18px; }
+            .welcome-brand h1 { font-size: 26px; }
+            .welcome-brand p { font-size: 15px; }
+            .welcome-brand .brand-icon { font-size: 34px; }
+            .welcome-brand .features-mini { flex-direction: column;
+                gap: 8px; }
+            .welcome-actions { padding: 20px 18px; }
+            .welcome-actions h2 { font-size: 18px; }
+            .welcome-actions .sub-label { font-size: 14px; }
+            .btn-choice { font-size: 15px; padding: 14px; }
+            .btn-choice .badge { font-size: 10px; padding: 0 10px; }
 
-            .main-content { padding: 20px 12px; margin: 12px 4px; }
-            .services, .contact { padding: 20px 14px; }
-            .services li { font-size: 15px; padding: 12px 0; }
-            .contact-option { font-size: 15px; padding: 12px 14px; }
-            .contact-option .icon { width: 40px; height: 40px; font-size: 16px; margin-right: 12px; }
+            .main-content { padding: 20px 12px;
+                margin: 12px 4px; }
+            .services,
+            .contact { padding: 20px 14px; }
+            .services li { font-size: 15px;
+                padding: 12px 0; }
+            .contact-option { font-size: 15px;
+                padding: 12px 14px; }
+            .contact-option .icon { width: 40px;
+                height: 40px;
+                font-size: 16px;
+                margin-right: 12px; }
             .contact-form { padding: 18px 14px; }
-            .form-group input { padding: 14px 14px; font-size: 15px; }
-            .submit-btn { font-size: 16px; padding: 14px; }
+            .form-group input { padding: 14px 14px;
+                font-size: 15px; }
+            .submit-btn { font-size: 16px;
+                padding: 14px; }
             .prices-block { padding: 18px 12px; }
             .prices-block h2 { font-size: 22px; }
             .info-block { padding: 22px 14px; }
             .info-block h2 { font-size: 22px; }
             .info-block .subtitle { font-size: 15px; }
-            .info-block .price-tag { font-size: 18px; padding: 8px 20px; }
+            .info-block .price-tag { font-size: 18px;
+                padding: 8px 20px; }
             .info-features { grid-template-columns: 1fr; }
             .case-item { padding: 16px 18px; }
         }
@@ -898,33 +960,45 @@
         </div>
     </div>
 
-    <!-- ===== WELCOME OVERLAY ===== (НОВЫЙ ДИЗАЙН) -->
+    <!-- ============================================================
+    НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО
+    ============================================================ -->
     <div class="welcome-overlay" id="welcomeOverlay">
         <div class="welcome-card">
-            <!-- Левая часть: изображение + текст -->
-            <div class="welcome-image-wrap">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Строительная бригада">
-                <div class="overlay-gradient"></div>
-                <div class="welcome-text">
-                    <span class="emoji-big">🏗️</span>
-                    <h2>Добро пожаловать в <span>SUPER.ПРОФ</span></h2>
-                    <p>Бизнес размещает заявку — проверенные специалисты выполняют работы</p>
+
+            <!-- Левая часть: брендинг -->
+            <div class="welcome-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h1>Добро пожаловать в <br><span>SUPER.ПРОФ</span></h1>
+                <p>Платформа, которая соединяет бизнес с проверенными специалистами для быстрого и качественного выполнения задач.</p>
+                <div class="features-mini">
+                    <span><i class="fas fa-check-circle"></i> Проверенные кадры</span>
+                    <span><i class="fas fa-clock"></i> Выезд за 1 час</span>
+                    <span><i class="fas fa-shield-alt"></i> Гарантия качества</span>
                 </div>
             </div>
 
-            <!-- Правая часть: кнопки -->
+            <!-- Правая часть: выбор роли -->
             <div class="welcome-actions">
-                <div class="greeting">
-                    Выберите роль
-                    <small>Мы подберём решение под ваш запрос</small>
-                </div>
+                <div class="action-label">Выберите свою роль</div>
+                <h2>Кто вы?</h2>
+                <div class="sub-label">Мы подберем оптимальное решение под ваш запрос</div>
+
                 <button class="btn-choice primary" id="btnCustomer">
-                    <i class="fas fa-building"></i> Я заказчик
+                    <i class="fas fa-building"></i>
+                    Я заказчик
+                    <span class="badge">нужны рабочие</span>
                 </button>
+
                 <button class="btn-choice secondary" id="btnWorker">
-                    <i class="fas fa-hard-hat"></i> Ищу работу
+                    <i class="fas fa-hard-hat"></i>
+                    Ищу работу
+                    <span class="badge">хочу зарабатывать</span>
                 </button>
             </div>
+
         </div>
     </div>
 
@@ -1102,9 +1176,9 @@
 
     async function sendToTelegram(name, phone, type = 'заявка') {
         const message = `🔔 Новая ${type} с сайта SUPER.ПРОФ!\n\n` +
-                       `👤 Имя: ${name}\n` +
-                       `📞 Телефон: ${phone}\n` +
-                       `🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
+            `👤 Имя: ${name}\n` +
+            `📞 Телефон: ${phone}\n` +
+            `🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
         const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
         try {
             const response = await fetch(url, {
