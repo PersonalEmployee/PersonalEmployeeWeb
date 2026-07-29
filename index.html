@@ -35,7 +35,6 @@
             overflow: hidden;
             position: relative;
             min-height: 94vh;
-            transition: all 0.3s ease;
         }
 
         .container {
@@ -163,24 +162,24 @@
         }
 
         /* ======================================================
-                   НОВЫЙ ДИЗАЙН ПРИВЕТСТВЕННОГО ОКНА
-                   ====================================================== */
+           НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО — ЧИСТЫЙ ДИЗАЙН
+           ====================================================== */
         .welcome-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(6, 14, 30, 0.75);
-            backdrop-filter: blur(20px) saturate(1.3);
+            background: rgba(6, 14, 30, 0.70);
+            backdrop-filter: blur(16px) saturate(1.2);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 200;
             border-radius: 40px;
-            padding: 24px;
-            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        visibility 0.6s ease;
+            padding: 30px;
+            transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        visibility 0.5s ease;
         }
 
         .welcome-overlay.hidden {
@@ -189,97 +188,79 @@
             pointer-events: none;
         }
 
-        /* Главная карточка — минималистичный стеклянный дизайн */
+        /* Карточка — минималистичная, без серых областей */
         .welcome-card {
             max-width: 1100px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-radius: 56px;
+            background: #ffffff;
+            border-radius: 48px;
             overflow: hidden;
-            box-shadow: 0 80px 160px rgba(0, 0, 0, 0.5),
-                        0 0 0 1px rgba(255, 255, 255, 0.15);
+            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: row;
-            height: 75vh;
-            max-height: 620px;
-            transition: all 0.4s ease;
+            height: 72vh;
+            max-height: 600px;
         }
 
-        /* ---- ЛЕВАЯ ЧАСТЬ: ТЕКСТ + ДЕКОР ---- */
-        .welcome-brand {
+        /* ---- ЛЕВАЯ ЧАСТЬ: КРУПНОЕ ИЗОБРАЖЕНИЕ ---- */
+        .welcome-image {
             flex: 1.2;
             background: linear-gradient(145deg, #0b1e3a, #1a3a6a);
-            padding: 48px 44px 52px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             position: relative;
             overflow: hidden;
         }
 
-        .welcome-brand::before {
-            content: '';
+        .welcome-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .welcome-image .gradient {
             position: absolute;
-            top: -30%;
-            right: -20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(252, 211, 77, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
             pointer-events: none;
         }
 
-        .welcome-brand .brand-icon {
-            font-size: 56px;
-            color: #fcd34d;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 8px 24px rgba(252, 211, 77, 0.2));
+        .welcome-image .text-overlay {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            z-index: 2;
+            color: white;
         }
 
-        .welcome-brand h1 {
+        .welcome-image .text-overlay .icon-big {
             font-size: 44px;
+            display: block;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+        }
+
+        .welcome-image .text-overlay h2 {
+            font-size: 38px;
             font-weight: 900;
-            color: #ffffff;
-            line-height: 1.1;
-            margin-bottom: 14px;
-            letter-spacing: -0.5px;
+            line-height: 1.15;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            margin-bottom: 6px;
         }
 
-        .welcome-brand h1 span {
-            background: linear-gradient(135deg, #fcd34d, #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .welcome-brand p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.7;
-            max-width: 85%;
-            font-weight: 400;
-        }
-
-        .welcome-brand .features-mini {
-            display: flex;
-            gap: 24px;
-            margin-top: 28px;
-            flex-wrap: wrap;
-        }
-
-        .welcome-brand .features-mini span {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .welcome-brand .features-mini i {
+        .welcome-image .text-overlay h2 span {
             color: #fcd34d;
-            font-size: 16px;
+        }
+
+        .welcome-image .text-overlay p {
+            font-size: 17px;
+            opacity: 0.9;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+            max-width: 85%;
+            line-height: 1.6;
         }
 
         /* ---- ПРАВАЯ ЧАСТЬ: КНОПКИ ---- */
@@ -289,30 +270,31 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 44px 48px;
+            padding: 48px 44px;
             gap: 20px;
+            min-width: 300px;
         }
 
-        .welcome-actions .action-label {
+        .welcome-actions .label {
             font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             color: #8a9bb5;
             font-weight: 600;
-            margin-bottom: 4px;
         }
 
-        .welcome-actions h2 {
-            font-size: 26px;
+        .welcome-actions h3 {
+            font-size: 28px;
             font-weight: 700;
             color: #0b1e3a;
-            margin-bottom: 4px;
+            line-height: 1.2;
+            margin-bottom: 2px;
         }
 
-        .welcome-actions .sub-label {
+        .welcome-actions .sub {
             color: #6a7f9e;
-            font-size: 15px;
-            margin-bottom: 12px;
+            font-size: 16px;
+            margin-bottom: 8px;
         }
 
         .btn-choice {
@@ -329,7 +311,7 @@
             justify-content: center;
             gap: 14px;
             font-family: 'Inter', sans-serif;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
         }
 
         .btn-choice i {
@@ -360,19 +342,19 @@
             box-shadow: 0 12px 32px rgba(252, 211, 77, 0.45);
         }
 
-        .btn-choice .badge {
+        .btn-choice .tag {
             font-size: 12px;
-            background: rgba(255,255,255,0.2);
-            padding: 2px 12px;
+            background: rgba(255,255,255,0.15);
+            padding: 2px 14px;
             border-radius: 40px;
             font-weight: 600;
         }
 
-        .btn-choice.primary .badge {
-            background: rgba(255,255,255,0.15);
+        .btn-choice.primary .tag {
+            background: rgba(255,255,255,0.12);
             color: rgba(255,255,255,0.85);
         }
-        .btn-choice.secondary .badge {
+        .btn-choice.secondary .tag {
             background: rgba(0,0,0,0.06);
             color: #1e2f45;
         }
@@ -822,18 +804,24 @@
                 height: auto;
                 max-height: 92vh;
             }
-            .welcome-brand {
-                padding: 36px 32px 32px;
+            .welcome-image {
                 flex: none;
+                height: 40vh;
+                min-height: 240px;
             }
-            .welcome-brand h1 { font-size: 36px; }
-            .welcome-brand p { max-width: 100%; }
-            .welcome-brand .features-mini { gap: 16px; }
+            .welcome-image .text-overlay {
+                bottom: 28px;
+                left: 30px;
+                right: 30px;
+            }
+            .welcome-image .text-overlay h2 { font-size: 30px; }
+            .welcome-image .text-overlay p { max-width: 100%; font-size: 16px; }
             .welcome-actions {
                 padding: 32px 36px;
                 gap: 16px;
+                min-width: unset;
             }
-            .welcome-actions h2 { font-size: 22px; }
+            .welcome-actions h3 { font-size: 24px; }
             .btn-choice { font-size: 17px; padding: 18px; }
         }
 
@@ -856,12 +844,17 @@
 
             .welcome-overlay { padding: 16px; }
             .welcome-card { border-radius: 32px; }
-            .welcome-brand { padding: 28px 24px; }
-            .welcome-brand h1 { font-size: 30px; }
-            .welcome-brand .brand-icon { font-size: 40px; }
-            .welcome-brand .features-mini span { font-size: 13px; }
+            .welcome-image { height: 32vh;
+                min-height: 200px; }
+            .welcome-image .text-overlay { bottom: 20px;
+                left: 22px;
+                right: 22px; }
+            .welcome-image .text-overlay h2 { font-size: 26px; }
+            .welcome-image .text-overlay .icon-big { font-size: 34px; }
+            .welcome-image .text-overlay p { font-size: 14px; }
             .welcome-actions { padding: 24px 24px; }
-            .welcome-actions h2 { font-size: 20px; }
+            .welcome-actions h3 { font-size: 22px; }
+            .welcome-actions .sub { font-size: 14px; }
             .btn-choice { font-size: 16px; padding: 16px; gap: 10px; }
             .btn-choice i { font-size: 18px; }
 
@@ -889,17 +882,15 @@
         }
 
         @media (max-width: 480px) {
-            .welcome-brand { padding: 22px 18px; }
-            .welcome-brand h1 { font-size: 26px; }
-            .welcome-brand p { font-size: 15px; }
-            .welcome-brand .brand-icon { font-size: 34px; }
-            .welcome-brand .features-mini { flex-direction: column;
-                gap: 8px; }
+            .welcome-image { height: 28vh;
+                min-height: 160px; }
+            .welcome-image .text-overlay h2 { font-size: 22px; }
+            .welcome-image .text-overlay .icon-big { font-size: 28px; }
+            .welcome-image .text-overlay p { font-size: 13px; }
             .welcome-actions { padding: 20px 18px; }
-            .welcome-actions h2 { font-size: 18px; }
-            .welcome-actions .sub-label { font-size: 14px; }
+            .welcome-actions h3 { font-size: 20px; }
             .btn-choice { font-size: 15px; padding: 14px; }
-            .btn-choice .badge { font-size: 10px; padding: 0 10px; }
+            .btn-choice .tag { font-size: 10px; padding: 0 10px; }
 
             .main-content { padding: 20px 12px;
                 margin: 12px 4px; }
@@ -961,41 +952,38 @@
     </div>
 
     <!-- ============================================================
-    НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО
+    ПРИВЕТСТВЕННОЕ ОКНО — ЧИСТЫЙ ДИЗАЙН
     ============================================================ -->
     <div class="welcome-overlay" id="welcomeOverlay">
         <div class="welcome-card">
 
-            <!-- Левая часть: брендинг -->
-            <div class="welcome-brand">
-                <div class="brand-icon">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <h1>Добро пожаловать в <br><span>SUPER.ПРОФ</span></h1>
-                <p>Платформа, которая соединяет бизнес с проверенными специалистами для быстрого и качественного выполнения задач.</p>
-                <div class="features-mini">
-                    <span><i class="fas fa-check-circle"></i> Проверенные кадры</span>
-                    <span><i class="fas fa-clock"></i> Выезд за 1 час</span>
-                    <span><i class="fas fa-shield-alt"></i> Гарантия качества</span>
+            <!-- Левая часть: изображение с текстом -->
+            <div class="welcome-image">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Рабочие">
+                <div class="gradient"></div>
+                <div class="text-overlay">
+                    <span class="icon-big">🏗️</span>
+                    <h2>Добро пожаловать в <span>SUPER.ПРОФ</span></h2>
+                    <p>Надёжные специалисты для вашего бизнеса. Быстро, качественно, с гарантией.</p>
                 </div>
             </div>
 
             <!-- Правая часть: выбор роли -->
             <div class="welcome-actions">
-                <div class="action-label">Выберите свою роль</div>
-                <h2>Кто вы?</h2>
-                <div class="sub-label">Мы подберем оптимальное решение под ваш запрос</div>
+                <div class="label">Выберите роль</div>
+                <h3>Кто вы?</h3>
+                <div class="sub">Мы подберём решение под ваш запрос</div>
 
                 <button class="btn-choice primary" id="btnCustomer">
                     <i class="fas fa-building"></i>
                     Я заказчик
-                    <span class="badge">нужны рабочие</span>
+                    <span class="tag">нужны рабочие</span>
                 </button>
 
                 <button class="btn-choice secondary" id="btnWorker">
                     <i class="fas fa-hard-hat"></i>
                     Ищу работу
-                    <span class="badge">хочу зарабатывать</span>
+                    <span class="tag">хочу зарабатывать</span>
                 </button>
             </div>
 
