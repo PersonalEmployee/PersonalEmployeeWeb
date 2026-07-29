@@ -139,7 +139,6 @@
             margin-top: 2px;
         }
 
-        /* Увеличенная высота изображения */
         .header-image {
             width: 100%;
             max-width: 1100px;
@@ -691,9 +690,10 @@
             margin: 35px 0 12px 0;
         }
 
+        /* СЕТКА ДЛЯ УСЛУГ — 3 колонки с переносом */
         .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin: 16px 0 28px 0;
         }
@@ -717,6 +717,25 @@
             font-size: 15px;
             line-height: 1.6;
             margin: 0;
+        }
+
+        /* Специальный класс для сдвига вправо */
+        .case-item.shift-right {
+            grid-column: span 1;
+        }
+
+        /* Чтобы две нижние встали в правую часть */
+        .cases-grid .case-item:nth-last-child(-n+2) {
+            grid-column: span 1;
+        }
+
+        /* Для 3-колоночной сетки: последние 2 элемента смещаем вправо */
+        .cases-grid .case-item:nth-last-child(2) {
+            grid-column: 2 / 3;
+        }
+
+        .cases-grid .case-item:nth-last-child(1) {
+            grid-column: 3 / 4;
         }
 
         .price-details {
@@ -767,7 +786,7 @@
         }
 
         /* ======================================================
-           НОВЫЙ КРАСИВЫЙ ФУТЕР
+           ФУТЕР
            ====================================================== */
         .footer {
             background: #0b1426;
@@ -838,6 +857,7 @@
             font-size: 18px;
             transition: 0.3s;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .footer-social a:hover {
@@ -860,6 +880,18 @@
         }
 
         /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cases-grid .case-item:nth-last-child(2) {
+                grid-column: auto;
+            }
+            .cases-grid .case-item:nth-last-child(1) {
+                grid-column: auto;
+            }
+        }
+
         @media (max-width: 768px) {
             .container { padding: 16px; }
             .top-bar {
@@ -901,7 +933,16 @@
             .info-block { padding: 30px 20px; }
             .info-block h2 { font-size: 26px; }
             .info-features { grid-template-columns: 1fr 1fr; }
-            .cases-grid { grid-template-columns: 1fr; }
+
+            .cases-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .cases-grid .case-item:nth-last-child(2) {
+                grid-column: auto;
+            }
+            .cases-grid .case-item:nth-last-child(1) {
+                grid-column: auto;
+            }
 
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
             .footer { padding: 30px 20px 20px; }
@@ -930,7 +971,16 @@
             .info-block .subtitle { font-size: 15px; }
             .info-block .price-tag { font-size: 18px; padding: 8px 20px; }
             .info-features { grid-template-columns: 1fr; }
-            .case-item { padding: 16px 18px; }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            .cases-grid .case-item:nth-last-child(2) {
+                grid-column: auto;
+            }
+            .cases-grid .case-item:nth-last-child(1) {
+                grid-column: auto;
+            }
 
             .footer-grid { grid-template-columns: 1fr; gap: 24px; }
             .footer { padding: 24px 16px 16px; }
@@ -948,7 +998,10 @@
             <div class="service"><i class="fas fa-users"></i> Грузчики 24/7</div>
         </div>
         <div class="right-group">
-            <a href="mailto:tsarenko77@list.ru"><i class="fas fa-envelope"></i> tsarenko77@list.ru</a>
+            <!-- EMAIL — открывает почтовый клиент -->
+            <a href="mailto:tsarenko77@list.ru?subject=Заявка%20с%20сайта%20SUPER.ПРОФ&body=Здравствуйте!%20Хочу%20оставить%20заявку%3A">
+                <i class="fas fa-envelope"></i> tsarenko77@list.ru
+            </a>
             <span class="time"><i class="fas fa-clock"></i> 08:00 – 20:00</span>
             <a href="tel:+77770645930"><i class="fas fa-phone-alt"></i> +7 (777) 064-59-30</a>
         </div>
@@ -1018,7 +1071,7 @@
                         <div class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></div>
                         <div>WhatsApp</div>
                     </div>
-                    <div class="contact-option" onclick="alert('Написать на email: tsarenko77@list.ru')">
+                    <div class="contact-option" onclick="window.location.href='mailto:tsarenko77@list.ru?subject=Заявка%20с%20сайта%20SUPER.ПРОФ&body=Здравствуйте!%20Хочу%20оставить%20заявку%3A'">
                         <div class="icon icon-email"><i class="fas fa-envelope"></i></div>
                         <div>Написать</div>
                     </div>
@@ -1141,13 +1194,15 @@
             <h3>В каких случаях вам потребуются услуги разнорабочих?</h3>
             <p style="color: #4a6180; font-size: 16px; margin-bottom: 16px;">Наши сотрудники эффективно справляются с широким спектром задач. Вы сможете заказать услуги разнорабочих на следующие объекты:</p>
 
+            <!-- ОБНОВЛЕННАЯ СЕТКА: 6 карточек, последние 2 сдвинуты вправо -->
             <div class="cases-grid">
                 <div class="case-item"><strong>🏢 На склад</strong><p>Аккуратно выполним погрузо-разгрузочные работы, расставим имущество в соответствии с планом.</p></div>
                 <div class="case-item"><strong>🏭 В цех или на производство</strong><p>Нам по силам различные задачи на производстве.</p></div>
                 <div class="case-item"><strong>🌳 На дачу</strong><p>Разнорабочие требуются при строительных, земляных работах и прочих задачах.</p></div>
                 <div class="case-item"><strong>🏗️ На стройку</strong><p>Монтируем конструкции, проводим кровельные работы, помогаем с цементными растворами, монтируем леса, выполняем отделку.</p></div>
-                <div class="case-item"><strong>🛒 В магазин</strong><p>Пригодятся услуги грузчиков-разнорабочих. Аккуратно переместим и правильно расставим короба.</p></div>
-                <div class="case-item"><strong>🔨 На демонтаж</strong><p>Разберём перегородки из дерева или бетона, кирпичную кладку, уберем напольные покрытия.</p></div>
+                <!-- НОВЫЕ КАРТОЧКИ -->
+                <div class="case-item"><strong>🚪 В подъезд</strong><p>Поможем с выносом мусора, уборкой подъездов, заменой ламп, мелким ремонтом и обслуживанием.</p></div>
+                <div class="case-item"><strong>🏠 В дом</strong><p>Услуги по уборке территории, перевозке мебели, мелкому ремонту, погрузке и другим бытовым задачам.</p></div>
             </div>
 
             <h3>Стоимость услуг разнорабочих и подсобников в Усть-Каменогорске</h3>
@@ -1159,25 +1214,26 @@
         </div>
 
         <!-- ======================================================
-        НОВЫЙ КРАСИВЫЙ ФУТЕР
+        ФУТЕР
         ====================================================== -->
         <footer class="footer">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4><i class="fas fa-briefcase" style="margin-right:8px;"></i>SUPER.ПРОФ</h4>
-                    <p>Агентство по подбору разнорабочих и грузчиков в Усть-Каменогорске.</p>
+                    <p>Агентство по подбору разнорабочих и грузчиков в Усть-Каменогорске. Работаем с 2018 года.</p>
                     <div class="footer-social">
                         <a href="https://t.me/+77770645930" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
                         <a href="https://wa.me/77770645930" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        
+                        <!-- INSTAGRAM — всплывающее сообщение -->
+                        <a href="#" aria-label="Instagram" onclick="alert('Извините, Instagram аккаунт сейчас в доработке 🛠️'); return false;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
                     <h4>Контакты</h4>
                     <a href="tel:+77770645930"><i class="fas fa-phone-alt"></i> +7 (777) 064-59-30</a>
-                    <a href="mailto:tsarenko77@list.ru"><i class="fas fa-envelope"></i> tsarenko77@list.ru</a>
+                    <a href="mailto:tsarenko77@list.ru?subject=Заявка%20с%20сайта%20SUPER.ПРОФ&body=Здравствуйте!%20Хочу%20оставить%20заявку%3A"><i class="fas fa-envelope"></i> tsarenko77@list.ru</a>
                     <a href="#"><i class="fas fa-map-marker-alt"></i> Усть-Каменогорск, ВКО</a>
                     <a href="#"><i class="fas fa-clock"></i> Пн-Пт: 08:00 – 20:00</a>
                 </div>
@@ -1194,8 +1250,8 @@
                     <h4>Быстрые ссылки</h4>
                     <a href="#"><i class="fas fa-info-circle"></i> О нас</a>
                     <a href="#"><i class="fas fa-file-contract"></i> Договор</a>
-                    
-                    
+                    <a href="#"><i class="fas fa-lock"></i> Политика конфиденциальности</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Частые вопросы</a>
                 </div>
             </div>
 
