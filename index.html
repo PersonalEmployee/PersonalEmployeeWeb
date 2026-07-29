@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        /* ---------- RESET & BASE ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -43,7 +42,7 @@
             padding: 20px 40px;
         }
 
-        /* ---------- TOP BAR ---------- */
+        /* TOP BAR */
         .top-bar {
             background: #0b1426;
             color: #e8edf5;
@@ -68,7 +67,6 @@
         .top-bar .city {
             font-weight: 700;
             color: #fcd34d;
-            letter-spacing: 0.3px;
         }
         .top-bar .city i { margin-right: 8px; color: #fcd34d; }
 
@@ -109,7 +107,7 @@
         }
         .top-bar .right-group .time i { color: #fcd34d; }
 
-        /* ---------- HEADER ---------- */
+        /* HEADER */
         .main-header {
             background: #ffffff;
             box-shadow: 0 2px 12px rgba(0,0,0,0.02);
@@ -162,7 +160,7 @@
         }
 
         /* ======================================================
-           НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО — ЧИСТЫЙ ДИЗАЙН
+           НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО — СОВСЕМ ДРУГОЙ ДИЗАЙН
            ====================================================== */
         .welcome-overlay {
             position: absolute;
@@ -170,16 +168,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(6, 14, 30, 0.70);
-            backdrop-filter: blur(16px) saturate(1.2);
+            background: linear-gradient(135deg, rgba(11, 20, 38, 0.85) 0%, rgba(30, 79, 138, 0.75) 100%);
+            backdrop-filter: blur(12px);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 200;
             border-radius: 40px;
             padding: 30px;
-            transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        visibility 0.5s ease;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
         .welcome-overlay.hidden {
@@ -188,178 +185,159 @@
             pointer-events: none;
         }
 
-        /* Карточка — минималистичная, без серых областей */
         .welcome-card {
-            max-width: 1100px;
+            max-width: 900px;
             width: 100%;
             background: #ffffff;
-            border-radius: 48px;
-            overflow: hidden;
-            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: row;
-            height: 72vh;
-            max-height: 600px;
-        }
-
-        /* ---- ЛЕВАЯ ЧАСТЬ: КРУПНОЕ ИЗОБРАЖЕНИЕ ---- */
-        .welcome-image {
-            flex: 1.2;
-            background: linear-gradient(145deg, #0b1e3a, #1a3a6a);
+            border-radius: 32px;
+            padding: 56px 60px 48px;
+            box-shadow: 0 80px 160px rgba(0, 0, 0, 0.6);
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .welcome-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
-        }
-
-        .welcome-image .gradient {
+        /* Декоративный элемент */
+        .welcome-card::before {
+            content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 65%;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+            top: -120px;
+            right: -120px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(30, 79, 138, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
             pointer-events: none;
         }
 
-        .welcome-image .text-overlay {
+        .welcome-card::after {
+            content: '';
             position: absolute;
-            bottom: 40px;
-            left: 40px;
-            right: 40px;
-            z-index: 2;
-            color: white;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(252, 211, 77, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .welcome-image .text-overlay .icon-big {
+        .welcome-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .welcome-card h1 {
             font-size: 44px;
-            display: block;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3));
-        }
-
-        .welcome-image .text-overlay h2 {
-            font-size: 38px;
             font-weight: 900;
-            line-height: 1.15;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
-            margin-bottom: 6px;
-        }
-
-        .welcome-image .text-overlay h2 span {
-            color: #fcd34d;
-        }
-
-        .welcome-image .text-overlay p {
-            font-size: 17px;
-            opacity: 0.9;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
-            max-width: 85%;
-            line-height: 1.6;
-        }
-
-        /* ---- ПРАВАЯ ЧАСТЬ: КНОПКИ ---- */
-        .welcome-actions {
-            flex: 1;
-            background: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 48px 44px;
-            gap: 20px;
-            min-width: 300px;
-        }
-
-        .welcome-actions .label {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: #8a9bb5;
-            font-weight: 600;
-        }
-
-        .welcome-actions h3 {
-            font-size: 28px;
-            font-weight: 700;
             color: #0b1e3a;
-            line-height: 1.2;
-            margin-bottom: 2px;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
         }
 
-        .welcome-actions .sub {
-            color: #6a7f9e;
-            font-size: 16px;
-            margin-bottom: 8px;
+        .welcome-card h1 span {
+            background: linear-gradient(135deg, #1e4f8a, #f5b81b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-card .subtitle {
+            font-size: 18px;
+            color: #4a6180;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-card .divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e4f8a, #f5b81b);
+            border-radius: 4px;
+            margin: 0 auto 32px;
+        }
+
+        .welcome-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
         .btn-choice {
-            width: 100%;
-            padding: 20px 24px;
+            padding: 18px 40px;
             border: none;
             border-radius: 60px;
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
-            display: flex;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 14px;
+            gap: 12px;
             font-family: 'Inter', sans-serif;
-            letter-spacing: 0.2px;
+            min-width: 200px;
+            justify-content: center;
         }
 
         .btn-choice i {
-            font-size: 22px;
+            font-size: 20px;
         }
 
         .btn-choice.primary {
             background: #1e4f8a;
             color: white;
-            box-shadow: 0 4px 16px rgba(30, 79, 138, 0.30);
+            box-shadow: 0 4px 20px rgba(30, 79, 138, 0.35);
         }
 
         .btn-choice.primary:hover {
             background: #143a65;
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 12px 32px rgba(30, 79, 138, 0.40);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 36px rgba(30, 79, 138, 0.45);
         }
 
         .btn-choice.secondary {
             background: #fcd34d;
             color: #0b1e3a;
-            box-shadow: 0 4px 16px rgba(252, 211, 77, 0.30);
+            box-shadow: 0 4px 20px rgba(252, 211, 77, 0.35);
         }
 
         .btn-choice.secondary:hover {
             background: #fbbf24;
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 12px 32px rgba(252, 211, 77, 0.45);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 36px rgba(252, 211, 77, 0.5);
         }
 
-        .btn-choice .tag {
-            font-size: 12px;
-            background: rgba(255,255,255,0.15);
-            padding: 2px 14px;
-            border-radius: 40px;
-            font-weight: 600;
+        .welcome-card .footer-text {
+            margin-top: 28px;
+            font-size: 14px;
+            color: #8a9bb5;
+            position: relative;
+            z-index: 1;
         }
 
-        .btn-choice.primary .tag {
-            background: rgba(255,255,255,0.12);
-            color: rgba(255,255,255,0.85);
-        }
-        .btn-choice.secondary .tag {
-            background: rgba(0,0,0,0.06);
-            color: #1e2f45;
+        .welcome-card .footer-text i {
+            color: #fcd34d;
+            margin: 0 4px;
         }
 
-        /* ---------- MAIN CONTENT ---------- */
+        /* MAIN CONTENT */
         .main-content {
             display: none;
             animation: fadeUp 0.55s ease;
@@ -402,7 +380,6 @@
             padding-bottom: 16px;
             font-weight: 800;
             font-size: 26px;
-            letter-spacing: -0.2px;
         }
 
         .services ul {
@@ -797,34 +774,7 @@
             border-top: 1px solid #eef2f8;
         }
 
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 1024px) {
-            .welcome-card {
-                flex-direction: column;
-                height: auto;
-                max-height: 92vh;
-            }
-            .welcome-image {
-                flex: none;
-                height: 40vh;
-                min-height: 240px;
-            }
-            .welcome-image .text-overlay {
-                bottom: 28px;
-                left: 30px;
-                right: 30px;
-            }
-            .welcome-image .text-overlay h2 { font-size: 30px; }
-            .welcome-image .text-overlay p { max-width: 100%; font-size: 16px; }
-            .welcome-actions {
-                padding: 32px 36px;
-                gap: 16px;
-                min-width: unset;
-            }
-            .welcome-actions h3 { font-size: 24px; }
-            .btn-choice { font-size: 17px; padding: 18px; }
-        }
-
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .container { padding: 16px; }
             .top-bar {
@@ -834,47 +784,35 @@
                 padding: 10px 18px;
                 font-size: 13px;
             }
-            .top-bar .left-group { justify-content: center;
-                flex-wrap: wrap; }
-            .top-bar .right-group { justify-content: center;
-                flex-wrap: wrap; }
+            .top-bar .left-group { justify-content: center; flex-wrap: wrap; }
+            .top-bar .right-group { justify-content: center; flex-wrap: wrap; }
             .header-image { height: 160px; }
             .agency-title { font-size: 38px; }
             .agency-subtitle { font-size: 24px; }
 
             .welcome-overlay { padding: 16px; }
-            .welcome-card { border-radius: 32px; }
-            .welcome-image { height: 32vh;
-                min-height: 200px; }
-            .welcome-image .text-overlay { bottom: 20px;
-                left: 22px;
-                right: 22px; }
-            .welcome-image .text-overlay h2 { font-size: 26px; }
-            .welcome-image .text-overlay .icon-big { font-size: 34px; }
-            .welcome-image .text-overlay p { font-size: 14px; }
-            .welcome-actions { padding: 24px 24px; }
-            .welcome-actions h3 { font-size: 22px; }
-            .welcome-actions .sub { font-size: 14px; }
-            .btn-choice { font-size: 16px; padding: 16px; gap: 10px; }
-            .btn-choice i { font-size: 18px; }
+            .welcome-card {
+                padding: 40px 28px 36px;
+                border-radius: 24px;
+            }
+            .welcome-card h1 { font-size: 32px; }
+            .welcome-card .subtitle { font-size: 16px; }
+            .welcome-icon { font-size: 48px; }
+            .btn-choice {
+                padding: 16px 28px;
+                font-size: 16px;
+                min-width: 100%;
+            }
+            .welcome-buttons { flex-direction: column; gap: 12px; }
 
-            .main-content { padding: 30px 20px;
-                margin: 16px 10px; }
-            .content { flex-direction: column;
-                gap: 24px; }
-            .services,
-            .contact { min-width: unset;
-                padding: 28px 20px; }
+            .main-content { padding: 30px 20px; margin: 16px 10px; }
+            .content { flex-direction: column; gap: 24px; }
+            .services, .contact { min-width: unset; padding: 28px 20px; }
             .prices-block { padding: 24px 20px; }
             .prices-block h2 { font-size: 26px; }
-            .prices-table { display: block;
-                overflow-x: auto;
-                white-space: nowrap; }
-            .prices-table th,
-            .prices-table td { padding: 10px 8px;
-                font-size: 14px; }
-            .btn-order { padding: 6px 16px;
-                font-size: 13px; }
+            .prices-table { display: block; overflow-x: auto; white-space: nowrap; }
+            .prices-table th, .prices-table td { padding: 10px 8px; font-size: 14px; }
+            .btn-order { padding: 6px 16px; font-size: 13px; }
             .info-block { padding: 30px 20px; }
             .info-block h2 { font-size: 26px; }
             .info-features { grid-template-columns: 1fr 1fr; }
@@ -882,40 +820,26 @@
         }
 
         @media (max-width: 480px) {
-            .welcome-image { height: 28vh;
-                min-height: 160px; }
-            .welcome-image .text-overlay h2 { font-size: 22px; }
-            .welcome-image .text-overlay .icon-big { font-size: 28px; }
-            .welcome-image .text-overlay p { font-size: 13px; }
-            .welcome-actions { padding: 20px 18px; }
-            .welcome-actions h3 { font-size: 20px; }
-            .btn-choice { font-size: 15px; padding: 14px; }
-            .btn-choice .tag { font-size: 10px; padding: 0 10px; }
+            .welcome-card { padding: 32px 20px 28px; }
+            .welcome-card h1 { font-size: 26px; }
+            .welcome-card .subtitle { font-size: 15px; }
+            .welcome-icon { font-size: 40px; }
+            .btn-choice { font-size: 15px; padding: 14px 20px; }
 
-            .main-content { padding: 20px 12px;
-                margin: 12px 4px; }
-            .services,
-            .contact { padding: 20px 14px; }
-            .services li { font-size: 15px;
-                padding: 12px 0; }
-            .contact-option { font-size: 15px;
-                padding: 12px 14px; }
-            .contact-option .icon { width: 40px;
-                height: 40px;
-                font-size: 16px;
-                margin-right: 12px; }
+            .main-content { padding: 20px 12px; margin: 12px 4px; }
+            .services, .contact { padding: 20px 14px; }
+            .services li { font-size: 15px; padding: 12px 0; }
+            .contact-option { font-size: 15px; padding: 12px 14px; }
+            .contact-option .icon { width: 40px; height: 40px; font-size: 16px; margin-right: 12px; }
             .contact-form { padding: 18px 14px; }
-            .form-group input { padding: 14px 14px;
-                font-size: 15px; }
-            .submit-btn { font-size: 16px;
-                padding: 14px; }
+            .form-group input { padding: 14px 14px; font-size: 15px; }
+            .submit-btn { font-size: 16px; padding: 14px; }
             .prices-block { padding: 18px 12px; }
             .prices-block h2 { font-size: 22px; }
             .info-block { padding: 22px 14px; }
             .info-block h2 { font-size: 22px; }
             .info-block .subtitle { font-size: 15px; }
-            .info-block .price-tag { font-size: 18px;
-                padding: 8px 20px; }
+            .info-block .price-tag { font-size: 18px; padding: 8px 20px; }
             .info-features { grid-template-columns: 1fr; }
             .case-item { padding: 16px 18px; }
         }
@@ -952,41 +876,30 @@
     </div>
 
     <!-- ============================================================
-    ПРИВЕТСТВЕННОЕ ОКНО — ЧИСТЫЙ ДИЗАЙН
+    НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО — МИНИМАЛИСТИЧНЫЙ ЦЕНТРИРОВАННЫЙ ДИЗАЙН
     ============================================================ -->
     <div class="welcome-overlay" id="welcomeOverlay">
         <div class="welcome-card">
-
-            <!-- Левая часть: изображение с текстом -->
-            <div class="welcome-image">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Рабочие">
-                <div class="gradient"></div>
-                <div class="text-overlay">
-                    <span class="icon-big">🏗️</span>
-                    <h2>Добро пожаловать в <span>SUPER.ПРОФ</span></h2>
-                    <p>Надёжные специалисты для вашего бизнеса. Быстро, качественно, с гарантией.</p>
-                </div>
-            </div>
-
-            <!-- Правая часть: выбор роли -->
-            <div class="welcome-actions">
-                <div class="label">Выберите роль</div>
-                <h3>Кто вы?</h3>
-                <div class="sub">Мы подберём решение под ваш запрос</div>
-
+            <div class="welcome-icon">🚀</div>
+            <h1>Добро пожаловать в <br><span>SUPER.ПРОФ</span></h1>
+            <div class="divider"></div>
+            <p class="subtitle">
+                Платформа для быстрого поиска надёжных специалистов<br>
+                и выгодных заказов. Выберите свою роль, чтобы начать.
+            </p>
+            <div class="welcome-buttons">
                 <button class="btn-choice primary" id="btnCustomer">
-                    <i class="fas fa-building"></i>
-                    Я заказчик
-                    <span class="tag">нужны рабочие</span>
+                    <i class="fas fa-briefcase"></i> Я заказчик
                 </button>
-
                 <button class="btn-choice secondary" id="btnWorker">
-                    <i class="fas fa-hard-hat"></i>
-                    Ищу работу
-                    <span class="tag">хочу зарабатывать</span>
+                    <i class="fas fa-hard-hat"></i> Ищу работу
                 </button>
             </div>
-
+            <div class="footer-text">
+                <i class="fas fa-shield-alt"></i> 100% проверенные специалисты
+                <span style="margin: 0 8px; color: #dce3ef;">|</span>
+                <i class="fas fa-clock"></i> Выезд за 1 час
+            </div>
         </div>
     </div>
 
