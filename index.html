@@ -139,10 +139,11 @@
             margin-top: 2px;
         }
 
+        /* Увеличенная высота изображения */
         .header-image {
             width: 100%;
             max-width: 1100px;
-            height: 280px;
+            height: 380px;
             background: #dce3ef;
             display: flex;
             align-items: center;
@@ -157,10 +158,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
 
         /* ======================================================
-           НОВОЕ ПРИВЕТСТВЕННОЕ ОКНО — МИНИМАЛИСТИЧНЫЙ ЦЕНТРИРОВАННЫЙ ДИЗАЙН
+           ПРИВЕТСТВЕННОЕ ОКНО
            ====================================================== */
         .welcome-overlay {
             position: absolute;
@@ -197,7 +199,6 @@
             overflow: hidden;
         }
 
-        /* Декоративный элемент */
         .welcome-card::before {
             content: '';
             position: absolute;
@@ -765,13 +766,97 @@
             margin-bottom: 6px;
         }
 
-        footer {
+        /* ======================================================
+           НОВЫЙ КРАСИВЫЙ ФУТЕР
+           ====================================================== */
+        .footer {
+            background: #0b1426;
+            color: #e8edf5;
+            padding: 40px 40px 30px;
+            margin-top: 40px;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fcd34d;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: #b9c7e0;
+            line-height: 1.8;
+        }
+
+        .footer-col a {
+            color: #b9c7e0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            transition: 0.2s;
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: #fcd34d;
+            transform: translateX(4px);
+        }
+
+        .footer-col a i {
+            width: 20px;
+            color: #fcd34d;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            color: #e8edf5;
+            font-size: 18px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: #fcd34d;
+            color: #0b1426;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1f2a40;
             margin-top: 30px;
+            padding-top: 20px;
             text-align: center;
-            padding: 30px 0 15px;
+            font-size: 13px;
             color: #6a7f9e;
-            font-size: 15px;
-            border-top: 1px solid #eef2f8;
+        }
+
+        .footer-bottom span {
+            color: #fcd34d;
         }
 
         /* RESPONSIVE */
@@ -786,7 +871,7 @@
             }
             .top-bar .left-group { justify-content: center; flex-wrap: wrap; }
             .top-bar .right-group { justify-content: center; flex-wrap: wrap; }
-            .header-image { height: 160px; }
+            .header-image { height: 220px; }
             .agency-title { font-size: 38px; }
             .agency-subtitle { font-size: 24px; }
 
@@ -817,9 +902,13 @@
             .info-block h2 { font-size: 26px; }
             .info-features { grid-template-columns: 1fr 1fr; }
             .cases-grid { grid-template-columns: 1fr; }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .footer { padding: 30px 20px 20px; }
         }
 
         @media (max-width: 480px) {
+            .header-image { height: 180px; }
             .welcome-card { padding: 32px 20px 28px; }
             .welcome-card h1 { font-size: 26px; }
             .welcome-card .subtitle { font-size: 15px; }
@@ -842,6 +931,9 @@
             .info-block .price-tag { font-size: 18px; padding: 8px 20px; }
             .info-features { grid-template-columns: 1fr; }
             .case-item { padding: 16px 18px; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer { padding: 24px 16px 16px; }
         }
     </style>
 </head>
@@ -869,7 +961,7 @@
                 <div class="agency-title">АГЕНТСТВО</div>
                 <div class="agency-subtitle">SUPER.ПРОФ</div>
                 <div class="header-image">
-                    <img src="assets/images/2208_w048_n005_238b_p1_238.jpg" alt="Агентство">
+                    <img src="assets/images/2208_w048_n005_238b_p1_238.jpg" alt="Агентство SUPER.ПРОФ">
                 </div>
             </div>
         </div>
@@ -918,12 +1010,10 @@
 
             <div class="contact" id="contactBlock">
                 <div class="contact-options">
-                    <!-- Telegram с номером +7 777 064 59 30 -->
                     <div class="contact-option" onclick="window.open('https://t.me/+77770645930', '_blank')">
                         <div class="icon icon-telegram"><i class="fab fa-telegram-plane"></i></div>
                         <div>Telegram</div>
                     </div>
-                    <!-- WhatsApp с номером +7 777 064 59 30 -->
                     <div class="contact-option" onclick="window.open('https://wa.me/77770645930', '_blank')">
                         <div class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></div>
                         <div>WhatsApp</div>
@@ -1068,7 +1158,52 @@
             </div>
         </div>
 
-        <footer><p>© 2026 АГЕНТСТВО SUPER.ПРОФ. Все права защищены.</p></footer>
+        <!-- ======================================================
+        НОВЫЙ КРАСИВЫЙ ФУТЕР
+        ====================================================== -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4><i class="fas fa-briefcase" style="margin-right:8px;"></i>SUPER.ПРОФ</h4>
+                    <p>Агентство по подбору разнорабочих и грузчиков в Усть-Каменогорске. Работаем с 2018 года.</p>
+                    <div class="footer-social">
+                        <a href="https://t.me/+77770645930" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://wa.me/77770645930" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <a href="tel:+77770645930"><i class="fas fa-phone-alt"></i> +7 (777) 064-59-30</a>
+                    <a href="mailto:tsarenko77@list.ru"><i class="fas fa-envelope"></i> tsarenko77@list.ru</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Усть-Каменогорск, ВКО</a>
+                    <a href="#"><i class="fas fa-clock"></i> Пн-Пт: 08:00 – 20:00</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Услуги</h4>
+                    <a href="#"><i class="fas fa-truck"></i> Грузчики</a>
+                    <a href="#"><i class="fas fa-hard-hat"></i> Разнорабочие</a>
+                    <a href="#"><i class="fas fa-building"></i> Подсобные услуги</a>
+                    <a href="#"><i class="fas fa-broom"></i> Уборка помещений</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Быстрые ссылки</h4>
+                    <a href="#"><i class="fas fa-info-circle"></i> О нас</a>
+                    <a href="#"><i class="fas fa-file-contract"></i> Договор</a>
+                    <a href="#"><i class="fas fa-lock"></i> Политика конфиденциальности</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Частые вопросы</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 <span>SUPER.ПРОФ</span> — Все права защищены. Сделано с <i class="fas fa-heart" style="color:#fcd34d;"></i> в Казахстане
+            </div>
+        </footer>
+
     </div>
 </div>
 
