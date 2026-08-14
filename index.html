@@ -7,7 +7,7 @@
 
     <title>ЧиД — Нужные руки рядом!</title>
 
-    <!-- Шрифты -->
+    <!-- Шрифт Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -40,14 +40,11 @@
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #eef3fa 0%,
-                    #d9e2f0 100%
-                );
-
+            background: linear-gradient(
+                145deg,
+                #eef3fa 0%,
+                #d9e2f0 100%
+            );
             min-height: 100vh;
             color: #0b1e3a;
         }
@@ -64,27 +61,18 @@
 
         .main-wrapper {
             width: min(1440px, calc(100% - 32px));
-
             margin: 16px auto;
-
             background: #ffffff;
-
             border-radius: 32px;
-
-            box-shadow:
-                0 30px 70px rgba(0, 20, 40, 0.22);
-
+            box-shadow: 0 30px 70px rgba(0, 20, 40, 0.22);
             overflow: hidden;
-
             position: relative;
         }
 
         .container {
             width: 100%;
             max-width: 1400px;
-
             margin: 0 auto;
-
             padding: 20px 40px;
         }
 
@@ -96,15 +84,11 @@
         .top-bar {
             background: #0b1426;
             color: #e8edf5;
-
             padding: 12px 36px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             gap: 15px 30px;
-
             font-size: 14px;
             font-weight: 500;
         }
@@ -113,9 +97,7 @@
         .right-group {
             display: flex;
             align-items: center;
-
             flex-wrap: wrap;
-
             gap: 12px 28px;
         }
 
@@ -138,7 +120,6 @@
         .right-group a {
             color: #e8edf5;
             text-decoration: none;
-
             transition: 0.2s ease;
         }
 
@@ -164,9 +145,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
             text-align: center;
-
             padding: 18px 0 24px;
         }
 
@@ -178,32 +157,23 @@
         .brand-block {
             display: flex;
             flex-direction: column;
-
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             margin: 0 auto;
         }
 
         .agency-title {
             color: #71839c;
-
             font-size: clamp(13px, 1.5vw, 18px);
-
             font-weight: 800;
-
             letter-spacing: 7px;
-
             text-transform: uppercase;
-
             margin-bottom: 4px;
         }
 
         .brand-name {
             position: relative;
-
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -211,28 +181,21 @@
 
         .brand-mark {
             position: relative;
-
             display: inline-block;
-
             font-size: clamp(62px, 7vw, 94px);
-
             line-height: 0.9;
-
             font-weight: 900;
-
             letter-spacing: -5px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #143a65 0%,
-                    #1e4f8a 45%,
-                    #2f72ba 100%
-                );
+            background: linear-gradient(
+                135deg,
+                #143a65 0%,
+                #1e4f8a 45%,
+                #2f72ba 100%
+            );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
             background-clip: text;
 
             text-shadow:
@@ -252,7 +215,6 @@
             top: 5px;
 
             background: #f5b81b;
-
             border-radius: 50%;
 
             box-shadow:
@@ -261,54 +223,41 @@
 
         .brand-slogan {
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             gap: 13px;
-
             margin-top: 12px;
-
             color: #d49a00;
-
             font-size: clamp(14px, 1.7vw, 20px);
-
             font-weight: 800;
-
             letter-spacing: 1.2px;
-
             text-transform: uppercase;
         }
 
         .slogan-line {
             display: block;
-
             width: clamp(35px, 6vw, 85px);
-
             height: 2px;
-
             border-radius: 10px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #f5b81b
-                );
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #f5b81b
+            );
         }
 
         .slogan-line:last-child {
-            background:
-                linear-gradient(
-                    90deg,
-                    #f5b81b,
-                    transparent
-                );
+            background: linear-gradient(
+                90deg,
+                #f5b81b,
+                transparent
+            );
         }
 
 
         /* =========================================================
-           ШИРОКАЯ ФОТОГРАФИЯ — НА ВСЮ ШИРИНУ (исправлено)
+           ФОТО
         ========================================================= */
 
         .header-image {
@@ -340,29 +289,24 @@
 
         .welcome-overlay {
             position: fixed;
-
             inset: 0;
-
             width: 100%;
             height: 100dvh;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(8, 18, 35, 0.96),
-                    rgba(30, 79, 138, 0.94)
-                );
+            background: linear-gradient(
+                135deg,
+                rgba(8, 18, 35, 0.96),
+                rgba(30, 79, 138, 0.94)
+            );
 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
 
             display: flex;
-
             justify-content: center;
             align-items: center;
 
             padding: 16px;
-
             z-index: 9999;
 
             transition:
@@ -380,7 +324,6 @@
             width: min(650px, 100%);
 
             background: #ffffff;
-
             border-radius: 28px;
 
             padding: 32px 40px 28px;
@@ -391,7 +334,6 @@
                 0 35px 90px rgba(0, 0, 0, 0.45);
 
             position: relative;
-
             overflow: hidden;
         }
 
@@ -406,13 +348,12 @@
             width: 100%;
             height: 5px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #1e4f8a,
-                    #f5b81b,
-                    #1e4f8a
-                );
+            background: linear-gradient(
+                90deg,
+                #1e4f8a,
+                #f5b81b,
+                #1e4f8a
+            );
         }
 
         .welcome-icon {
@@ -448,31 +389,24 @@
 
         .welcome-card h1 {
             font-size: clamp(27px, 4vw, 40px);
-
             line-height: 1.1;
-
             font-weight: 900;
-
             color: #0b1e3a;
-
             margin-bottom: 11px;
         }
 
         .welcome-card h1 span {
-            background:
-                linear-gradient(
-                    135deg,
-                    #1e4f8a,
-                    #f5b81b
-                );
+            background: linear-gradient(
+                135deg,
+                #1e4f8a,
+                #f5b81b
+            );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
             background-clip: text;
         }
 
-        /* ДОБАВЛЕНО: подзаголовок в приветственном окне */
         .welcome-tagline {
             font-size: clamp(16px, 2vw, 22px);
             font-weight: 700;
@@ -489,12 +423,11 @@
 
             border-radius: 10px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #1e4f8a,
-                    #f5b81b
-                );
+            background: linear-gradient(
+                90deg,
+                #1e4f8a,
+                #f5b81b
+            );
         }
 
         .welcome-subtitle {
@@ -503,7 +436,6 @@
             margin: 0 auto 19px;
 
             font-size: 15px;
-
             line-height: 1.5;
 
             color: #4a6180;
@@ -511,29 +443,23 @@
 
         .welcome-buttons {
             display: flex;
-
             justify-content: center;
-
             gap: 12px;
         }
 
         .btn-choice {
             border: none;
-
             border-radius: 60px;
 
             padding: 14px 24px;
-
             min-width: 190px;
 
             font-size: 16px;
-
             font-weight: 700;
 
             cursor: pointer;
 
             display: inline-flex;
-
             justify-content: center;
             align-items: center;
 
@@ -548,7 +474,6 @@
 
         .btn-choice.primary {
             color: #ffffff;
-
             background: #1e4f8a;
 
             box-shadow:
@@ -561,7 +486,6 @@
 
         .btn-choice.secondary {
             color: #0b1e3a;
-
             background: #fcd34d;
 
             box-shadow:
@@ -574,15 +498,12 @@
 
         .welcome-bottom {
             margin-top: 15px;
-
             font-size: 12px;
-
             color: #8a9bb5;
         }
 
         .welcome-bottom i {
             color: #fcd34d;
-
             margin: 0 4px;
         }
 
@@ -593,7 +514,6 @@
 
         .main-content {
             display: none;
-
             animation: fadeUp 0.45s ease;
         }
 
@@ -621,24 +541,19 @@
 
         .customer-content {
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 28px;
-
             margin: 20px 0;
         }
 
         .services,
         .contact {
             flex: 1;
-
             min-width: 320px;
 
             background: #ffffff;
 
             border: 1px solid #e9eef5;
-
             border-radius: 24px;
 
             padding: 30px;
@@ -649,15 +564,12 @@
 
         .services h2 {
             color: #0b1e3a;
-
             font-size: 25px;
-
             font-weight: 800;
 
             border-bottom: 4px solid #1e4f8a;
 
             padding-bottom: 13px;
-
             margin-bottom: 15px;
         }
 
@@ -673,7 +585,6 @@
             color: #1e2f45;
 
             font-size: 16px;
-
             line-height: 1.5;
         }
 
@@ -687,7 +598,6 @@
             color: #1e4f8a;
 
             font-size: 22px;
-
             font-weight: 700;
 
             margin-right: 10px;
@@ -700,17 +610,13 @@
 
         .contact-options {
             display: flex;
-
             flex-direction: column;
-
             gap: 10px;
-
             margin-bottom: 20px;
         }
 
         .contact-option {
             display: flex;
-
             align-items: center;
 
             padding: 11px 14px;
@@ -718,23 +624,18 @@
             border-radius: 15px;
 
             background: #f8faff;
-
             border: 1px solid transparent;
 
             color: #1e2f45;
-
             font-weight: 600;
 
             cursor: pointer;
-
             transition: 0.2s;
         }
 
         .contact-option:hover {
             background: #eef4ff;
-
             border-color: #1e4f8a;
-
             transform: translateX(4px);
         }
 
@@ -747,12 +648,10 @@
             border-radius: 12px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             color: white;
-
             font-size: 18px;
         }
 
@@ -791,7 +690,6 @@
         .contact-form h3,
         .worker-form h2 {
             color: #0b1e3a;
-
             margin-bottom: 18px;
         }
 
@@ -811,13 +709,11 @@
             color: #2a405a;
 
             font-size: 14px;
-
             font-weight: 600;
         }
 
         .form-group label i {
             color: #1e4f8a;
-
             margin-right: 5px;
         }
 
@@ -833,7 +729,6 @@
             background: #ffffff;
 
             font-size: 16px;
-
             color: #0b1e3a;
 
             outline: none;
@@ -854,21 +749,17 @@
             padding: 15px 20px;
 
             border: none;
-
             border-radius: 60px;
 
             background: #1e4f8a;
-
             color: #ffffff;
 
             font-size: 16px;
-
             font-weight: 700;
 
             cursor: pointer;
 
             display: flex;
-
             justify-content: center;
             align-items: center;
 
@@ -888,9 +779,7 @@
 
         .submit-btn:disabled {
             opacity: 0.7;
-
             cursor: not-allowed;
-
             transform: none;
         }
 
@@ -909,13 +798,11 @@
 
         .worker-page {
             max-width: 760px;
-
             margin: 30px auto 40px;
         }
 
         .worker-title {
             text-align: center;
-
             margin-bottom: 22px;
         }
 
@@ -926,14 +813,12 @@
             margin: 0 auto 13px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             border-radius: 20px;
 
             background: #eef4ff;
-
             color: #1e4f8a;
 
             font-size: 28px;
@@ -941,19 +826,14 @@
 
         .worker-title h2 {
             font-size: 31px;
-
             font-weight: 900;
-
             color: #0b1e3a;
-
             margin-bottom: 7px;
         }
 
         .worker-title p {
             color: #5c708b;
-
             font-size: 15px;
-
             line-height: 1.5;
         }
 
@@ -984,32 +864,25 @@
             text-align: center;
 
             font-size: 14px;
-
             line-height: 1.5;
         }
 
         .success-message {
             color: #166534;
-
             background: #dcfce7;
-
             border: 1px solid #86efac;
         }
 
         .error-message {
             color: #991b1b;
-
             background: #fee2e2;
-
             border: 1px solid #fca5a5;
         }
 
         .success-message i,
         .error-message i {
             display: block;
-
             font-size: 25px;
-
             margin-bottom: 5px;
         }
 
@@ -1022,7 +895,6 @@
             background: #ffffff;
 
             border: 1px solid #e8eef5;
-
             border-radius: 25px;
 
             padding: 38px;
@@ -1035,7 +907,6 @@
 
         .info-block h2 {
             font-size: 30px;
-
             margin-bottom: 11px;
         }
 
@@ -1047,28 +918,9 @@
             color: #4a6180;
 
             font-size: 16px;
-
             line-height: 1.65;
 
             margin-bottom: 20px;
-        }
-
-        .price-tag {
-            display: inline-block;
-
-            padding: 10px 22px;
-
-            border-radius: 60px;
-
-            background: #1e4f8a;
-
-            color: #ffffff;
-
-            font-size: 18px;
-
-            font-weight: 700;
-
-            margin-bottom: 22px;
         }
 
         .info-features {
@@ -1083,7 +935,6 @@
 
         .feature {
             display: flex;
-
             align-items: center;
 
             gap: 11px;
@@ -1093,23 +944,19 @@
             border-radius: 15px;
 
             background: #f8faff;
-
             border: 1px solid #e8eef7;
 
             font-size: 14px;
-
             color: #1e2f45;
         }
 
         .feature i {
             color: #1e4f8a;
-
             font-size: 19px;
         }
 
         .info-block h3 {
             font-size: 22px;
-
             margin: 26px 0 11px;
         }
 
@@ -1133,9 +980,7 @@
 
         .case-item strong {
             display: block;
-
             margin-bottom: 6px;
-
             color: #0b1e3a;
         }
 
@@ -1143,7 +988,6 @@
             color: #5b708b;
 
             font-size: 14px;
-
             line-height: 1.5;
         }
 
@@ -1224,13 +1068,11 @@
 
         .footer-col a:hover {
             color: #fcd34d;
-
             transform: translateX(3px);
         }
 
         .footer-col a i {
             width: 18px;
-
             color: #fcd34d;
         }
 
@@ -1253,7 +1095,7 @@
             justify-content: center;
             align-items: center;
 
-            background: rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.06);
 
             border-radius: 50%;
 
@@ -1264,9 +1106,7 @@
 
         .footer-social a:hover {
             background: #fcd34d;
-
             color: #0b1426;
-
             transform: translateY(-3px);
         }
 
@@ -1299,17 +1139,13 @@
 
             .main-wrapper {
                 width: calc(100% - 20px);
-
                 margin: 10px auto;
-
                 border-radius: 22px;
             }
 
             .top-bar {
                 flex-direction: column;
-
                 text-align: center;
-
                 padding: 11px 18px;
             }
 
@@ -1353,11 +1189,8 @@
 
             .main-wrapper {
                 width: 100%;
-
                 margin: 0;
-
                 border-radius: 0;
-
                 box-shadow: none;
             }
 
@@ -1367,7 +1200,6 @@
 
             .top-bar {
                 font-size: 12px;
-
                 gap: 8px;
             }
 
@@ -1378,31 +1210,25 @@
 
             .agency-title {
                 font-size: 12px;
-
                 letter-spacing: 5px;
             }
 
             .brand-mark {
                 font-size: 62px;
-
                 letter-spacing: -3px;
             }
 
             .brand-mark::after {
                 width: 17px;
                 height: 17px;
-
                 right: -12px;
                 top: 3px;
             }
 
             .brand-slogan {
                 gap: 8px;
-
                 margin-top: 9px;
-
                 font-size: 11px;
-
                 letter-spacing: 0.5px;
             }
 
@@ -1416,38 +1242,27 @@
                 width: 100%;
             }
 
-            /* -----------------------------------------------------
-               ПРИВЕТСТВЕННОЕ ОКНО
-            ----------------------------------------------------- */
-
             .welcome-overlay {
                 padding: 10px;
             }
 
             .welcome-card {
                 width: 100%;
-
                 padding: 24px 17px 20px;
-
                 border-radius: 22px;
-
                 max-height: none;
-
                 overflow: hidden;
             }
 
             .welcome-icon {
                 width: 50px;
                 height: 50px;
-
                 font-size: 27px;
-
                 margin-bottom: 7px;
             }
 
             .welcome-card h1 {
                 font-size: 25px;
-
                 margin-bottom: 8px;
             }
 
@@ -1462,40 +1277,31 @@
 
             .welcome-subtitle {
                 font-size: 13px;
-
                 line-height: 1.4;
-
                 margin-bottom: 14px;
             }
 
             .welcome-buttons {
                 flex-direction: column;
-
                 gap: 8px;
             }
 
             .btn-choice {
                 width: 100%;
-
                 min-width: 0;
-
                 padding: 13px 18px;
-
                 font-size: 14px;
             }
 
             .welcome-bottom {
                 font-size: 10px;
-
                 line-height: 1.4;
-
                 margin-top: 11px;
             }
 
             .services,
             .contact {
                 min-width: 0;
-
                 padding: 22px 17px;
             }
 
@@ -1537,13 +1343,11 @@
 
             .footer {
                 padding: 28px 18px 18px;
-
                 border-radius: 20px;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
-
                 gap: 23px;
             }
         }
@@ -1562,15 +1366,12 @@
             .welcome-icon {
                 width: 45px;
                 height: 45px;
-
                 font-size: 24px;
-
                 margin-bottom: 5px;
             }
 
             .welcome-card h1 {
                 font-size: 27px;
-
                 margin-bottom: 7px;
             }
 
@@ -1585,9 +1386,7 @@
 
             .welcome-subtitle {
                 font-size: 13px;
-
                 line-height: 1.35;
-
                 margin-bottom: 12px;
             }
 
@@ -1632,7 +1431,7 @@
 
         <div class="right-group">
 
-            <a href="mailto:tsarenko77@list.ru?subject=Заявка с сайта ЧиД">
+            <a href="mailto:chid4145@gmail.com?subject=Заявка с сайта ЧиД">
                 <i class="fas fa-envelope"></i>
                 chid4145@gmail.com
             </a>
@@ -1642,7 +1441,7 @@
                 08:00 – 20:00
             </span>
 
-            <a href="tel:+77770645930">
+            <a href="tel:+77477891341">
                 <i class="fas fa-phone-alt"></i>
                 +7 (747) 789-13-41
             </a>
@@ -1664,15 +1463,16 @@
 
                 <div class="brand-block">
 
-                    <!-- ИЗМЕНЕНО: "АГЕНТСТВО" → "РАБОТА" -->
                     <div class="agency-title">
                         РАБОТА
                     </div>
 
                     <div class="brand-name">
+
                         <div class="brand-mark">
                             ЧиД
                         </div>
+
                     </div>
 
                     <div class="brand-slogan">
@@ -1690,9 +1490,7 @@
                 </div>
 
 
-                <!-- =================================================
-                     ФОТО — НА ВСЮ ШИРИНУ (без текста на картинке)
-                ================================================== -->
+                <!-- ФОТО -->
 
                 <div class="header-image">
 
@@ -1711,7 +1509,7 @@
 
 
     <!-- =========================================================
-         ПРИВЕТСТВЕННОЕ ОКНО (добавлен текст под заголовком)
+         ПРИВЕТСТВЕННОЕ ОКНО
     ========================================================== -->
 
     <div
@@ -1736,11 +1534,12 @@
 
             </h1>
 
-            <!-- ДОБАВЛЕНО: подзаголовок -->
+
             <div class="welcome-tagline">
                 Работа / Услуги разнорабочих
             </div>
 
+
             <div class="divider"></div>
 
 
@@ -1779,18 +1578,6 @@
 
                 </button>
 
-            </div>
-
-
-            <!-- УБРАНЫ надписи "Надёжные специалисты" и "Быстрый выезд" -->
-            <div class="welcome-bottom" style="display: none;">
-                <i class="fas fa-shield-alt"></i>
-                Надёжные специалисты
-
-                <span style="margin: 0 7px;">|</span>
-
-                <i class="fas fa-clock"></i>
-                Быстрый выезд
             </div>
 
         </div>
@@ -1855,9 +1642,11 @@
                     <div class="contact-options">
 
 
+                        <!-- TELEGRAM -->
+
                         <div
                             class="contact-option"
-                            onclick="window.open('https://t.me/+77477891341', '_blank')"
+                            onclick="window.open('https://t.me/', '_blank')"
                         >
 
                             <div class="icon icon-telegram">
@@ -1871,9 +1660,11 @@
                         </div>
 
 
+                        <!-- WHATSAPP -->
+
                         <div
                             class="contact-option"
-                            onclick="window.open('https://wa.me/+77477891341', '_blank')"
+                            onclick="window.open('https://wa.me/77477891341', '_blank')"
                         >
 
                             <div class="icon icon-whatsapp">
@@ -1886,6 +1677,8 @@
 
                         </div>
 
+
+                        <!-- EMAIL -->
 
                         <div
                             class="contact-option"
@@ -1902,6 +1695,8 @@
 
                         </div>
 
+
+                        <!-- ЗАЯВКА -->
 
                         <div
                             class="contact-option"
@@ -2053,9 +1848,6 @@
                 </p>
 
 
-            
-
-
                 <div class="info-features">
 
                     <div class="feature">
@@ -2153,7 +1945,6 @@
                     </div>
 
 
-
                     <div class="case-item">
 
                         <strong>
@@ -2162,7 +1953,7 @@
 
                         <p>
                             Уборка помещений, квартир, подъездов после
-                            строительства и кап.ремонта
+                            строительства и кап. ремонта.
                         </p>
 
                     </div>
@@ -2226,9 +2017,7 @@
              ИЩУ РАБОТУ
         ====================================================== -->
 
-        <section
-            id="workerContent"
-        >
+        <section id="workerContent">
 
             <div class="worker-page">
 
@@ -2411,8 +2200,9 @@
                 <div class="footer-social">
 
                     <a
-                        href="https://t.me/+77770645930"
+                        href="https://t.me/"
                         target="_blank"
+                        rel="noopener noreferrer"
                         aria-label="Telegram"
                     >
 
@@ -2422,8 +2212,9 @@
 
 
                     <a
-                        href="https://wa.me/77770645930"
+                        href="https://wa.me/77477891341"
                         target="_blank"
+                        rel="noopener noreferrer"
                         aria-label="WhatsApp"
                     >
 
@@ -2454,7 +2245,7 @@
                 </h4>
 
 
-                <a href="tel:+77770645930">
+                <a href="tel:+77477891341">
 
                     <i class="fas fa-phone-alt"></i>
 
@@ -2463,11 +2254,11 @@
                 </a>
 
 
-                <a href="mailto:tsarenko77@list.ru">
+                <a href="mailto:chid4145@gmail.com">
 
                     <i class="fas fa-envelope"></i>
 
-                   chid4145@gmail.com
+                    chid4145@gmail.com
 
                 </a>
 
@@ -2596,11 +2387,10 @@
 
 <script>
 
-
     /* =========================================================
        TELEGRAM
-
-       ВСТАВЬ СЮДА СВОИ ДАННЫЕ
+       
+       ОБЯЗАТЕЛЬНО ЗАМЕНИ ЭТИ ДВА ЗНАЧЕНИЯ
     ========================================================= */
 
     const TELEGRAM_BOT_TOKEN =
@@ -2625,12 +2415,8 @@
             `🔔 Новая ${type} с сайта ЧиД!\n\n` +
             `👤 Имя: ${name}\n` +
             `📞 Телефон: ${phone}\n` +
-            (city
-                ? `📍 Город: ${city}\n`
-                : '') +
-            `🕐 Время: ${
-                new Date().toLocaleString('ru-RU')
-            }`;
+            (city ? `📍 Город: ${city}\n` : '') +
+            `🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
 
 
         const url =
@@ -2645,16 +2431,12 @@
                     method: 'POST',
 
                     headers: {
-                        'Content-Type':
-                            'application/json'
+                        'Content-Type': 'application/json'
                     },
 
                     body: JSON.stringify({
-                        chat_id:
-                            TELEGRAM_CHAT_ID,
-
-                        text:
-                            message
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message
                     })
                 }
             );
@@ -2664,3170 +2446,10 @@
                 await response.json();
 
 
-            return data.ok;
+            console.log('Telegram response:', data);
 
-        } catch (error) {
 
-            console.error(
-                'Telegram error:',
-                error
-            );
-
-            return false;
-        }
-    }
-
-
-    /* =========================================================
-       DOM READY
-    ========================================================= */
-
-    document.addEventListener(
-        'DOMContentLoaded',
-        function () {
-
-
-            /* =====================================================
-               ЭЛЕМЕНТЫ
-            ====================================================== */
-
-            const overlay =
-                document.getElementById(
-                    'welcomeOverlay'
-                );
-
-            const mainContent =
-                document.getElementById(
-                    'mainContent'
-                );
-
-            const customerContent =
-                document.getElementById(
-                    'customerContent'
-                );
-
-            const workerContent =
-                document.getElementById(
-                    'workerContent'
-                );
-
-            const mainFooter =
-                document.getElementById(
-                    'mainFooter'
-                );
-
-            const btnCustomer =
-                document.getElementById(
-                    'btnCustomer'
-                );
-
-            const btnWorker =
-                document.getElementById(
-                    'btnWorker'
-                );
-
-
-            /* =====================================================
-               ПОКАЗ ЗАКАЗЧИКА
-            ====================================================== */
-
-            function showCustomer() {
-
-                overlay.classList.add(
-                    'hidden'
-                );
-
-                mainContent.classList.add(
-                    'active'
-                );
-
-                customerContent.style.display =
-                    'block';
-
-                workerContent.style.display =
-                    'none';
-
-                mainFooter.style.display =
-                    'block';
-
-
-                setTimeout(
-                    function () {
-
-                        mainContent.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-
-                    },
-                    350
-                );
-            }
-
-
-            /* =====================================================
-               ПОКАЗ СОИСКАТЕЛЯ
-            ====================================================== */
-
-            function showWorker() {
-
-                overlay.classList.add(
-                    'hidden'
-                );
-
-                mainContent.classList.add(
-                    'active'
-                );
-
-                customerContent.style.display =
-                    'none';
-
-                workerContent.style.display =
-                    'block';
-
-                mainFooter.style.display =
-                    'block';
-
-
-                setTimeout(
-                    function () {
-
-                        workerContent.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-
-                    },
-                    350
-                );
-            }
-
-
-            /* =====================================================
-               КНОПКИ
-            ====================================================== */
-
-            if (btnCustomer) {
-
-                btnCustomer.addEventListener(
-                    'click',
-                    showCustomer
-                );
-
-            }
-
-
-            if (btnWorker) {
-
-                btnWorker.addEventListener(
-                    'click',
-                    showWorker
-                );
-
-            }
-
-
-            /* =====================================================
-               ФОРМА ЗАКАЗЧИКА
-            ====================================================== */
-
-            const customerForm =
-                document.getElementById(
-                    'customerForm'
-                );
-
-            const submitBtn =
-                document.getElementById(
-                    'submitBtn'
-                );
-
-            const customerSuccess =
-                document.getElementById(
-                    'customerSuccess'
-                );
-
-            const customerError =
-                document.getElementById(
-                    'customerError'
-                );
-
-
-            if (customerForm) {
-
-                customerForm.addEventListener(
-                    'submit',
-                    async function (e) {
-
-                        e.preventDefault();
-
-
-                        const name =
-                            document
-                                .getElementById(
-                                    'fullName'
-                                )
-                                .value
-                                .trim();
-
-
-                        const phone =
-                            document
-                                .getElementById(
-                                    'phone'
-                                )
-                                .value
-                                .trim();
-
-
-                        if (
-                            !name ||
-                            !phone
-                        ) {
-
-                            alert(
-                                'Заполните имя и телефон.'
-                            );
-
-                            return;
-                        }
-
-
-                        submitBtn.disabled =
-                            true;
-
-                        submitBtn.innerHTML =
-                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-
-
-                        customerSuccess.style.display =
-                            'none';
-
-                        customerError.style.display =
-                            'none';
-
-
-                        const success =
-                            await sendToTelegram(
-                                name,
-                                phone,
-                                '',
-                                'заявка от заказчика'
-                            );
-
-
-                        if (success) {
-
-                            customerSuccess.style.display =
-                                'block';
-
-                            customerForm.reset();
-
-                        } else {
-
-                            customerError.style.display =
-                                'block';
-
-                        }
-
-
-                        submitBtn.disabled =
-                            false;
-
-                        submitBtn.innerHTML =
-                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
-
-
-                        if (success) {
-
-                            customerSuccess.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center'
-                            });
-
-
-                            setTimeout(
-                                function () {
-
-                                    customerSuccess.style.display =
-                                        'none';
-
-                                },
-                                8000
-                            );
-                        }
-
-                    }
-                );
-            }
-
-
-            /* =====================================================
-               ФОРМА "ИЩУ РАБОТУ"
-            ====================================================== */
-
-            const workerForm =
-                document.getElementById(
-                    'workerForm'
-                );
-
-            const workerSubmitBtn =
-                document.getElementById(
-                    'workerSubmitBtn'
-                );
-
-            const workerSuccess =
-                document.getElementById(
-                    'workerSuccess'
-                );
-
-            const workerError =
-                document.getElementById(
-                    'workerError'
-                );
-
-
-            if (workerForm) {
-
-                workerForm.addEventListener(
-                    'submit',
-                    async function (e) {
-
-                        e.preventDefault();
-
-
-                        const name =
-                            document
-                                .getElementById(
-                                    'workerName'
-                                )
-                                .value
-                                .trim();
-
-
-                        const phone =
-                            document
-                                .getElementById(
-                                    'workerPhone'
-                                )
-                                .value
-                                .trim();
-
-
-                        const city =
-                            document
-                                .getElementById(
-                                    'workerCity'
-                                )
-                                .value
-                                .trim();
-
-
-                        if (
-                            !name ||
-                            !phone ||
-                            !city
-                        ) {
-
-                            alert(
-                                'Заполните имя, телефон и город.'
-                            );
-
-                            return;
-                        }
-
-
-                        workerSubmitBtn.disabled =
-                            true;
-
-                        workerSubmitBtn.innerHTML =
-                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-
-
-                        workerSuccess.style.display =
-                            'none';
-
-                        workerError.style.display =
-                            'none';
-
-
-                        const success =
-                            await sendToTelegram(
-                                name,
-                                phone,
-                                city,
-                                'заявка на работу'
-                            );
-
-
-                        if (success) {
-
-                            workerSuccess.style.display =
-                                'block';
-
-                            workerForm.reset();
-
-                        } else {
-
-                            workerError.style.display =
-                                'block';
-
-                        }
-
-
-                        workerSubmitBtn.disabled =
-                            false;
-
-                        workerSubmitBtn.innerHTML =
-                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
-
-
-                        if (success) {
-
-                            workerSuccess.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center'
-                            });
-
-
-                            setTimeout(
-                                function () {
-
-                                    workerSuccess.style.display =
-                                        'none';
-
-                                },
-                                8000
-                            );
-                        }
-
-                    }
-                );
-            }
-
-        }
-    );
-
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ЧиД — Нужные руки рядом!</title>
-
-    <!-- Шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    >
-
-    <style>
-
-        /* =========================================================
-           RESET
-        ========================================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #eef3fa 0%,
-                    #d9e2f0 100%
-                );
-
-            min-height: 100vh;
-            color: #0b1e3a;
-        }
-
-        button,
-        input {
-            font-family: inherit;
-        }
-
-
-        /* =========================================================
-           ОСНОВНАЯ ОБЁРТКА
-        ========================================================= */
-
-        .main-wrapper {
-            width: min(1440px, calc(100% - 32px));
-
-            margin: 16px auto;
-
-            background: #ffffff;
-
-            border-radius: 32px;
-
-            box-shadow:
-                0 30px 70px rgba(0, 20, 40, 0.22);
-
-            overflow: hidden;
-
-            position: relative;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1400px;
-
-            margin: 0 auto;
-
-            padding: 20px 40px;
-        }
-
-
-        /* =========================================================
-           TOP BAR
-        ========================================================= */
-
-        .top-bar {
-            background: #0b1426;
-            color: #e8edf5;
-
-            padding: 12px 36px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 15px 30px;
-
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .left-group,
-        .right-group {
-            display: flex;
-            align-items: center;
-
-            flex-wrap: wrap;
-
-            gap: 12px 28px;
-        }
-
-        .city {
-            color: #fcd34d;
-            font-weight: 700;
-        }
-
-        .city i,
-        .service i,
-        .right-group i {
-            color: #fcd34d;
-            margin-right: 7px;
-        }
-
-        .service {
-            color: #b9c7e0;
-        }
-
-        .right-group a {
-            color: #e8edf5;
-            text-decoration: none;
-
-            transition: 0.2s ease;
-        }
-
-        .right-group a:hover {
-            color: #fcd34d;
-        }
-
-        .time {
-            color: #b9c7e0;
-        }
-
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
-        .main-header {
-            background: #ffffff;
-            border-bottom: 1px solid #eef2f8;
-        }
-
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            text-align: center;
-
-            padding: 18px 0 24px;
-        }
-
-
-        /* =========================================================
-           БРЕНД ЧиД
-        ========================================================= */
-
-        .brand-block {
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            margin: 0 auto;
-        }
-
-        .agency-title {
-            color: #71839c;
-
-            font-size: clamp(13px, 1.5vw, 18px);
-
-            font-weight: 800;
-
-            letter-spacing: 7px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 4px;
-        }
-
-        .brand-name {
-            position: relative;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .brand-mark {
-            position: relative;
-
-            display: inline-block;
-
-            font-size: clamp(62px, 7vw, 94px);
-
-            line-height: 0.9;
-
-            font-weight: 900;
-
-            letter-spacing: -5px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #143a65 0%,
-                    #1e4f8a 45%,
-                    #2f72ba 100%
-                );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            background-clip: text;
-
-            text-shadow:
-                0 5px 0 rgba(30, 79, 138, 0.05),
-                0 12px 30px rgba(30, 79, 138, 0.16);
-        }
-
-        .brand-mark::after {
-            content: "";
-
-            position: absolute;
-
-            width: 23px;
-            height: 23px;
-
-            right: -19px;
-            top: 5px;
-
-            background: #f5b81b;
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 6px 18px rgba(245, 184, 27, 0.35);
-        }
-
-        .brand-slogan {
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 13px;
-
-            margin-top: 12px;
-
-            color: #d49a00;
-
-            font-size: clamp(14px, 1.7vw, 20px);
-
-            font-weight: 800;
-
-            letter-spacing: 1.2px;
-
-            text-transform: uppercase;
-        }
-
-        .slogan-line {
-            display: block;
-
-            width: clamp(35px, 6vw, 85px);
-
-            height: 2px;
-
-            border-radius: 10px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #f5b81b
-                );
-        }
-
-        .slogan-line:last-child {
-            background:
-                linear-gradient(
-                    90deg,
-                    #f5b81b,
-                    transparent
-                );
-        }
-
-
-        /* =========================================================
-           ШИРОКАЯ ФОТОГРАФИЯ — НА ВСЮ ШИРИНУ
-        ========================================================= */
-
-        .header-image {
-            width: 100vw;
-            max-width: 100%;
-            margin: 24px 0 0;
-            border-radius: 0;
-            overflow: hidden;
-            background: #f1f4f9;
-            border: none;
-            box-shadow: none;
-            line-height: 0;
-            position: relative;
-
-            /* смещаем, чтобы выровнять с краями обёртки */
-            transform: translateX(calc(-50% + 50vw));
-        }
-
-        .header-image::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(255,255,255,0.04),
-                    rgba(11,30,58,0.04)
-                );
-        }
-
-        .header-image img {
-            display: block;
-
-            width: 100%;
-            height: auto;
-
-            max-width: 100%;
-
-            object-fit: contain;
-            object-position: center;
-
-            background: #ffffff;
-        }
-
-        /* дополнительный текст на картинке — "Работа / Услуги разнорабочих" */
-        .header-image-text {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            font-size: clamp(18px, 3vw, 36px);
-            font-weight: 900;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
-            pointer-events: none;
-            z-index: 2;
-            letter-spacing: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.3), transparent);
-            padding: 12px 0;
-        }
-        .header-image-text span {
-            display: inline-block;
-            background: rgba(11, 30, 58, 0.55);
-            padding: 6px 24px;
-            border-radius: 40px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-
-        /* =========================================================
-           ПРИВЕТСТВЕННОЕ ОКНО
-        ========================================================= */
-
-        .welcome-overlay {
-            position: fixed;
-
-            inset: 0;
-
-            width: 100%;
-            height: 100dvh;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(8, 18, 35, 0.96),
-                    rgba(30, 79, 138, 0.94)
-                );
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 16px;
-
-            z-index: 9999;
-
-            transition:
-                opacity 0.4s ease,
-                visibility 0.4s ease;
-        }
-
-        .welcome-overlay.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .welcome-card {
-            width: min(650px, 100%);
-
-            background: #ffffff;
-
-            border-radius: 28px;
-
-            padding: 32px 40px 28px;
-
-            text-align: center;
-
-            box-shadow:
-                0 35px 90px rgba(0, 0, 0, 0.45);
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .welcome-card::before {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            top: 0;
-
-            width: 100%;
-            height: 5px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #1e4f8a,
-                    #f5b81b,
-                    #1e4f8a
-                );
-        }
-
-        .welcome-icon {
-            width: 64px;
-            height: 64px;
-
-            margin: 0 auto 10px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 20px;
-
-            background: #eef4ff;
-
-            font-size: 34px;
-
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-6px);
-            }
-        }
-
-        .welcome-card h1 {
-            font-size: clamp(27px, 4vw, 40px);
-
-            line-height: 1.1;
-
-            font-weight: 900;
-
-            color: #0b1e3a;
-
-            margin-bottom: 11px;
-        }
-
-        .welcome-card h1 span {
-            background:
-                linear-gradient(
-                    135deg,
-                    #1e4f8a,
-                    #f5b81b
-                );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            background-clip: text;
-        }
-
-        .divider {
-            width: 55px;
-            height: 4px;
-
-            margin: 0 auto 15px;
-
-            border-radius: 10px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #1e4f8a,
-                    #f5b81b
-                );
-        }
-
-        .welcome-subtitle {
-            max-width: 540px;
-
-            margin: 0 auto 19px;
-
-            font-size: 15px;
-
-            line-height: 1.5;
-
-            color: #4a6180;
-        }
-
-        .welcome-buttons {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 12px;
-        }
-
-        .btn-choice {
-            border: none;
-
-            border-radius: 60px;
-
-            padding: 14px 24px;
-
-            min-width: 190px;
-
-            font-size: 16px;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            display: inline-flex;
-
-            justify-content: center;
-            align-items: center;
-
-            gap: 9px;
-
-            transition: 0.25s ease;
-        }
-
-        .btn-choice:hover {
-            transform: translateY(-3px);
-        }
-
-        .btn-choice.primary {
-            color: #ffffff;
-
-            background: #1e4f8a;
-
-            box-shadow:
-                0 8px 24px rgba(30, 79, 138, 0.3);
-        }
-
-        .btn-choice.primary:hover {
-            background: #143a65;
-        }
-
-        .btn-choice.secondary {
-            color: #0b1e3a;
-
-            background: #fcd34d;
-
-            box-shadow:
-                0 8px 24px rgba(252, 211, 77, 0.3);
-        }
-
-        .btn-choice.secondary:hover {
-            background: #fbbf24;
-        }
-
-        .welcome-bottom {
-            margin-top: 15px;
-
-            font-size: 12px;
-
-            color: #8a9bb5;
-        }
-
-        .welcome-bottom i {
-            color: #fcd34d;
-
-            margin: 0 4px;
-        }
-
-
-        /* =========================================================
-           ОСНОВНОЙ КОНТЕНТ
-        ========================================================= */
-
-        .main-content {
-            display: none;
-
-            animation: fadeUp 0.45s ease;
-        }
-
-        .main-content.active {
-            display: block;
-        }
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* =========================================================
-           КОНТЕНТ ЗАКАЗЧИКА
-        ========================================================= */
-
-        .customer-content {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 28px;
-
-            margin: 20px 0;
-        }
-
-        .services,
-        .contact {
-            flex: 1;
-
-            min-width: 320px;
-
-            background: #ffffff;
-
-            border: 1px solid #e9eef5;
-
-            border-radius: 24px;
-
-            padding: 30px;
-
-            box-shadow:
-                0 5px 20px rgba(11, 30, 58, 0.05);
-        }
-
-        .services h2 {
-            color: #0b1e3a;
-
-            font-size: 25px;
-
-            font-weight: 800;
-
-            border-bottom: 4px solid #1e4f8a;
-
-            padding-bottom: 13px;
-
-            margin-bottom: 15px;
-        }
-
-        .services ul {
-            list-style: none;
-        }
-
-        .services li {
-            padding: 14px 0;
-
-            border-bottom: 1px solid #edf2f9;
-
-            color: #1e2f45;
-
-            font-size: 16px;
-
-            line-height: 1.5;
-        }
-
-        .services li:last-child {
-            border-bottom: none;
-        }
-
-        .services li::before {
-            content: "▹";
-
-            color: #1e4f8a;
-
-            font-size: 22px;
-
-            font-weight: 700;
-
-            margin-right: 10px;
-        }
-
-
-        /* =========================================================
-           КОНТАКТЫ
-        ========================================================= */
-
-        .contact-options {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 10px;
-
-            margin-bottom: 20px;
-        }
-
-        .contact-option {
-            display: flex;
-
-            align-items: center;
-
-            padding: 11px 14px;
-
-            border-radius: 15px;
-
-            background: #f8faff;
-
-            border: 1px solid transparent;
-
-            color: #1e2f45;
-
-            font-weight: 600;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-        .contact-option:hover {
-            background: #eef4ff;
-
-            border-color: #1e4f8a;
-
-            transform: translateX(4px);
-        }
-
-        .contact-option .icon {
-            width: 42px;
-            height: 42px;
-
-            margin-right: 14px;
-
-            border-radius: 12px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            color: white;
-
-            font-size: 18px;
-        }
-
-        .icon-telegram {
-            background: #0088cc;
-        }
-
-        .icon-whatsapp {
-            background: #25d366;
-        }
-
-        .icon-email {
-            background: #ea4335;
-        }
-
-        .icon-phone {
-            background: #1e4f8a;
-        }
-
-
-        /* =========================================================
-           ФОРМЫ
-        ========================================================= */
-
-        .contact-form,
-        .worker-form {
-            background: #f8faff;
-
-            padding: 24px;
-
-            border-radius: 20px;
-
-            border: 1px solid #e8eef7;
-        }
-
-        .contact-form h3,
-        .worker-form h2 {
-            color: #0b1e3a;
-
-            margin-bottom: 18px;
-        }
-
-        .worker-form h2 {
-            font-size: 28px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-
-            margin-bottom: 7px;
-
-            color: #2a405a;
-
-            font-size: 14px;
-
-            font-weight: 600;
-        }
-
-        .form-group label i {
-            color: #1e4f8a;
-
-            margin-right: 5px;
-        }
-
-        .form-group input {
-            width: 100%;
-
-            padding: 14px 15px;
-
-            border-radius: 13px;
-
-            border: 2px solid #e0e8f3;
-
-            background: #ffffff;
-
-            font-size: 16px;
-
-            color: #0b1e3a;
-
-            outline: none;
-
-            transition: 0.2s;
-        }
-
-        .form-group input:focus {
-            border-color: #1e4f8a;
-
-            box-shadow:
-                0 0 0 4px rgba(30, 79, 138, 0.09);
-        }
-
-        .submit-btn {
-            width: 100%;
-
-            padding: 15px 20px;
-
-            border: none;
-
-            border-radius: 60px;
-
-            background: #1e4f8a;
-
-            color: #ffffff;
-
-            font-size: 16px;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            gap: 10px;
-
-            transition: 0.25s;
-        }
-
-        .submit-btn:hover {
-            background: #143a65;
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 10px 25px rgba(30, 79, 138, 0.25);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.7;
-
-            cursor: not-allowed;
-
-            transform: none;
-        }
-
-
-        /* =========================================================
-           СТРАНИЦА СОИСКАТЕЛЯ
-        ========================================================= */
-
-        #workerContent {
-            display: none;
-        }
-
-        #workerContent.active {
-            display: block;
-        }
-
-        .worker-page {
-            max-width: 760px;
-
-            margin: 30px auto 40px;
-        }
-
-        .worker-title {
-            text-align: center;
-
-            margin-bottom: 22px;
-        }
-
-        .worker-title .icon {
-            width: 65px;
-            height: 65px;
-
-            margin: 0 auto 13px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 20px;
-
-            background: #eef4ff;
-
-            color: #1e4f8a;
-
-            font-size: 28px;
-        }
-
-        .worker-title h2 {
-            font-size: 31px;
-
-            font-weight: 900;
-
-            color: #0b1e3a;
-
-            margin-bottom: 7px;
-        }
-
-        .worker-title p {
-            color: #5c708b;
-
-            font-size: 15px;
-
-            line-height: 1.5;
-        }
-
-        .worker-form {
-            background: #ffffff;
-
-            padding: 30px;
-
-            box-shadow:
-                0 8px 30px rgba(11, 30, 58, 0.07);
-        }
-
-
-        /* =========================================================
-           СООБЩЕНИЯ
-        ========================================================= */
-
-        .success-message,
-        .error-message {
-            display: none;
-
-            margin-top: 14px;
-
-            padding: 14px 17px;
-
-            border-radius: 15px;
-
-            text-align: center;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-        }
-
-        .success-message {
-            color: #166534;
-
-            background: #dcfce7;
-
-            border: 1px solid #86efac;
-        }
-
-        .error-message {
-            color: #991b1b;
-
-            background: #fee2e2;
-
-            border: 1px solid #fca5a5;
-        }
-
-        .success-message i,
-        .error-message i {
-            display: block;
-
-            font-size: 25px;
-
-            margin-bottom: 5px;
-        }
-
-
-        /* =========================================================
-           ИНФОРМАЦИЯ
-        ========================================================= */
-
-        .info-block {
-            background: #ffffff;
-
-            border: 1px solid #e8eef5;
-
-            border-radius: 25px;
-
-            padding: 38px;
-
-            margin: 28px 0;
-
-            box-shadow:
-                0 5px 20px rgba(11, 30, 58, 0.04);
-        }
-
-        .info-block h2 {
-            font-size: 30px;
-
-            margin-bottom: 11px;
-        }
-
-        .info-block h2 span {
-            color: #1e4f8a;
-        }
-
-        .info-subtitle {
-            color: #4a6180;
-
-            font-size: 16px;
-
-            line-height: 1.65;
-
-            margin-bottom: 20px;
-        }
-
-        .price-tag {
-            display: inline-block;
-
-            padding: 10px 22px;
-
-            border-radius: 60px;
-
-            background: #1e4f8a;
-
-            color: #ffffff;
-
-            font-size: 18px;
-
-            font-weight: 700;
-
-            margin-bottom: 22px;
-        }
-
-        .info-features {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 12px;
-
-            margin-bottom: 27px;
-        }
-
-        .feature {
-            display: flex;
-
-            align-items: center;
-
-            gap: 11px;
-
-            padding: 14px;
-
-            border-radius: 15px;
-
-            background: #f8faff;
-
-            border: 1px solid #e8eef7;
-
-            font-size: 14px;
-
-            color: #1e2f45;
-        }
-
-        .feature i {
-            color: #1e4f8a;
-
-            font-size: 19px;
-        }
-
-        .info-block h3 {
-            font-size: 22px;
-
-            margin: 26px 0 11px;
-        }
-
-        .cases-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 13px;
-        }
-
-        .case-item {
-            padding: 17px;
-
-            border-radius: 17px;
-
-            background: #f8faff;
-
-            border-left: 4px solid #1e4f8a;
-        }
-
-        .case-item strong {
-            display: block;
-
-            margin-bottom: 6px;
-
-            color: #0b1e3a;
-        }
-
-        .case-item p {
-            color: #5b708b;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-        }
-
-        .price-details {
-            background: #f0f6ff;
-
-            padding: 18px 22px;
-
-            border-radius: 17px;
-
-            color: #1e2f45;
-
-            line-height: 1.9;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        .footer {
-            background: #0b1426;
-
-            color: #e8edf5;
-
-            padding: 38px;
-
-            margin-top: 32px;
-
-            border-radius: 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 30px;
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-        }
-
-        .footer-col h4 {
-            color: #fcd34d;
-
-            font-size: 15px;
-
-            margin-bottom: 14px;
-        }
-
-        .footer-col p {
-            color: #b9c7e0;
-
-            font-size: 13px;
-
-            line-height: 1.7;
-        }
-
-        .footer-col a {
-            display: flex;
-
-            align-items: center;
-
-            gap: 9px;
-
-            padding: 5px 0;
-
-            color: #b9c7e0;
-
-            text-decoration: none;
-
-            font-size: 13px;
-
-            transition: 0.2s;
-        }
-
-        .footer-col a:hover {
-            color: #fcd34d;
-
-            transform: translateX(3px);
-        }
-
-        .footer-col a i {
-            width: 18px;
-
-            color: #fcd34d;
-        }
-
-        .footer-social {
-            display: flex;
-
-            gap: 10px;
-
-            margin-top: 13px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-
-            padding: 0;
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            background: rgba(255,255,255,0.06);
-
-            border-radius: 50%;
-
-            color: #e8edf5;
-
-            font-size: 17px;
-        }
-
-        .footer-social a:hover {
-            background: #fcd34d;
-
-            color: #0b1426;
-
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-
-            margin: 25px auto 0;
-
-            padding-top: 17px;
-
-            border-top: 1px solid #1f2a40;
-
-            text-align: center;
-
-            color: #6a7f9e;
-
-            font-size: 12px;
-        }
-
-        .footer-bottom span {
-            color: #fcd34d;
-        }
-
-
-        /* =========================================================
-           АДАПТИВ — ПЛАНШЕТ
-        ========================================================= */
-
-        @media (max-width: 900px) {
-
-            .main-wrapper {
-                width: calc(100% - 20px);
-
-                margin: 10px auto;
-
-                border-radius: 22px;
-            }
-
-            .top-bar {
-                flex-direction: column;
-
-                text-align: center;
-
-                padding: 11px 18px;
-            }
-
-            .left-group,
-            .right-group {
-                justify-content: center;
-            }
-
-            .container {
-                padding: 18px 20px;
-            }
-
-            .customer-content {
-                flex-direction: column;
-            }
-
-            .cases-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .header-image {
-                transform: none;
-                width: 100%;
-                border-radius: 18px;
-            }
-            .header-image-text {
-                bottom: 16px;
-                font-size: clamp(14px, 2.5vw, 24px);
-            }
-            .header-image-text span {
-                padding: 4px 16px;
-            }
-        }
-
-
-        /* =========================================================
-           АДАПТИВ — ТЕЛЕФОН
-        ========================================================= */
-
-        @media (max-width: 650px) {
-
-            body {
-                background: #ffffff;
-            }
-
-            .main-wrapper {
-                width: 100%;
-
-                margin: 0;
-
-                border-radius: 0;
-
-                box-shadow: none;
-            }
-
-            .container {
-                padding: 14px;
-            }
-
-            .top-bar {
-                font-size: 12px;
-
-                gap: 8px;
-            }
-
-            .left-group,
-            .right-group {
-                gap: 7px 15px;
-            }
-
-            .agency-title {
-                font-size: 12px;
-
-                letter-spacing: 5px;
-            }
-
-            .brand-mark {
-                font-size: 62px;
-
-                letter-spacing: -3px;
-            }
-
-            .brand-mark::after {
-                width: 17px;
-                height: 17px;
-
-                right: -12px;
-                top: 3px;
-            }
-
-            .brand-slogan {
-                gap: 8px;
-
-                margin-top: 9px;
-
-                font-size: 11px;
-
-                letter-spacing: 0.5px;
-            }
-
-            .slogan-line {
-                width: 24px;
-            }
-
-            .header-image {
-                margin-top: 17px;
-
-                border-radius: 0;
-                transform: none;
-                width: 100%;
-            }
-            .header-image-text {
-                bottom: 10px;
-                font-size: clamp(12px, 3vw, 18px);
-            }
-            .header-image-text span {
-                padding: 3px 12px;
-            }
-
-            /* -----------------------------------------------------
-               ПРИВЕТСТВЕННОЕ ОКНО:
-               НЕ СКРОЛЛИТСЯ
-            ----------------------------------------------------- */
-
-            .welcome-overlay {
-                padding: 10px;
-            }
-
-            .welcome-card {
-                width: 100%;
-
-                padding: 24px 17px 20px;
-
-                border-radius: 22px;
-
-                max-height: none;
-
-                overflow: hidden;
-            }
-
-            .welcome-icon {
-                width: 50px;
-                height: 50px;
-
-                font-size: 27px;
-
-                margin-bottom: 7px;
-            }
-
-            .welcome-card h1 {
-                font-size: 25px;
-
-                margin-bottom: 8px;
-            }
-
-            .divider {
-                margin-bottom: 12px;
-            }
-
-            .welcome-subtitle {
-                font-size: 13px;
-
-                line-height: 1.4;
-
-                margin-bottom: 14px;
-            }
-
-            .welcome-buttons {
-                flex-direction: column;
-
-                gap: 8px;
-            }
-
-            .btn-choice {
-                width: 100%;
-
-                min-width: 0;
-
-                padding: 13px 18px;
-
-                font-size: 14px;
-            }
-
-            .welcome-bottom {
-                font-size: 10px;
-
-                line-height: 1.4;
-
-                margin-top: 11px;
-            }
-
-            .services,
-            .contact {
-                min-width: 0;
-
-                padding: 22px 17px;
-            }
-
-            .services h2 {
-                font-size: 22px;
-            }
-
-            .services li {
-                font-size: 15px;
-            }
-
-            .info-block {
-                padding: 25px 17px;
-            }
-
-            .info-block h2 {
-                font-size: 26px;
-            }
-
-            .info-features {
-                grid-template-columns: 1fr;
-            }
-
-            .cases-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .worker-page {
-                margin: 20px auto 30px;
-            }
-
-            .worker-title h2 {
-                font-size: 25px;
-            }
-
-            .worker-form {
-                padding: 22px 17px;
-            }
-
-            .footer {
-                padding: 28px 18px 18px;
-
-                border-radius: 20px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-
-                gap: 23px;
-            }
-        }
-
-
-        /* =========================================================
-           МАЛЕНЬКАЯ ВЫСОТА ЭКРАНА
-        ========================================================= */
-
-        @media (max-height: 650px) {
-
-            .welcome-card {
-                padding: 20px 30px 17px;
-            }
-
-            .welcome-icon {
-                width: 45px;
-                height: 45px;
-
-                font-size: 24px;
-
-                margin-bottom: 5px;
-            }
-
-            .welcome-card h1 {
-                font-size: 27px;
-
-                margin-bottom: 7px;
-            }
-
-            .divider {
-                margin-bottom: 10px;
-            }
-
-            .welcome-subtitle {
-                font-size: 13px;
-
-                line-height: 1.35;
-
-                margin-bottom: 12px;
-            }
-
-            .btn-choice {
-                padding: 11px 20px;
-            }
-
-            .welcome-bottom {
-                margin-top: 9px;
-            }
-        }
-
-    </style>
-</head>
-
-
-<body>
-
-<div class="main-wrapper">
-
-
-    <!-- =========================================================
-         ВЕРХНЯЯ ПАНЕЛЬ
-    ========================================================== -->
-
-    <div class="top-bar">
-
-        <div class="left-group">
-
-            <div class="city">
-                <i class="fas fa-map-pin"></i>
-                Усть-Каменогорск, ВКО
-            </div>
-
-            <div class="service">
-                <i class="fas fa-users"></i>
-                Грузчики 24/7
-            </div>
-
-        </div>
-
-
-        <div class="right-group">
-
-            <a href="mailto:tsarenko77@list.ru?subject=Заявка с сайта ЧиД">
-                <i class="fas fa-envelope"></i>
-                chid4145@gmail.com
-            </a>
-
-            <span class="time">
-                <i class="fas fa-clock"></i>
-                08:00 – 20:00
-            </span>
-
-            <a href="tel:+77770645930">
-                <i class="fas fa-phone-alt"></i>
-                +7 (747) 789-13-41
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
-
-    <header class="main-header">
-
-        <div class="container">
-
-            <div class="header-content">
-
-                <div class="brand-block">
-
-                    <!-- ИЗМЕНЕНО: "АГЕНТСТВО" → "РАБОТА" -->
-                    <div class="agency-title">
-                        РАБОТА
-                    </div>
-
-                    <div class="brand-name">
-                        <div class="brand-mark">
-                            ЧиД
-                        </div>
-                    </div>
-
-                    <div class="brand-slogan">
-
-                        <span class="slogan-line"></span>
-
-                        <span>
-                            Нужные руки рядом!
-                        </span>
-
-                        <span class="slogan-line"></span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- =================================================
-                     ФОТО — НА ВСЮ ШИРИНУ + ТЕКСТ
-                ================================================== -->
-
-                <div class="header-image">
-
-                    <img
-                        src="WhatsApp Image 2026-08-11 at 11.36.55.jpeg"
-                        alt="ЧиД — Нужные руки рядом!"
-                    >
-
-                    <!-- ДОБАВЛЕНО: текст на картинке -->
-                    <div class="header-image-text">
-                        <span>Работа / Услуги разнорабочих</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================================================
-         ПРИВЕТСТВЕННОЕ ОКНО (УБРАНЫ НАДПИСИ)
-    ========================================================== -->
-
-    <div
-        class="welcome-overlay"
-        id="welcomeOverlay"
-    >
-
-        <div class="welcome-card">
-
-            <div class="welcome-icon">
-                🚀
-            </div>
-
-
-            <h1>
-
-                Добро пожаловать в
-
-                <br>
-
-                <span>ЧиД</span>
-
-            </h1>
-
-
-            <div class="divider"></div>
-
-
-            <p class="welcome-subtitle">
-
-                Платформа для быстрого поиска надёжных специалистов
-                и выгодных заказов. Выберите свою роль, чтобы начать.
-
-            </p>
-
-
-            <div class="welcome-buttons">
-
-                <button
-                    class="btn-choice primary"
-                    id="btnCustomer"
-                    type="button"
-                >
-
-                    <i class="fas fa-briefcase"></i>
-
-                    Я заказчик
-
-                </button>
-
-
-                <button
-                    class="btn-choice secondary"
-                    id="btnWorker"
-                    type="button"
-                >
-
-                    <i class="fas fa-hard-hat"></i>
-
-                    Ищу работу
-
-                </button>
-
-            </div>
-
-
-            <!-- УБРАНЫ надписи "Надёжные специалисты" и "Быстрый выезд" -->
-            <div class="welcome-bottom" style="display: none;">
-                <i class="fas fa-shield-alt"></i>
-                Надёжные специалисты
-
-                <span style="margin: 0 7px;">|</span>
-
-                <i class="fas fa-clock"></i>
-                Быстрый выезд
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================================================
-         ОСНОВНОЙ КОНТЕНТ
-    ========================================================== -->
-
-    <main
-        class="container main-content"
-        id="mainContent"
-    >
-
-
-        <!-- =====================================================
-             ЗАКАЗЧИК
-        ====================================================== -->
-
-        <section id="customerContent">
-
-            <div class="customer-content">
-
-
-                <!-- УСЛУГИ -->
-
-                <div class="services">
-
-                    <h2>
-                        УСЛУГИ
-                    </h2>
-
-                    <ul>
-
-                        <li>
-                            Грузчики
-                        </li>
-
-                        <li>
-                            Разнорабочие для любых объектов
-                        </li>
-
-                        <li>
-                            Подсобные услуги
-                        </li>
-
-                        <li>
-                            Уборка помещений после строительства и ремонта
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- КОНТАКТЫ -->
-
-                <div class="contact">
-
-                    <div class="contact-options">
-
-
-                        <div
-                            class="contact-option"
-                            onclick="window.open('https://t.me/+77477891341', '_blank')"
-                        >
-
-                            <div class="icon icon-telegram">
-                                <i class="fab fa-telegram-plane"></i>
-                            </div>
-
-                            <div>
-                                Telegram
-                            </div>
-
-                        </div>
-
-
-                        <div
-                            class="contact-option"
-                            onclick="window.open('https://wa.me/+77477891341', '_blank')"
-                        >
-
-                            <div class="icon icon-whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-
-                            <div>
-                                WhatsApp
-                            </div>
-
-                        </div>
-
-
-                        <div
-                            class="contact-option"
-                            onclick="window.location.href='mailto:chid4145@gmail.com?subject=Заявка с сайта ЧиД'"
-                        >
-
-                            <div class="icon icon-email">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-
-                            <div>
-                                Написать
-                            </div>
-
-                        </div>
-
-
-                        <div
-                            class="contact-option"
-                            onclick="document.getElementById('fullName').focus()"
-                        >
-
-                            <div class="icon icon-phone">
-                                <i class="fas fa-pen"></i>
-                            </div>
-
-                            <div>
-                                Оставить заявку
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ФОРМА -->
-
-                    <div class="contact-form">
-
-                        <h3>
-
-                            <i
-                                class="fas fa-paper-plane"
-                                style="color:#1e4f8a; margin-right:7px;"
-                            ></i>
-
-                            Оставьте заявку — мы перезвоним
-
-                        </h3>
-
-
-                        <form id="customerForm">
-
-                            <div class="form-group">
-
-                                <label for="fullName">
-
-                                    <i class="fas fa-user"></i>
-
-                                    Ваше имя
-
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="fullName"
-                                    placeholder="Иванов Иван"
-                                    required
-                                >
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="phone">
-
-                                    <i class="fas fa-phone-alt"></i>
-
-                                    Номер телефона
-
-                                </label>
-
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    placeholder="+7 (___) ___-__-__"
-                                    required
-                                >
-
-                            </div>
-
-
-                            <button
-                                type="submit"
-                                class="submit-btn"
-                                id="submitBtn"
-                            >
-
-                                <i class="fas fa-paper-plane"></i>
-
-                                Отправить заявку
-
-                            </button>
-
-                        </form>
-
-
-                        <div
-                            class="success-message"
-                            id="customerSuccess"
-                        >
-
-                            <i class="fas fa-check-circle"></i>
-
-                            <strong>Спасибо!</strong>
-
-                            Ваша заявка принята.
-                            Мы свяжемся с вами в ближайшее время.
-
-                        </div>
-
-
-                        <div
-                            class="error-message"
-                            id="customerError"
-                        >
-
-                            <i class="fas fa-exclamation-circle"></i>
-
-                            <strong>Ошибка!</strong>
-
-                            Не удалось отправить заявку.
-                            Попробуйте позже или позвоните нам.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 ИНФОРМАЦИЯ
-            ================================================== -->
-
-            <section class="info-block">
-
-                <h2>
-
-                    Аренда
-                    <span>разнорабочих</span>
-
-                </h2>
-
-
-                <p class="info-subtitle">
-
-                    Разнорабочие — подсобные рабочие для стройки,
-                    уборки и демонтажа: копка, перенос, уборка территории,
-                    помощь мастерам и широкий круг физических задач.
-
-                </p>
-
-
-            
-
-
-                <div class="info-features">
-
-                    <div class="feature">
-
-                        <i class="fas fa-user-check"></i>
-
-                        Все сотрудники — граждане РК
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <i class="fas fa-handshake"></i>
-
-                        Работаем с физ. и юр. лицами
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <i class="fas fa-lock"></i>
-
-                        Цена фиксируется и не меняется
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <i class="fas fa-credit-card"></i>
-
-                        Оплата любым удобным способом
-
-                    </div>
-
-                </div>
-
-
-                <h3>
-                    В каких случаях вам потребуются услуги разнорабочих?
-                </h3>
-
-
-                <p class="info-subtitle">
-
-                    Наши сотрудники эффективно справляются
-                    с широким спектром задач.
-
-                </p>
-
-
-                <div class="cases-grid">
-
-
-                    <div class="case-item">
-
-                        <strong>
-                            🏢 На склад
-                        </strong>
-
-                        <p>
-                            Погрузо-разгрузочные работы,
-                            перенос и расстановка имущества.
-                        </p>
-
-                    </div>
-
-
-                    <div class="case-item">
-
-                        <strong>
-                            🏭 В цех
-                        </strong>
-
-                        <p>
-                            Различные подсобные задачи
-                            на производстве.
-                        </p>
-
-                    </div>
-
-
-                    <div class="case-item">
-
-                        <strong>
-                            🌳 На дачу
-                        </strong>
-
-                        <p>
-                            Подсобные и строительные работы.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="case-item">
-
-                        <strong>
-                            🚪 В подъезд
-                        </strong>
-
-                        <p>
-                            Уборка помещений, квартир, подъездов после
-                            строительства и кап.ремонта
-                        </p>
-
-                    </div>
-
-
-                    <div class="case-item">
-
-                        <strong>
-                            🏠 В дом
-                        </strong>
-
-                        <p>
-                            Уборка территории, перевозка мебели,
-                            погрузка и бытовые задачи.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <h3>
-                    Стоимость услуг разнорабочих
-                </h3>
-
-
-                <p class="info-subtitle">
-
-                    Мы предлагаем помощь на день или на час.
-                    При расчёте стоимости учитываем:
-
-                </p>
-
-
-                <div class="price-details">
-
-                    <strong>
-                        ✓ сложность задач;
-                    </strong>
-
-                    <br>
-
-                    <strong>
-                        ✓ квалификацию персонала;
-                    </strong>
-
-                    <br>
-
-                    <strong>
-                        ✓ необходимое оборудование и инструменты.
-                    </strong>
-
-                </div>
-
-            </section>
-
-        </section>
-
-
-        <!-- =====================================================
-             ИЩУ РАБОТУ
-        ====================================================== -->
-
-        <section
-            id="workerContent"
-        >
-
-            <div class="worker-page">
-
-                <div class="worker-title">
-
-                    <div class="icon">
-
-                        <i class="fas fa-hard-hat"></i>
-
-                    </div>
-
-
-                    <h2>
-                        Ищу работу
-                    </h2>
-
-
-                    <p>
-
-                        Заполните форму, и мы свяжемся с вами
-                        по поводу подходящих заказов.
-
-                    </p>
-
-                </div>
-
-
-                <div class="worker-form">
-
-                    <form id="workerForm">
-
-
-                        <div class="form-group">
-
-                            <label for="workerName">
-
-                                <i class="fas fa-user"></i>
-
-                                Ваше имя
-
-                            </label>
-
-                            <input
-                                type="text"
-                                id="workerName"
-                                placeholder="Иванов Иван"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="workerPhone">
-
-                                <i class="fas fa-phone-alt"></i>
-
-                                Номер телефона
-
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="workerPhone"
-                                placeholder="+7 (___) ___-__-__"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="workerCity">
-
-                                <i class="fas fa-map-pin"></i>
-
-                                Город
-
-                            </label>
-
-                            <input
-                                type="text"
-                                id="workerCity"
-                                placeholder="Усть-Каменогорск"
-                                required
-                            >
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="submit-btn"
-                            id="workerSubmitBtn"
-                        >
-
-                            <i class="fas fa-paper-plane"></i>
-
-                            Отправить заявку
-
-                        </button>
-
-                    </form>
-
-
-                    <div
-                        class="success-message"
-                        id="workerSuccess"
-                    >
-
-                        <i class="fas fa-check-circle"></i>
-
-                        <strong>Спасибо!</strong>
-
-                        Ваша заявка принята.
-                        Мы свяжемся с вами по поводу работы.
-
-                    </div>
-
-
-                    <div
-                        class="error-message"
-                        id="workerError"
-                    >
-
-                        <i class="fas fa-exclamation-circle"></i>
-
-                        <strong>Ошибка!</strong>
-
-                        Не удалось отправить заявку.
-                        Попробуйте позже.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer
-        class="footer"
-        id="mainFooter"
-    >
-
-        <div class="footer-grid">
-
-
-            <div class="footer-col">
-
-                <h4>
-
-                    <i
-                        class="fas fa-briefcase"
-                        style="margin-right:7px;"
-                    ></i>
-
-                    ЧиД
-
-                </h4>
-
-
-                <p>
-
-                    Агентство по подбору разнорабочих
-                    и грузчиков в Усть-Каменогорске.
-
-                </p>
-
-
-                <div class="footer-social">
-
-                    <a
-                        href="https://t.me/+77770645930"
-                        target="_blank"
-                        aria-label="Telegram"
-                    >
-
-                        <i class="fab fa-telegram-plane"></i>
-
-                    </a>
-
-
-                    <a
-                        href="https://wa.me/77770645930"
-                        target="_blank"
-                        aria-label="WhatsApp"
-                    >
-
-                        <i class="fab fa-whatsapp"></i>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="Instagram"
-                        onclick="alert('Извините, Instagram аккаунт сейчас в доработке 🛠️'); return false;"
-                    >
-
-                        <i class="fab fa-instagram"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-col">
-
-                <h4>
-                    Контакты
-                </h4>
-
-
-                <a href="tel:+77770645930">
-
-                    <i class="fas fa-phone-alt"></i>
-
-                    +7 (747) 789-13-41
-
-                </a>
-
-
-                <a href="mailto:tsarenko77@list.ru">
-
-                    <i class="fas fa-envelope"></i>
-
-                   chid4145@gmail.com
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fas fa-map-marker-alt"></i>
-
-                    Усть-Каменогорск, ВКО
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fas fa-clock"></i>
-
-                    Пн-Пт: 08:00 – 20:00
-
-                </a>
-
-            </div>
-
-
-            <div class="footer-col">
-
-                <h4>
-                    Услуги
-                </h4>
-
-
-                <a href="#">
-
-                    <i class="fas fa-truck"></i>
-
-                    Грузчики
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fas fa-hard-hat"></i>
-
-                    Разнорабочие
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fas fa-building"></i>
-
-                    Подсобные услуги
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fas fa-broom"></i>
-
-                    Уборка помещений
-
-                </a>
-
-            </div>
-
-
-            <div class="footer-col">
-
-                <h4>
-                    Быстрые ссылки
-                </h4>
-
-
-                <a href="#">
-
-                    <i class="fas fa-info-circle"></i>
-
-                    О нас
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fas fa-file-contract"></i>
-
-                    Договор
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            © 2026
-
-            <span>ЧиД</span>
-
-            — Все права защищены.
-
-            Сделано с
-
-            <i
-                class="fas fa-heart"
-                style="color:#fcd34d;"
-            ></i>
-
-            в Казахстане
-
-        </div>
-
-    </footer>
-
-</div>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-
-    /* =========================================================
-       TELEGRAM
-
-       ВСТАВЬ СЮДА СВОИ ДАННЫЕ
-    ========================================================= */
-
-    const TELEGRAM_BOT_TOKEN =
-        'ВСТАВЬ_СЮДА_СВОЙ_ТОКЕН';
-
-    const TELEGRAM_CHAT_ID =
-        'ВСТАВЬ_СЮДА_CHAT_ID';
-
-
-    /* =========================================================
-       ОТПРАВКА В TELEGRAM
-    ========================================================= */
-
-    async function sendToTelegram(
-        name,
-        phone,
-        city = '',
-        type = 'заявка'
-    ) {
-
-        const message =
-            `🔔 Новая ${type} с сайта ЧиД!\n\n` +
-            `👤 Имя: ${name}\n` +
-            `📞 Телефон: ${phone}\n` +
-            (city
-                ? `📍 Город: ${city}\n`
-                : '') +
-            `🕐 Время: ${
-                new Date().toLocaleString('ru-RU')
-            }`;
-
-
-        const url =
-            `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
-
-        try {
-
-            const response = await fetch(
-                url,
-                {
-                    method: 'POST',
-
-                    headers: {
-                        'Content-Type':
-                            'application/json'
-                    },
-
-                    body: JSON.stringify({
-                        chat_id:
-                            TELEGRAM_CHAT_ID,
-
-                        text:
-                            message
-                    })
-                }
-            );
-
-
-            const data =
-                await response.json();
-
-
-            return data.ok;
+            return data.ok === true;
 
         } catch (error) {
 
