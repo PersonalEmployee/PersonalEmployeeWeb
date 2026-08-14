@@ -2663,13 +2663,15 @@
         const customerForm = document.getElementById("customerForm");
         const customerSuccess = document.getElementById("customerSuccess");
         const customerError = document.getElementById("customerError");
+        const fullNameInput = document.getElementById("fullName");
+        const phoneInput = document.getElementById("phone");
 
         if (customerForm) {
             customerForm.addEventListener("submit", function (event) {
                 event.preventDefault();
 
-                const name = document.getElementById("fullName").value.trim();
-                const phone = document.getElementById("phone").value.trim();
+                const name = fullNameInput.value.trim();
+                const phone = phoneInput.value.trim();
 
                 if (!name || !phone) {
                     alert("Пожалуйста, заполните имя и номер телефона.");
@@ -2686,8 +2688,17 @@
                 customerSuccess.style.display = "block";
                 customerError.style.display = "none";
 
+                // Очищаем форму
+                fullNameInput.value = "";
+                phoneInput.value = "";
+
                 const encoded = encodeURIComponent(message);
                 window.location.href = "https://wa.me/77477891341?text=" + encoded;
+
+                // Скрываем сообщение через 5 секунд
+                setTimeout(function () {
+                    customerSuccess.style.display = "none";
+                }, 5000);
             });
         }
 
@@ -2698,14 +2709,17 @@
         const workerForm = document.getElementById("workerForm");
         const workerSuccess = document.getElementById("workerSuccess");
         const workerError = document.getElementById("workerError");
+        const workerNameInput = document.getElementById("workerName");
+        const workerPhoneInput = document.getElementById("workerPhone");
+        const workerCityInput = document.getElementById("workerCity");
 
         if (workerForm) {
             workerForm.addEventListener("submit", function (event) {
                 event.preventDefault();
 
-                const name = document.getElementById("workerName").value.trim();
-                const phone = document.getElementById("workerPhone").value.trim();
-                const city = document.getElementById("workerCity").value.trim();
+                const name = workerNameInput.value.trim();
+                const phone = workerPhoneInput.value.trim();
+                const city = workerCityInput.value.trim();
 
                 if (!name || !phone || !city) {
                     alert("Пожалуйста, заполните имя, телефон и город.");
@@ -2722,8 +2736,18 @@
                 workerSuccess.style.display = "block";
                 workerError.style.display = "none";
 
+                // Очищаем форму
+                workerNameInput.value = "";
+                workerPhoneInput.value = "";
+                workerCityInput.value = "";
+
                 const encoded = encodeURIComponent(message);
                 window.location.href = "https://wa.me/77477891341?text=" + encoded;
+
+                // Скрываем сообщение через 5 секунд
+                setTimeout(function () {
+                    workerSuccess.style.display = "none";
+                }, 5000);
             });
         }
 
@@ -2734,10 +2758,9 @@
         const focusCustomerForm = document.getElementById("focusCustomerForm");
         if (focusCustomerForm) {
             focusCustomerForm.addEventListener("click", function () {
-                const nameInput = document.getElementById("fullName");
-                if (nameInput) {
-                    nameInput.focus();
-                    nameInput.scrollIntoView({ behavior: "smooth", block: "center" });
+                if (fullNameInput) {
+                    fullNameInput.focus();
+                    fullNameInput.scrollIntoView({ behavior: "smooth", block: "center" });
                 }
             });
         }
