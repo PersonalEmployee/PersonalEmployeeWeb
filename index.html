@@ -308,29 +308,23 @@
 
 
         /* =========================================================
-           ШИРОКАЯ ФОТОГРАФИЯ
+           ШИРОКАЯ ФОТОГРАФИЯ — НА ВСЮ ШИРИНУ
         ========================================================= */
 
         .header-image {
-            width: 100%;
-
-            margin: 24px auto 0;
-
-            border-radius: 28px;
-
+            width: 100vw;
+            max-width: 100%;
+            margin: 24px 0 0;
+            border-radius: 0;
             overflow: hidden;
-
             background: #f1f4f9;
-
-            border: 1px solid #e3e9f2;
-
-            box-shadow:
-                0 18px 45px rgba(11, 30, 58, 0.13),
-                0 4px 12px rgba(11, 30, 58, 0.06);
-
+            border: none;
+            box-shadow: none;
             line-height: 0;
-
             position: relative;
+
+            /* смещаем, чтобы выровнять с краями обёртки */
+            transform: translateX(calc(-50% + 50vw));
         }
 
         .header-image::after {
@@ -362,6 +356,32 @@
             object-position: center;
 
             background: #ffffff;
+        }
+
+        /* дополнительный текст на картинке — "Работа / Услуги разнорабочих" */
+        .header-image-text {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: clamp(18px, 3vw, 36px);
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            pointer-events: none;
+            z-index: 2;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.3), transparent);
+            padding: 12px 0;
+        }
+        .header-image-text span {
+            display: inline-block;
+            background: rgba(11, 30, 58, 0.55);
+            padding: 6px 24px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
 
@@ -1355,6 +1375,19 @@
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .header-image {
+                transform: none;
+                width: 100%;
+                border-radius: 18px;
+            }
+            .header-image-text {
+                bottom: 16px;
+                font-size: clamp(14px, 2.5vw, 24px);
+            }
+            .header-image-text span {
+                padding: 4px 16px;
+            }
         }
 
 
@@ -1430,7 +1463,16 @@
             .header-image {
                 margin-top: 17px;
 
-                border-radius: 18px;
+                border-radius: 0;
+                transform: none;
+                width: 100%;
+            }
+            .header-image-text {
+                bottom: 10px;
+                font-size: clamp(12px, 3vw, 18px);
+            }
+            .header-image-text span {
+                padding: 3px 12px;
             }
 
             /* -----------------------------------------------------
@@ -1672,8 +1714,9 @@
 
                 <div class="brand-block">
 
+                    <!-- ИЗМЕНЕНО: "АГЕНТСТВО" → "РАБОТА" -->
                     <div class="agency-title">
-                        АГЕНТСТВО
+                        РАБОТА
                     </div>
 
                     <div class="brand-name">
@@ -1698,7 +1741,7 @@
 
 
                 <!-- =================================================
-                     ФОТО
+                     ФОТО — НА ВСЮ ШИРИНУ + ТЕКСТ
                 ================================================== -->
 
                 <div class="header-image">
@@ -1707,6 +1750,11 @@
                         src="WhatsApp Image 2026-08-11 at 11.36.55.jpeg"
                         alt="ЧиД — Нужные руки рядом!"
                     >
+
+                    <!-- ДОБАВЛЕНО: текст на картинке -->
+                    <div class="header-image-text">
+                        <span>Работа / Услуги разнорабочих</span>
+                    </div>
 
                 </div>
 
@@ -1718,7 +1766,7 @@
 
 
     <!-- =========================================================
-         ПРИВЕТСТВЕННОЕ ОКНО
+         ПРИВЕТСТВЕННОЕ ОКНО (УБРАНЫ НАДПИСИ)
     ========================================================== -->
 
     <div
@@ -1785,8 +1833,8 @@
             </div>
 
 
-            <div class="welcome-bottom">
-
+            <!-- УБРАНЫ надписи "Надёжные специалисты" и "Быстрый выезд" -->
+            <div class="welcome-bottom" style="display: none;">
                 <i class="fas fa-shield-alt"></i>
                 Надёжные специалисты
 
@@ -1794,7 +1842,6 @@
 
                 <i class="fas fa-clock"></i>
                 Быстрый выезд
-
             </div>
 
         </div>
@@ -3115,4 +3162,3 @@
 
 </body>
 </html>
-```
