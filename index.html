@@ -7,7 +7,7 @@
 
     <title>ЧиД — Нужные руки рядом!</title>
 
-    <!-- Шрифт Inter -->
+    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -40,11 +40,14 @@
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(
-                145deg,
-                #eef3fa 0%,
-                #d9e2f0 100%
-            );
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #eef3fa 0%,
+                    #d9e2f0 100%
+                );
+
             min-height: 100vh;
             color: #0b1e3a;
         }
@@ -61,18 +64,27 @@
 
         .main-wrapper {
             width: min(1440px, calc(100% - 32px));
+
             margin: 16px auto;
+
             background: #ffffff;
+
             border-radius: 32px;
-            box-shadow: 0 30px 70px rgba(0, 20, 40, 0.22);
+
+            box-shadow:
+                0 30px 70px rgba(0, 20, 40, 0.22);
+
             overflow: hidden;
+
             position: relative;
         }
 
         .container {
             width: 100%;
             max-width: 1400px;
+
             margin: 0 auto;
+
             padding: 20px 40px;
         }
 
@@ -84,11 +96,15 @@
         .top-bar {
             background: #0b1426;
             color: #e8edf5;
+
             padding: 12px 36px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             gap: 15px 30px;
+
             font-size: 14px;
             font-weight: 500;
         }
@@ -97,7 +113,9 @@
         .right-group {
             display: flex;
             align-items: center;
+
             flex-wrap: wrap;
+
             gap: 12px 28px;
         }
 
@@ -120,6 +138,7 @@
         .right-group a {
             color: #e8edf5;
             text-decoration: none;
+
             transition: 0.2s ease;
         }
 
@@ -145,7 +164,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
             text-align: center;
+
             padding: 18px 0 24px;
         }
 
@@ -157,23 +178,32 @@
         .brand-block {
             display: flex;
             flex-direction: column;
+
             align-items: center;
             justify-content: center;
+
             text-align: center;
+
             margin: 0 auto;
         }
 
         .agency-title {
             color: #71839c;
+
             font-size: clamp(13px, 1.5vw, 18px);
+
             font-weight: 800;
+
             letter-spacing: 7px;
+
             text-transform: uppercase;
+
             margin-bottom: 4px;
         }
 
         .brand-name {
             position: relative;
+
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -181,21 +211,28 @@
 
         .brand-mark {
             position: relative;
+
             display: inline-block;
+
             font-size: clamp(62px, 7vw, 94px);
+
             line-height: 0.9;
+
             font-weight: 900;
+
             letter-spacing: -5px;
 
-            background: linear-gradient(
-                135deg,
-                #143a65 0%,
-                #1e4f8a 45%,
-                #2f72ba 100%
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #143a65 0%,
+                    #1e4f8a 45%,
+                    #2f72ba 100%
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
             background-clip: text;
 
             text-shadow:
@@ -215,6 +252,7 @@
             top: 5px;
 
             background: #f5b81b;
+
             border-radius: 50%;
 
             box-shadow:
@@ -223,45 +261,59 @@
 
         .brand-slogan {
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             gap: 13px;
+
             margin-top: 12px;
+
             color: #d49a00;
+
             font-size: clamp(14px, 1.7vw, 20px);
+
             font-weight: 800;
+
             letter-spacing: 1.2px;
+
             text-transform: uppercase;
         }
 
         .slogan-line {
             display: block;
+
             width: clamp(35px, 6vw, 85px);
+
             height: 2px;
+
             border-radius: 10px;
 
-            background: linear-gradient(
-                90deg,
-                transparent,
-                #f5b81b
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #f5b81b
+                );
         }
 
         .slogan-line:last-child {
-            background: linear-gradient(
-                90deg,
-                #f5b81b,
-                transparent
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #f5b81b,
+                    transparent
+                );
         }
 
 
         /* =========================================================
-           ФОТО
+           ШИРОКАЯ ФОТОГРАФИЯ — НА ВСЮ ШИРИНУ
         ========================================================= */
 
         .header-image {
-            width: 100%;
+            width: 100vw;
+            max-width: 100%;
             margin: 24px 0 0;
             border-radius: 0;
             overflow: hidden;
@@ -270,16 +322,66 @@
             box-shadow: none;
             line-height: 0;
             position: relative;
+
+            /* смещаем, чтобы выровнять с краями обёртки */
+            transform: translateX(calc(-50% + 50vw));
+        }
+
+        .header-image::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255,255,255,0.04),
+                    rgba(11,30,58,0.04)
+                );
         }
 
         .header-image img {
             display: block;
+
             width: 100%;
             height: auto;
+
             max-width: 100%;
+
             object-fit: contain;
             object-position: center;
+
             background: #ffffff;
+        }
+
+        /* дополнительный текст на картинке — "Работа / Услуги разнорабочих" */
+        .header-image-text {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: clamp(18px, 3vw, 36px);
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            pointer-events: none;
+            z-index: 2;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.3), transparent);
+            padding: 12px 0;
+        }
+        .header-image-text span {
+            display: inline-block;
+            background: rgba(11, 30, 58, 0.55);
+            padding: 6px 24px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
 
@@ -289,24 +391,29 @@
 
         .welcome-overlay {
             position: fixed;
+
             inset: 0;
+
             width: 100%;
             height: 100dvh;
 
-            background: linear-gradient(
-                135deg,
-                rgba(8, 18, 35, 0.96),
-                rgba(30, 79, 138, 0.94)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(8, 18, 35, 0.96),
+                    rgba(30, 79, 138, 0.94)
+                );
 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
 
             display: flex;
+
             justify-content: center;
             align-items: center;
 
             padding: 16px;
+
             z-index: 9999;
 
             transition:
@@ -324,6 +431,7 @@
             width: min(650px, 100%);
 
             background: #ffffff;
+
             border-radius: 28px;
 
             padding: 32px 40px 28px;
@@ -334,6 +442,7 @@
                 0 35px 90px rgba(0, 0, 0, 0.45);
 
             position: relative;
+
             overflow: hidden;
         }
 
@@ -348,12 +457,13 @@
             width: 100%;
             height: 5px;
 
-            background: linear-gradient(
-                90deg,
-                #1e4f8a,
-                #f5b81b,
-                #1e4f8a
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #1e4f8a,
+                    #f5b81b,
+                    #1e4f8a
+                );
         }
 
         .welcome-icon {
@@ -389,30 +499,28 @@
 
         .welcome-card h1 {
             font-size: clamp(27px, 4vw, 40px);
+
             line-height: 1.1;
+
             font-weight: 900;
+
             color: #0b1e3a;
+
             margin-bottom: 11px;
         }
 
         .welcome-card h1 span {
-            background: linear-gradient(
-                135deg,
-                #1e4f8a,
-                #f5b81b
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #1e4f8a,
+                    #f5b81b
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
 
-        .welcome-tagline {
-            font-size: clamp(16px, 2vw, 22px);
-            font-weight: 700;
-            color: #1e4f8a;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
+            background-clip: text;
         }
 
         .divider {
@@ -423,11 +531,12 @@
 
             border-radius: 10px;
 
-            background: linear-gradient(
-                90deg,
-                #1e4f8a,
-                #f5b81b
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #1e4f8a,
+                    #f5b81b
+                );
         }
 
         .welcome-subtitle {
@@ -436,6 +545,7 @@
             margin: 0 auto 19px;
 
             font-size: 15px;
+
             line-height: 1.5;
 
             color: #4a6180;
@@ -443,23 +553,29 @@
 
         .welcome-buttons {
             display: flex;
+
             justify-content: center;
+
             gap: 12px;
         }
 
         .btn-choice {
             border: none;
+
             border-radius: 60px;
 
             padding: 14px 24px;
+
             min-width: 190px;
 
             font-size: 16px;
+
             font-weight: 700;
 
             cursor: pointer;
 
             display: inline-flex;
+
             justify-content: center;
             align-items: center;
 
@@ -474,6 +590,7 @@
 
         .btn-choice.primary {
             color: #ffffff;
+
             background: #1e4f8a;
 
             box-shadow:
@@ -486,6 +603,7 @@
 
         .btn-choice.secondary {
             color: #0b1e3a;
+
             background: #fcd34d;
 
             box-shadow:
@@ -498,12 +616,15 @@
 
         .welcome-bottom {
             margin-top: 15px;
+
             font-size: 12px;
+
             color: #8a9bb5;
         }
 
         .welcome-bottom i {
             color: #fcd34d;
+
             margin: 0 4px;
         }
 
@@ -514,6 +635,7 @@
 
         .main-content {
             display: none;
+
             animation: fadeUp 0.45s ease;
         }
 
@@ -541,19 +663,24 @@
 
         .customer-content {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 28px;
+
             margin: 20px 0;
         }
 
         .services,
         .contact {
             flex: 1;
+
             min-width: 320px;
 
             background: #ffffff;
 
             border: 1px solid #e9eef5;
+
             border-radius: 24px;
 
             padding: 30px;
@@ -564,12 +691,15 @@
 
         .services h2 {
             color: #0b1e3a;
+
             font-size: 25px;
+
             font-weight: 800;
 
             border-bottom: 4px solid #1e4f8a;
 
             padding-bottom: 13px;
+
             margin-bottom: 15px;
         }
 
@@ -585,6 +715,7 @@
             color: #1e2f45;
 
             font-size: 16px;
+
             line-height: 1.5;
         }
 
@@ -598,6 +729,7 @@
             color: #1e4f8a;
 
             font-size: 22px;
+
             font-weight: 700;
 
             margin-right: 10px;
@@ -610,13 +742,17 @@
 
         .contact-options {
             display: flex;
+
             flex-direction: column;
+
             gap: 10px;
+
             margin-bottom: 20px;
         }
 
         .contact-option {
             display: flex;
+
             align-items: center;
 
             padding: 11px 14px;
@@ -624,18 +760,23 @@
             border-radius: 15px;
 
             background: #f8faff;
+
             border: 1px solid transparent;
 
             color: #1e2f45;
+
             font-weight: 600;
 
             cursor: pointer;
+
             transition: 0.2s;
         }
 
         .contact-option:hover {
             background: #eef4ff;
+
             border-color: #1e4f8a;
+
             transform: translateX(4px);
         }
 
@@ -648,10 +789,12 @@
             border-radius: 12px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             color: white;
+
             font-size: 18px;
         }
 
@@ -690,6 +833,7 @@
         .contact-form h3,
         .worker-form h2 {
             color: #0b1e3a;
+
             margin-bottom: 18px;
         }
 
@@ -709,11 +853,13 @@
             color: #2a405a;
 
             font-size: 14px;
+
             font-weight: 600;
         }
 
         .form-group label i {
             color: #1e4f8a;
+
             margin-right: 5px;
         }
 
@@ -729,6 +875,7 @@
             background: #ffffff;
 
             font-size: 16px;
+
             color: #0b1e3a;
 
             outline: none;
@@ -749,17 +896,21 @@
             padding: 15px 20px;
 
             border: none;
+
             border-radius: 60px;
 
             background: #1e4f8a;
+
             color: #ffffff;
 
             font-size: 16px;
+
             font-weight: 700;
 
             cursor: pointer;
 
             display: flex;
+
             justify-content: center;
             align-items: center;
 
@@ -779,7 +930,9 @@
 
         .submit-btn:disabled {
             opacity: 0.7;
+
             cursor: not-allowed;
+
             transform: none;
         }
 
@@ -798,11 +951,13 @@
 
         .worker-page {
             max-width: 760px;
+
             margin: 30px auto 40px;
         }
 
         .worker-title {
             text-align: center;
+
             margin-bottom: 22px;
         }
 
@@ -813,12 +968,14 @@
             margin: 0 auto 13px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             border-radius: 20px;
 
             background: #eef4ff;
+
             color: #1e4f8a;
 
             font-size: 28px;
@@ -826,14 +983,19 @@
 
         .worker-title h2 {
             font-size: 31px;
+
             font-weight: 900;
+
             color: #0b1e3a;
+
             margin-bottom: 7px;
         }
 
         .worker-title p {
             color: #5c708b;
+
             font-size: 15px;
+
             line-height: 1.5;
         }
 
@@ -864,25 +1026,32 @@
             text-align: center;
 
             font-size: 14px;
+
             line-height: 1.5;
         }
 
         .success-message {
             color: #166534;
+
             background: #dcfce7;
+
             border: 1px solid #86efac;
         }
 
         .error-message {
             color: #991b1b;
+
             background: #fee2e2;
+
             border: 1px solid #fca5a5;
         }
 
         .success-message i,
         .error-message i {
             display: block;
+
             font-size: 25px;
+
             margin-bottom: 5px;
         }
 
@@ -895,6 +1064,7 @@
             background: #ffffff;
 
             border: 1px solid #e8eef5;
+
             border-radius: 25px;
 
             padding: 38px;
@@ -907,6 +1077,7 @@
 
         .info-block h2 {
             font-size: 30px;
+
             margin-bottom: 11px;
         }
 
@@ -918,9 +1089,28 @@
             color: #4a6180;
 
             font-size: 16px;
+
             line-height: 1.65;
 
             margin-bottom: 20px;
+        }
+
+        .price-tag {
+            display: inline-block;
+
+            padding: 10px 22px;
+
+            border-radius: 60px;
+
+            background: #1e4f8a;
+
+            color: #ffffff;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            margin-bottom: 22px;
         }
 
         .info-features {
@@ -935,6 +1125,7 @@
 
         .feature {
             display: flex;
+
             align-items: center;
 
             gap: 11px;
@@ -944,19 +1135,23 @@
             border-radius: 15px;
 
             background: #f8faff;
+
             border: 1px solid #e8eef7;
 
             font-size: 14px;
+
             color: #1e2f45;
         }
 
         .feature i {
             color: #1e4f8a;
+
             font-size: 19px;
         }
 
         .info-block h3 {
             font-size: 22px;
+
             margin: 26px 0 11px;
         }
 
@@ -980,7 +1175,9 @@
 
         .case-item strong {
             display: block;
+
             margin-bottom: 6px;
+
             color: #0b1e3a;
         }
 
@@ -988,6 +1185,7 @@
             color: #5b708b;
 
             font-size: 14px;
+
             line-height: 1.5;
         }
 
@@ -1068,11 +1266,13 @@
 
         .footer-col a:hover {
             color: #fcd34d;
+
             transform: translateX(3px);
         }
 
         .footer-col a i {
             width: 18px;
+
             color: #fcd34d;
         }
 
@@ -1095,7 +1295,7 @@
             justify-content: center;
             align-items: center;
 
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255,255,255,0.06);
 
             border-radius: 50%;
 
@@ -1106,7 +1306,9 @@
 
         .footer-social a:hover {
             background: #fcd34d;
+
             color: #0b1426;
+
             transform: translateY(-3px);
         }
 
@@ -1139,13 +1341,17 @@
 
             .main-wrapper {
                 width: calc(100% - 20px);
+
                 margin: 10px auto;
+
                 border-radius: 22px;
             }
 
             .top-bar {
                 flex-direction: column;
+
                 text-align: center;
+
                 padding: 11px 18px;
             }
 
@@ -1171,8 +1377,16 @@
             }
 
             .header-image {
+                transform: none;
                 width: 100%;
                 border-radius: 18px;
+            }
+            .header-image-text {
+                bottom: 16px;
+                font-size: clamp(14px, 2.5vw, 24px);
+            }
+            .header-image-text span {
+                padding: 4px 16px;
             }
         }
 
@@ -1189,8 +1403,11 @@
 
             .main-wrapper {
                 width: 100%;
+
                 margin: 0;
+
                 border-radius: 0;
+
                 box-shadow: none;
             }
 
@@ -1200,6 +1417,7 @@
 
             .top-bar {
                 font-size: 12px;
+
                 gap: 8px;
             }
 
@@ -1210,25 +1428,31 @@
 
             .agency-title {
                 font-size: 12px;
+
                 letter-spacing: 5px;
             }
 
             .brand-mark {
                 font-size: 62px;
+
                 letter-spacing: -3px;
             }
 
             .brand-mark::after {
                 width: 17px;
                 height: 17px;
+
                 right: -12px;
                 top: 3px;
             }
 
             .brand-slogan {
                 gap: 8px;
+
                 margin-top: 9px;
+
                 font-size: 11px;
+
                 letter-spacing: 0.5px;
             }
 
@@ -1238,9 +1462,23 @@
 
             .header-image {
                 margin-top: 17px;
+
                 border-radius: 0;
+                transform: none;
                 width: 100%;
             }
+            .header-image-text {
+                bottom: 10px;
+                font-size: clamp(12px, 3vw, 18px);
+            }
+            .header-image-text span {
+                padding: 3px 12px;
+            }
+
+            /* -----------------------------------------------------
+               ПРИВЕТСТВЕННОЕ ОКНО:
+               НЕ СКРОЛЛИТСЯ
+            ----------------------------------------------------- */
 
             .welcome-overlay {
                 padding: 10px;
@@ -1248,27 +1486,29 @@
 
             .welcome-card {
                 width: 100%;
+
                 padding: 24px 17px 20px;
+
                 border-radius: 22px;
+
                 max-height: none;
+
                 overflow: hidden;
             }
 
             .welcome-icon {
                 width: 50px;
                 height: 50px;
+
                 font-size: 27px;
+
                 margin-bottom: 7px;
             }
 
             .welcome-card h1 {
                 font-size: 25px;
-                margin-bottom: 8px;
-            }
 
-            .welcome-tagline {
-                font-size: 14px;
-                margin-bottom: 10px;
+                margin-bottom: 8px;
             }
 
             .divider {
@@ -1277,31 +1517,40 @@
 
             .welcome-subtitle {
                 font-size: 13px;
+
                 line-height: 1.4;
+
                 margin-bottom: 14px;
             }
 
             .welcome-buttons {
                 flex-direction: column;
+
                 gap: 8px;
             }
 
             .btn-choice {
                 width: 100%;
+
                 min-width: 0;
+
                 padding: 13px 18px;
+
                 font-size: 14px;
             }
 
             .welcome-bottom {
                 font-size: 10px;
+
                 line-height: 1.4;
+
                 margin-top: 11px;
             }
 
             .services,
             .contact {
                 min-width: 0;
+
                 padding: 22px 17px;
             }
 
@@ -1343,11 +1592,13 @@
 
             .footer {
                 padding: 28px 18px 18px;
+
                 border-radius: 20px;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
+
                 gap: 23px;
             }
         }
@@ -1366,18 +1617,16 @@
             .welcome-icon {
                 width: 45px;
                 height: 45px;
+
                 font-size: 24px;
+
                 margin-bottom: 5px;
             }
 
             .welcome-card h1 {
                 font-size: 27px;
-                margin-bottom: 7px;
-            }
 
-            .welcome-tagline {
-                font-size: 14px;
-                margin-bottom: 8px;
+                margin-bottom: 7px;
             }
 
             .divider {
@@ -1386,7 +1635,9 @@
 
             .welcome-subtitle {
                 font-size: 13px;
+
                 line-height: 1.35;
+
                 margin-bottom: 12px;
             }
 
@@ -1431,7 +1682,7 @@
 
         <div class="right-group">
 
-            <a href="mailto:chid4145@gmail.com?subject=Заявка с сайта ЧиД">
+            <a href="mailto:tsarenko77@list.ru?subject=Заявка с сайта ЧиД">
                 <i class="fas fa-envelope"></i>
                 chid4145@gmail.com
             </a>
@@ -1441,7 +1692,7 @@
                 08:00 – 20:00
             </span>
 
-            <a href="tel:+77477891341">
+            <a href="tel:+77770645930">
                 <i class="fas fa-phone-alt"></i>
                 +7 (747) 789-13-41
             </a>
@@ -1463,16 +1714,15 @@
 
                 <div class="brand-block">
 
+                    <!-- ИЗМЕНЕНО: "АГЕНТСТВО" → "РАБОТА" -->
                     <div class="agency-title">
                         РАБОТА
                     </div>
 
                     <div class="brand-name">
-
                         <div class="brand-mark">
                             ЧиД
                         </div>
-
                     </div>
 
                     <div class="brand-slogan">
@@ -1490,7 +1740,9 @@
                 </div>
 
 
-                <!-- ФОТО -->
+                <!-- =================================================
+                     ФОТО — НА ВСЮ ШИРИНУ + ТЕКСТ
+                ================================================== -->
 
                 <div class="header-image">
 
@@ -1498,6 +1750,11 @@
                         src="WhatsApp Image 2026-08-11 at 11.36.55.jpeg"
                         alt="ЧиД — Нужные руки рядом!"
                     >
+
+                    <!-- ДОБАВЛЕНО: текст на картинке -->
+                    <div class="header-image-text">
+                        <span>Работа / Услуги разнорабочих</span>
+                    </div>
 
                 </div>
 
@@ -1509,7 +1766,7 @@
 
 
     <!-- =========================================================
-         ПРИВЕТСТВЕННОЕ ОКНО
+         ПРИВЕТСТВЕННОЕ ОКНО (УБРАНЫ НАДПИСИ)
     ========================================================== -->
 
     <div
@@ -1533,11 +1790,6 @@
                 <span>ЧиД</span>
 
             </h1>
-
-
-            <div class="welcome-tagline">
-                Работа / Услуги разнорабочих
-            </div>
 
 
             <div class="divider"></div>
@@ -1578,6 +1830,18 @@
 
                 </button>
 
+            </div>
+
+
+            <!-- УБРАНЫ надписи "Надёжные специалисты" и "Быстрый выезд" -->
+            <div class="welcome-bottom" style="display: none;">
+                <i class="fas fa-shield-alt"></i>
+                Надёжные специалисты
+
+                <span style="margin: 0 7px;">|</span>
+
+                <i class="fas fa-clock"></i>
+                Быстрый выезд
             </div>
 
         </div>
@@ -1642,11 +1906,9 @@
                     <div class="contact-options">
 
 
-                        <!-- TELEGRAM -->
-
                         <div
                             class="contact-option"
-                            onclick="window.open('https://t.me/', '_blank')"
+                            onclick="window.open('https://t.me/+77477891341', '_blank')"
                         >
 
                             <div class="icon icon-telegram">
@@ -1660,11 +1922,9 @@
                         </div>
 
 
-                        <!-- WHATSAPP -->
-
                         <div
                             class="contact-option"
-                            onclick="window.open('https://wa.me/77477891341', '_blank')"
+                            onclick="window.open('https://wa.me/+77477891341', '_blank')"
                         >
 
                             <div class="icon icon-whatsapp">
@@ -1677,8 +1937,6 @@
 
                         </div>
 
-
-                        <!-- EMAIL -->
 
                         <div
                             class="contact-option"
@@ -1695,8 +1953,6 @@
 
                         </div>
 
-
-                        <!-- ЗАЯВКА -->
 
                         <div
                             class="contact-option"
@@ -1848,6 +2104,9 @@
                 </p>
 
 
+            
+
+
                 <div class="info-features">
 
                     <div class="feature">
@@ -1945,6 +2204,7 @@
                     </div>
 
 
+
                     <div class="case-item">
 
                         <strong>
@@ -1953,7 +2213,7 @@
 
                         <p>
                             Уборка помещений, квартир, подъездов после
-                            строительства и кап. ремонта.
+                            строительства и кап.ремонта
                         </p>
 
                     </div>
@@ -2017,7 +2277,9 @@
              ИЩУ РАБОТУ
         ====================================================== -->
 
-        <section id="workerContent">
+        <section
+            id="workerContent"
+        >
 
             <div class="worker-page">
 
@@ -2200,9 +2462,8 @@
                 <div class="footer-social">
 
                     <a
-                        href="https://t.me/"
+                        href="https://t.me/+77770645930"
                         target="_blank"
-                        rel="noopener noreferrer"
                         aria-label="Telegram"
                     >
 
@@ -2212,9 +2473,8 @@
 
 
                     <a
-                        href="https://wa.me/77477891341"
+                        href="https://wa.me/77770645930"
                         target="_blank"
-                        rel="noopener noreferrer"
                         aria-label="WhatsApp"
                     >
 
@@ -2245,7 +2505,7 @@
                 </h4>
 
 
-                <a href="tel:+77477891341">
+                <a href="tel:+77770645930">
 
                     <i class="fas fa-phone-alt"></i>
 
@@ -2254,11 +2514,11 @@
                 </a>
 
 
-                <a href="mailto:chid4145@gmail.com">
+                <a href="mailto:tsarenko77@list.ru">
 
                     <i class="fas fa-envelope"></i>
 
-                    chid4145@gmail.com
+                   chid4145@gmail.com
 
                 </a>
 
@@ -2387,10 +2647,11 @@
 
 <script>
 
+
     /* =========================================================
        TELEGRAM
-       
-       ОБЯЗАТЕЛЬНО ЗАМЕНИ ЭТИ ДВА ЗНАЧЕНИЯ
+
+       ВСТАВЬ СЮДА СВОИ ДАННЫЕ
     ========================================================= */
 
     const TELEGRAM_BOT_TOKEN =
@@ -2415,8 +2676,12 @@
             `🔔 Новая ${type} с сайта ЧиД!\n\n` +
             `👤 Имя: ${name}\n` +
             `📞 Телефон: ${phone}\n` +
-            (city ? `📍 Город: ${city}\n` : '') +
-            `🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
+            (city
+                ? `📍 Город: ${city}\n`
+                : '') +
+            `🕐 Время: ${
+                new Date().toLocaleString('ru-RU')
+            }`;
 
 
         const url =
@@ -2431,12 +2696,16 @@
                     method: 'POST',
 
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type':
+                            'application/json'
                     },
 
                     body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: message
+                        chat_id:
+                            TELEGRAM_CHAT_ID,
+
+                        text:
+                            message
                     })
                 }
             );
@@ -2446,10 +2715,7 @@
                 await response.json();
 
 
-            console.log('Telegram response:', data);
-
-
-            return data.ok === true;
+            return data.ok;
 
         } catch (error) {
 
