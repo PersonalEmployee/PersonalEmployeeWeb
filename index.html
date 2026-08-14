@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ЧиД — Нужные руки рядом!</title>
+    <title>ЧиД — Работа / Услуги разнорабочих</title>
 
     <!-- Шрифт -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,12 @@
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(145deg, #eef3fa 0%, #d9e2f0 100%);
+            background:
+                linear-gradient(
+                    145deg,
+                    #eef3fa 0%,
+                    #d9e2f0 100%
+                );
             min-height: 100vh;
             color: #0b1e3a;
         }
@@ -54,7 +59,6 @@
             font-family: inherit;
         }
 
-
         /* =========================================================
            ОСНОВНАЯ ОБЁРТКА
         ========================================================= */
@@ -62,20 +66,27 @@
         .main-wrapper {
             width: min(1440px, calc(100% - 32px));
             margin: 16px auto;
+
             background: #ffffff;
+
             border-radius: 32px;
-            box-shadow: 0 30px 70px rgba(0, 20, 40, 0.22);
+
+            box-shadow:
+                0 30px 70px rgba(0, 20, 40, 0.22);
+
             overflow: hidden;
+
             position: relative;
         }
 
         .container {
             width: 100%;
             max-width: 1400px;
+
             margin: 0 auto;
+
             padding: 20px 40px;
         }
-
 
         /* =========================================================
            TOP BAR
@@ -84,11 +95,15 @@
         .top-bar {
             background: #0b1426;
             color: #e8edf5;
+
             padding: 12px 36px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             gap: 15px 30px;
+
             font-size: 14px;
             font-weight: 500;
         }
@@ -97,7 +112,9 @@
         .right-group {
             display: flex;
             align-items: center;
+
             flex-wrap: wrap;
+
             gap: 12px 28px;
         }
 
@@ -131,7 +148,6 @@
             color: #b9c7e0;
         }
 
-
         /* =========================================================
            HEADER
         ========================================================= */
@@ -145,10 +161,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            padding: 18px 0 0;
-        }
 
+            text-align: center;
+
+            padding: 20px 0 0;
+        }
 
         /* =========================================================
            БРЕНД
@@ -157,23 +174,49 @@
         .brand-block {
             display: flex;
             flex-direction: column;
+
             align-items: center;
             justify-content: center;
+
             text-align: center;
-            margin: 0 auto;
+
+            width: 100%;
         }
 
         .agency-title {
-            color: #71839c;
-            font-size: clamp(13px, 1.5vw, 18px);
-            font-weight: 800;
-            letter-spacing: 7px;
+            color: #1e4f8a;
+
+            font-size: clamp(22px, 3vw, 38px);
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
             text-transform: uppercase;
-            margin-bottom: 4px;
+
+            margin-bottom: 5px;
+
+            line-height: 1.1;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #143a65 0%,
+                    #1e4f8a 45%,
+                    #f5b81b 100%
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            text-shadow:
+                0 8px 25px rgba(30, 79, 138, 0.12);
         }
 
         .brand-name {
             position: relative;
+
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -181,21 +224,28 @@
 
         .brand-mark {
             position: relative;
+
             display: inline-block;
+
             font-size: clamp(62px, 7vw, 94px);
+
             line-height: 0.9;
+
             font-weight: 900;
+
             letter-spacing: -5px;
 
-            background: linear-gradient(
-                135deg,
-                #143a65 0%,
-                #1e4f8a 45%,
-                #2f72ba 100%
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #143a65 0%,
+                    #1e4f8a 45%,
+                    #2f72ba 100%
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
             background-clip: text;
 
             text-shadow:
@@ -215,6 +265,7 @@
             top: 5px;
 
             background: #f5b81b;
+
             border-radius: 50%;
 
             box-shadow:
@@ -223,17 +274,22 @@
 
         .brand-slogan {
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             gap: 13px;
+
             margin-top: 12px;
 
             color: #d49a00;
 
             font-size: clamp(14px, 1.7vw, 20px);
+
             font-weight: 800;
+
             letter-spacing: 1.2px;
+
             text-transform: uppercase;
         }
 
@@ -241,70 +297,90 @@
             display: block;
 
             width: clamp(35px, 6vw, 85px);
+
             height: 2px;
 
             border-radius: 10px;
 
-            background: linear-gradient(
-                90deg,
-                transparent,
-                #f5b81b
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #f5b81b
+                );
         }
 
         .slogan-line:last-child {
-            background: linear-gradient(
-                90deg,
-                #f5b81b,
-                transparent
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #f5b81b,
+                    transparent
+                );
         }
 
-
         /* =========================================================
-           ФОТО
-           
-           Никакого дополнительного текста поверх картинки.
+           КАРТИНКА НА ВСЮ ШИРИНУ ЭКРАНА
         ========================================================= */
 
         .header-image {
-            width: 100%;
+            width: 100vw;
+
+            height: clamp(280px, 38vw, 560px);
+
             margin-top: 24px;
+
+            margin-left: calc(50% - 50vw);
+
             overflow: hidden;
-            background: #f1f4f9;
-            line-height: 0;
+
             position: relative;
-        }
 
-        .header-image::after {
-            content: "";
+            background: #dfe7f2;
 
-            position: absolute;
-            inset: 0;
-
-            pointer-events: none;
-
-            background: linear-gradient(
-                180deg,
-                rgba(255,255,255,0.02),
-                rgba(11,30,58,0.04)
-            );
+            line-height: 0;
         }
 
         .header-image img {
             display: block;
 
             width: 100%;
-            height: auto;
-
-            min-height: 250px;
+            height: 100%;
 
             object-fit: cover;
-            object-position: center;
 
-            background: #ffffff;
+            object-position: center;
         }
 
+        /*
+           Небольшой затемняющий слой,
+           чтобы картинка выглядела дороже.
+        */
+
+        .header-image::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(11, 30, 58, 0.02),
+                    rgba(11, 30, 58, 0.08)
+                );
+        }
+
+        /*
+           В режиме "Ищу работу" картинка полностью исчезает.
+        */
+
+        body.worker-mode .header-image {
+            display: none;
+        }
 
         /* =========================================================
            ПРИВЕТСТВЕННОЕ ОКНО
@@ -318,11 +394,12 @@
             width: 100%;
             height: 100dvh;
 
-            background: linear-gradient(
-                135deg,
-                rgba(8, 18, 35, 0.96),
-                rgba(30, 79, 138, 0.94)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(8, 18, 35, 0.97),
+                    rgba(30, 79, 138, 0.96)
+                );
 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -348,13 +425,13 @@
         }
 
         .welcome-card {
-            width: min(650px, 100%);
+            width: min(680px, 100%);
 
             background: #ffffff;
 
-            border-radius: 28px;
+            border-radius: 30px;
 
-            padding: 32px 40px 28px;
+            padding: 38px 42px 30px;
 
             text-align: center;
 
@@ -375,21 +452,22 @@
             top: 0;
 
             width: 100%;
-            height: 5px;
+            height: 6px;
 
-            background: linear-gradient(
-                90deg,
-                #1e4f8a,
-                #f5b81b,
-                #1e4f8a
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #1e4f8a,
+                    #f5b81b,
+                    #1e4f8a
+                );
         }
 
         .welcome-icon {
-            width: 64px;
-            height: 64px;
+            width: 68px;
+            height: 68px;
 
-            margin: 0 auto 10px;
+            margin: 0 auto 12px;
 
             display: flex;
             align-items: center;
@@ -399,7 +477,7 @@
 
             background: #eef4ff;
 
-            font-size: 34px;
+            font-size: 35px;
 
             animation: float 3s ease-in-out infinite;
         }
@@ -417,7 +495,7 @@
         }
 
         .welcome-card h1 {
-            font-size: clamp(27px, 4vw, 40px);
+            font-size: clamp(28px, 4vw, 42px);
 
             line-height: 1.1;
 
@@ -429,11 +507,12 @@
         }
 
         .welcome-card h1 span {
-            background: linear-gradient(
-                135deg,
-                #1e4f8a,
-                #f5b81b
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #1e4f8a,
+                    #f5b81b
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -441,43 +520,66 @@
             background-clip: text;
         }
 
-        /* НОВАЯ НАДПИСЬ ПОД ЧиД */
+        /* =========================================================
+           НОВАЯ НАДПИСЬ ПОД ДОБРО ПОЖАЛОВАТЬ
+        ========================================================= */
 
-        .welcome-work-title {
-            font-size: clamp(15px, 2vw, 19px);
+        .welcome-service-title {
+            display: inline-block;
 
-            font-weight: 800;
+            margin: 2px auto 16px;
+
+            padding: 9px 20px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef4ff,
+                    #fff8dc
+                );
+
+            border: 1px solid rgba(245, 184, 27, 0.35);
 
             color: #1e4f8a;
 
-            margin-bottom: 15px;
+            font-size: clamp(15px, 2.2vw, 21px);
 
-            letter-spacing: 0.3px;
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            box-shadow:
+                0 8px 22px rgba(30, 79, 138, 0.10);
         }
 
         .divider {
-            width: 55px;
+            width: 60px;
             height: 4px;
 
-            margin: 0 auto 15px;
+            margin: 0 auto 16px;
 
             border-radius: 10px;
 
-            background: linear-gradient(
-                90deg,
-                #1e4f8a,
-                #f5b81b
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #1e4f8a,
+                    #f5b81b
+                );
         }
 
         .welcome-subtitle {
-            max-width: 540px;
+            max-width: 550px;
 
-            margin: 0 auto 19px;
+            margin: 0 auto 21px;
 
             font-size: 15px;
 
-            line-height: 1.5;
+            line-height: 1.55;
 
             color: #4a6180;
         }
@@ -495,9 +597,9 @@
 
             border-radius: 60px;
 
-            padding: 14px 24px;
+            padding: 15px 25px;
 
-            min-width: 190px;
+            min-width: 200px;
 
             font-size: 16px;
 
@@ -545,15 +647,6 @@
             background: #fbbf24;
         }
 
-        .welcome-bottom {
-            margin-top: 15px;
-
-            font-size: 12px;
-
-            color: #8a9bb5;
-        }
-
-
         /* =========================================================
            ОСНОВНОЙ КОНТЕНТ
         ========================================================= */
@@ -581,9 +674,8 @@
             }
         }
 
-
         /* =========================================================
-           ЗАКАЗЧИК
+           КОНТЕНТ ЗАКАЗЧИКА
         ========================================================= */
 
         .customer-content {
@@ -660,7 +752,6 @@
             margin-right: 10px;
         }
 
-
         /* =========================================================
            КОНТАКТЫ
         ========================================================= */
@@ -723,10 +814,6 @@
             font-size: 18px;
         }
 
-        .icon-telegram {
-            background: #0088cc;
-        }
-
         .icon-whatsapp {
             background: #25d366;
         }
@@ -738,7 +825,6 @@
         .icon-phone {
             background: #1e4f8a;
         }
-
 
         /* =========================================================
            ФОРМЫ
@@ -845,7 +931,7 @@
         }
 
         .submit-btn:hover {
-            background: #1ebe5d;
+            background: #1da851;
 
             transform: translateY(-2px);
 
@@ -853,6 +939,13 @@
                 0 10px 25px rgba(37, 211, 102, 0.25);
         }
 
+        .submit-btn:disabled {
+            opacity: 0.7;
+
+            cursor: not-allowed;
+
+            transform: none;
+        }
 
         /* =========================================================
            СТРАНИЦА ИЩУ РАБОТУ
@@ -925,7 +1018,6 @@
                 0 8px 30px rgba(11, 30, 58, 0.07);
         }
 
-
         /* =========================================================
            СООБЩЕНИЯ
         ========================================================= */
@@ -971,7 +1063,6 @@
 
             margin-bottom: 5px;
         }
-
 
         /* =========================================================
            ИНФОРМАЦИЯ
@@ -1099,7 +1190,6 @@
 
             line-height: 1.9;
         }
-
 
         /* =========================================================
            FOOTER
@@ -1231,7 +1321,6 @@
             color: #fcd34d;
         }
 
-
         /* =========================================================
            ПЛАНШЕТ
         ========================================================= */
@@ -1276,10 +1365,9 @@
             }
 
             .header-image {
-                width: 100%;
+                height: clamp(260px, 48vw, 450px);
             }
         }
-
 
         /* =========================================================
            ТЕЛЕФОН
@@ -1317,9 +1405,11 @@
             }
 
             .agency-title {
-                font-size: 12px;
+                font-size: 21px;
 
-                letter-spacing: 5px;
+                letter-spacing: 1.5px;
+
+                padding: 0 8px;
             }
 
             .brand-mark {
@@ -1350,19 +1440,26 @@
                 width: 24px;
             }
 
+            /*
+               Картинка на всю ширину телефона.
+               Высота ограничена, поэтому она не будет огромной.
+            */
+
             .header-image {
+                width: 100vw;
+
+                height: 260px;
+
                 margin-top: 17px;
 
-                width: 100%;
+                margin-left: calc(50% - 50vw);
 
                 border-radius: 0;
             }
 
-            .header-image img {
-                min-height: 200px;
-
-                object-fit: cover;
-            }
+            /* =====================================================
+               ПРИВЕТСТВЕННОЕ ОКНО
+            ===================================================== */
 
             .welcome-overlay {
                 padding: 10px;
@@ -1371,13 +1468,9 @@
             .welcome-card {
                 width: 100%;
 
-                padding: 24px 17px 20px;
+                padding: 25px 17px 21px;
 
                 border-radius: 22px;
-
-                max-height: none;
-
-                overflow: hidden;
             }
 
             .welcome-icon {
@@ -1386,19 +1479,23 @@
 
                 font-size: 27px;
 
-                margin-bottom: 7px;
+                margin-bottom: 8px;
             }
 
             .welcome-card h1 {
                 font-size: 25px;
 
-                margin-bottom: 7px;
+                margin-bottom: 9px;
             }
 
-            .welcome-work-title {
+            .welcome-service-title {
                 font-size: 14px;
 
-                margin-bottom: 12px;
+                padding: 8px 13px;
+
+                letter-spacing: 0.5px;
+
+                margin-bottom: 13px;
             }
 
             .divider {
@@ -1410,7 +1507,7 @@
 
                 line-height: 1.4;
 
-                margin-bottom: 14px;
+                margin-bottom: 15px;
             }
 
             .welcome-buttons {
@@ -1485,46 +1582,35 @@
             }
         }
 
-
         /* =========================================================
-           МАЛЕНЬКАЯ ВЫСОТА
+           НЕБОЛЬШАЯ ВЫСОТА
         ========================================================= */
 
-        @media (max-height: 650px) {
+        @media (max-height: 650px) and (min-width: 651px) {
 
             .welcome-card {
-                padding: 20px 30px 17px;
+                padding: 25px 30px 20px;
             }
 
             .welcome-icon {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
 
-                font-size: 24px;
-
-                margin-bottom: 5px;
+                font-size: 26px;
             }
 
             .welcome-card h1 {
-                font-size: 27px;
-
-                margin-bottom: 5px;
+                font-size: 30px;
             }
 
-            .welcome-work-title {
-                font-size: 14px;
+            .welcome-service-title {
+                font-size: 16px;
 
-                margin-bottom: 8px;
-            }
-
-            .divider {
                 margin-bottom: 10px;
             }
 
             .welcome-subtitle {
                 font-size: 13px;
-
-                line-height: 1.35;
 
                 margin-bottom: 12px;
             }
@@ -1541,7 +1627,6 @@
 <body>
 
 <div class="main-wrapper">
-
 
     <!-- =========================================================
          ВЕРХНЯЯ ПАНЕЛЬ
@@ -1562,7 +1647,6 @@
             </div>
 
         </div>
-
 
         <div class="right-group">
 
@@ -1598,8 +1682,13 @@
 
                 <div class="brand-block">
 
-                    <div class="agency-title">
-                        РАБОТА
+                    <!-- Эта надпись будет меняться через JS -->
+
+                    <div
+                        class="agency-title"
+                        id="agencyTitle"
+                    >
+                        РАБОТА / УСЛУГИ РАЗНОРАБОЧИХ
                     </div>
 
                     <div class="brand-name">
@@ -1625,7 +1714,10 @@
                 </div>
 
 
-                <!-- КАРТИНКА -->
+                <!-- =================================================
+                     КАРТИНКА
+                     Без текста поверх картинки
+                ================================================== -->
 
                 <div
                     class="header-image"
@@ -1634,7 +1726,7 @@
 
                     <img
                         src="WhatsApp Image 2026-08-11 at 11.36.55.jpeg"
-                        alt="ЧиД — Нужные руки рядом!"
+                        alt="ЧиД — Работа и услуги разнорабочих"
                     >
 
                 </div>
@@ -1675,8 +1767,8 @@
 
             <!-- НОВАЯ НАДПИСЬ -->
 
-            <div class="welcome-work-title">
-                Работа / услуги разнорабочих
+            <div class="welcome-service-title">
+                РАБОТА / УСЛУГИ РАЗНОРАБОЧИХ
             </div>
 
 
@@ -1685,8 +1777,8 @@
 
             <p class="welcome-subtitle">
 
-                Платформа для быстрого поиска надёжных специалистов
-                и выгодных заказов. Выберите свою роль, чтобы начать.
+                Быстрый поиск работников и заказов.
+                Выберите подходящий вариант, чтобы продолжить.
 
             </p>
 
@@ -1781,18 +1873,15 @@
 
                     <div class="contact-options">
 
-
-                        <!-- WHATSAPP -->
+                        <!-- WhatsApp -->
 
                         <div
                             class="contact-option"
-                            onclick="openWhatsAppDirect()"
+                            onclick="openWhatsApp('Здравствуйте! Хочу заказать услуги разнорабочих.')"
                         >
 
                             <div class="icon icon-whatsapp">
-
                                 <i class="fab fa-whatsapp"></i>
-
                             </div>
 
                             <div>
@@ -1802,7 +1891,7 @@
                         </div>
 
 
-                        <!-- EMAIL -->
+                        <!-- Email -->
 
                         <div
                             class="contact-option"
@@ -1810,9 +1899,7 @@
                         >
 
                             <div class="icon icon-email">
-
                                 <i class="fas fa-envelope"></i>
-
                             </div>
 
                             <div>
@@ -1822,7 +1909,7 @@
                         </div>
 
 
-                        <!-- ФОРМА -->
+                        <!-- Форма -->
 
                         <div
                             class="contact-option"
@@ -1830,9 +1917,7 @@
                         >
 
                             <div class="icon icon-phone">
-
                                 <i class="fas fa-pen"></i>
-
                             </div>
 
                             <div>
@@ -1844,7 +1929,9 @@
                     </div>
 
 
-                    <!-- ФОРМА -->
+                    <!-- =================================================
+                         ФОРМА ЗАКАЗЧИКА
+                    ================================================== -->
 
                     <div class="contact-form">
 
@@ -1924,13 +2011,27 @@
 
                             <i class="fas fa-check-circle"></i>
 
-                            <strong>Готово!</strong>
+                            <strong>Заявка подготовлена!</strong>
 
                             Сейчас откроется WhatsApp
-                            с подготовленной заявкой.
+                            с готовым сообщением.
 
                         </div>
 
+
+                        <div
+                            class="error-message"
+                            id="customerError"
+                        >
+
+                            <i class="fas fa-exclamation-circle"></i>
+
+                            <strong>Ошибка!</strong>
+
+                            Не удалось открыть WhatsApp.
+                            Попробуйте написать нам напрямую.
+
+                        </div>
 
                     </div>
 
@@ -2017,7 +2118,6 @@
 
                 <div class="cases-grid">
 
-
                     <div class="case-item">
 
                         <strong>
@@ -2066,8 +2166,9 @@
                         </strong>
 
                         <p>
-                            Уборка помещений, квартир, подъездов после
-                            строительства и капитального ремонта.
+                            Уборка помещений, квартир,
+                            подъездов после строительства
+                            и капитального ремонта.
                         </p>
 
                     </div>
@@ -2153,8 +2254,8 @@
 
                     <p>
 
-                        Заполните форму, и ваша заявка
-                        будет подготовлена для отправки в WhatsApp.
+                        Заполните форму, и мы подготовим сообщение
+                        для отправки в WhatsApp.
 
                     </p>
 
@@ -2248,10 +2349,24 @@
 
                         <i class="fas fa-check-circle"></i>
 
-                        <strong>Готово!</strong>
+                        <strong>Заявка подготовлена!</strong>
 
                         Сейчас откроется WhatsApp
-                        с подготовленной заявкой.
+                        с готовым сообщением.
+
+                    </div>
+
+
+                    <div
+                        class="error-message"
+                        id="workerError"
+                    >
+
+                        <i class="fas fa-exclamation-circle"></i>
+
+                        <strong>Ошибка!</strong>
+
+                        Не удалось открыть WhatsApp.
 
                     </div>
 
@@ -2292,7 +2407,7 @@
 
                 <p>
 
-                    Агентство по подбору разнорабочих
+                    Работа и услуги разнорабочих
                     и грузчиков в Усть-Каменогорске.
 
                 </p>
@@ -2324,7 +2439,7 @@
                     <a
                         href="#"
                         aria-label="Instagram"
-                        onclick="alert('Извините, Instagram аккаунт сейчас в доработке 🛠️'); return false;"
+                        onclick="alert('Instagram аккаунт сейчас в доработке 🛠️'); return false;"
                     >
 
                         <i class="fab fa-instagram"></i>
@@ -2343,11 +2458,11 @@
                 </h4>
 
 
-                <a href="tel:+77051880386">
+                <a href="tel:+77477891341">
 
                     <i class="fas fa-phone-alt"></i>
 
-                    +7 (705) 188-03-86 
+                    +7 (747) 789-13-41
 
                 </a>
 
@@ -2485,23 +2600,30 @@
 
 <script>
 
-    /* =========================================================
-       WHATSAPP
-
-       НОМЕР, НА КОТОРЫЙ ПРИХОДЯТ ЗАЯВКИ
-
-       Формат:
-       77477891341
-
-       Без +, пробелов и скобок.
-    ========================================================= */
+    /*
+     * =========================================================
+     * WHATSAPP
+     * =========================================================
+     *
+     * ВАЖНО:
+     *
+     * Номер указывается без +, пробелов и скобок.
+     *
+     * +7 (747) 789-13-41
+     *
+     * превращается в:
+     *
+     * 77477891341
+     */
 
     const WHATSAPP_NUMBER = '77477891341';
 
 
-    /* =========================================================
-       ОТКРЫТЬ WHATSAPP
-    ========================================================= */
+    /*
+     * =========================================================
+     * ОТКРЫТЬ WHATSAPP
+     * =========================================================
+     */
 
     function openWhatsApp(message) {
 
@@ -2521,31 +2643,22 @@
     }
 
 
-    /* =========================================================
-       ПРОСТО ОТКРЫТЬ WHATSAPP
-    ========================================================= */
-
-    function openWhatsAppDirect() {
-
-        const message =
-            'Здравствуйте! Хочу узнать подробнее об услугах ЧиД.';
-
-        openWhatsApp(message);
-    }
-
-
-    /* =========================================================
-       DOM READY
-    ========================================================= */
+    /*
+     * =========================================================
+     * DOM READY
+     * =========================================================
+     */
 
     document.addEventListener(
         'DOMContentLoaded',
         function () {
 
 
-            /* =====================================================
-               ЭЛЕМЕНТЫ
-            ====================================================== */
+            /*
+             * =====================================================
+             * ЭЛЕМЕНТЫ
+             * =====================================================
+             */
 
             const overlay =
                 document.getElementById(
@@ -2572,11 +2685,6 @@
                     'mainFooter'
                 );
 
-            const headerImage =
-                document.getElementById(
-                    'headerImage'
-                );
-
             const btnCustomer =
                 document.getElementById(
                     'btnCustomer'
@@ -2587,24 +2695,47 @@
                     'btnWorker'
                 );
 
+            const agencyTitle =
+                document.getElementById(
+                    'agencyTitle'
+                );
 
-            /* =====================================================
-               ПОКАЗ ЗАКАЗЧИКА
 
-               ВАЖНО:
-               Никакого scrollIntoView здесь нет.
-
-               Поэтому после закрытия приветственного окна
-               пользователь остаётся сверху страницы,
-               прямо на картинке.
-            ====================================================== */
+            /*
+             * =====================================================
+             * ПОКАЗ ЗАКАЗЧИКА
+             *
+             * ВАЖНО:
+             * Здесь НЕТ scrollIntoView().
+             *
+             * Поэтому после нажатия "Я заказчик"
+             * сайт останется сверху, на картинке.
+             * =====================================================
+             */
 
             function showCustomer() {
+
+                /*
+                 * Убираем режим работника
+                 */
 
                 document.body.classList.remove(
                     'worker-mode'
                 );
 
+
+                /*
+                 * Меняем надпись сверху
+                 */
+
+                agencyTitle.textContent =
+                    'РАБОТА / УСЛУГИ РАЗНОРАБОЧИХ';
+
+
+                /*
+                 * Показываем основной контент
+                 */
+
                 overlay.classList.add(
                     'hidden'
                 );
@@ -2622,28 +2753,53 @@
                 mainFooter.style.display =
                     'block';
 
-                headerImage.style.display =
-                    'block';
 
                 /*
-                    Не прокручиваем страницу.
-                    Она остаётся там, где была открыта.
-                */
+                 * НИКАКОЙ ПРОКРУТКИ ЗДЕСЬ НЕТ.
+                 *
+                 * Пользователь остаётся там,
+                 * где находится картинка.
+                 */
+
             }
 
 
-            /* =====================================================
-               ПОКАЗ СОИСКАТЕЛЯ
-
-               Здесь картинку полностью убираем.
-            ====================================================== */
+            /*
+             * =====================================================
+             * ПОКАЗ СОИСКАТЕЛЯ
+             *
+             * При выборе "Ищу работу":
+             *
+             * 1. Картинка исчезает.
+             * 2. Открывается форма.
+             * 3. Страница перемещается к форме работника.
+             * =====================================================
+             */
 
             function showWorker() {
+
+                /*
+                 * Включаем режим работника.
+                 * CSS автоматически уберёт картинку.
+                 */
 
                 document.body.classList.add(
                     'worker-mode'
                 );
 
+
+                /*
+                 * Меняем заголовок
+                 */
+
+                agencyTitle.textContent =
+                    'ИЩУ РАБОТУ';
+
+
+                /*
+                 * Показываем основной контент
+                 */
+
                 overlay.classList.add(
                     'hidden'
                 );
@@ -2661,17 +2817,11 @@
                 mainFooter.style.display =
                     'block';
 
-                /*
-                    Убираем картинку.
-                */
-
-                headerImage.style.display =
-                    'none';
 
                 /*
-                    Перемещаем пользователя к форме
-                    соискателя.
-                */
+                 * Для работника можно прокрутить
+                 * непосредственно к форме.
+                 */
 
                 setTimeout(
                     function () {
@@ -2684,12 +2834,15 @@
                     },
                     350
                 );
+
             }
 
 
-            /* =====================================================
-               КНОПКА ЗАКАЗЧИКА
-            ====================================================== */
+            /*
+             * =====================================================
+             * КНОПКА "Я ЗАКАЗЧИК"
+             * =====================================================
+             */
 
             if (btnCustomer) {
 
@@ -2701,9 +2854,11 @@
             }
 
 
-            /* =====================================================
-               КНОПКА ИЩУ РАБОТУ
-            ====================================================== */
+            /*
+             * =====================================================
+             * КНОПКА "ИЩУ РАБОТУ"
+             * =====================================================
+             */
 
             if (btnWorker) {
 
@@ -2715,9 +2870,11 @@
             }
 
 
-            /* =====================================================
-               ФОРМА ЗАКАЗЧИКА
-            ====================================================== */
+            /*
+             * =====================================================
+             * ФОРМА ЗАКАЗЧИКА
+             * =====================================================
+             */
 
             const customerForm =
                 document.getElementById(
@@ -2734,6 +2891,11 @@
                     'customerSuccess'
                 );
 
+            const customerError =
+                document.getElementById(
+                    'customerError'
+                );
+
 
             if (customerForm) {
 
@@ -2743,6 +2905,10 @@
 
                         e.preventDefault();
 
+
+                        /*
+                         * Получаем данные
+                         */
 
                         const name =
                             document
@@ -2762,6 +2928,10 @@
                                 .trim();
 
 
+                        /*
+                         * Проверка
+                         */
+
                         if (
                             !name ||
                             !phone
@@ -2776,13 +2946,31 @@
 
 
                         /*
-                            Формируем заявку.
-                        */
+                         * Меняем кнопку
+                         */
+
+                        submitBtn.disabled =
+                            true;
+
+                        submitBtn.innerHTML =
+                            '<i class="fas fa-spinner fa-spin"></i> Открываем WhatsApp...';
+
+
+                        customerSuccess.style.display =
+                            'none';
+
+                        customerError.style.display =
+                            'none';
+
+
+                        /*
+                         * Формируем сообщение
+                         */
 
                         const message =
-                            '🔔 НОВАЯ ЗАЯВКА С САЙТА ЧиД\n\n' +
+                            '🔔 ЗАЯВКА С САЙТА ЧиД\n\n' +
 
-                            '👤 Клиент: ' +
+                            '👤 Имя: ' +
                             name +
                             '\n' +
 
@@ -2790,56 +2978,83 @@
                             phone +
                             '\n\n' +
 
-                            '💼 Тип заявки: Заказчик\n\n' +
+                            '📋 Тип заявки: Заказ услуг разнорабочих';
 
-                            'Здравствуйте! Хочу заказать услуги разнорабочих.';
+
+                        try {
+
+                            /*
+                             * Открываем WhatsApp
+                             */
+
+                            openWhatsApp(
+                                message
+                            );
+
+
+                            /*
+                             * Показываем сообщение
+                             */
+
+                            customerSuccess.style.display =
+                                'block';
+
+
+                            /*
+                             * Очищаем форму
+                             */
+
+                            customerForm.reset();
+
+
+                        } catch (error) {
+
+                            console.error(
+                                error
+                            );
+
+                            customerError.style.display =
+                                'block';
+
+                        }
 
 
                         /*
-                            Показываем сообщение.
-                        */
+                         * Возвращаем кнопку
+                         */
 
-                        customerSuccess.style.display =
-                            'block';
-
-
-                        /*
-                            Меняем кнопку.
-                        */
+                        submitBtn.disabled =
+                            false;
 
                         submitBtn.innerHTML =
-                            '<i class="fab fa-whatsapp"></i> Открываем WhatsApp...';
+                            '<i class="fab fa-whatsapp"></i> Отправить в WhatsApp';
 
 
                         /*
-                            Открываем WhatsApp.
-                        */
-
-                        openWhatsApp(message);
-
-
-                        /*
-                            Возвращаем кнопку.
-                        */
+                         * Через 8 секунд убираем сообщение
+                         */
 
                         setTimeout(
                             function () {
 
-                                submitBtn.innerHTML =
-                                    '<i class="fab fa-whatsapp"></i> Отправить в WhatsApp';
+                                customerSuccess.style.display =
+                                    'none';
 
                             },
-                            1500
+                            8000
                         );
 
                     }
                 );
+
             }
 
 
-            /* =====================================================
-               ФОРМА "ИЩУ РАБОТУ"
-            ====================================================== */
+            /*
+             * =====================================================
+             * ФОРМА "ИЩУ РАБОТУ"
+             * =====================================================
+             */
 
             const workerForm =
                 document.getElementById(
@@ -2856,6 +3071,11 @@
                     'workerSuccess'
                 );
 
+            const workerError =
+                document.getElementById(
+                    'workerError'
+                );
+
 
             if (workerForm) {
 
@@ -2865,6 +3085,10 @@
 
                         e.preventDefault();
 
+
+                        /*
+                         * Получаем данные
+                         */
 
                         const name =
                             document
@@ -2893,6 +3117,10 @@
                                 .trim();
 
 
+                        /*
+                         * Проверка
+                         */
+
                         if (
                             !name ||
                             !phone ||
@@ -2908,13 +3136,31 @@
 
 
                         /*
-                            Формируем заявку работника.
-                        */
+                         * Меняем кнопку
+                         */
+
+                        workerSubmitBtn.disabled =
+                            true;
+
+                        workerSubmitBtn.innerHTML =
+                            '<i class="fas fa-spinner fa-spin"></i> Открываем WhatsApp...';
+
+
+                        workerSuccess.style.display =
+                            'none';
+
+                        workerError.style.display =
+                            'none';
+
+
+                        /*
+                         * Формируем сообщение
+                         */
 
                         const message =
-                            '🔔 НОВАЯ ЗАЯВКА С САЙТА ЧиД\n\n' +
+                            '🔔 ЗАЯВКА НА РАБОТУ — ЧиД\n\n' +
 
-                            '👷 Соискатель: ' +
+                            '👤 Имя: ' +
                             name +
                             '\n' +
 
@@ -2926,56 +3172,82 @@
                             city +
                             '\n\n' +
 
-                            '💼 Тип заявки: Ищу работу\n\n' +
+                            '💼 Тип заявки: Ищу работу';
 
-                            'Здравствуйте! Ищу работу разнорабочим.';
+
+                        try {
+
+                            /*
+                             * Открываем WhatsApp
+                             */
+
+                            openWhatsApp(
+                                message
+                            );
+
+
+                            /*
+                             * Показываем сообщение
+                             */
+
+                            workerSuccess.style.display =
+                                'block';
+
+
+                            /*
+                             * Очищаем форму
+                             */
+
+                            workerForm.reset();
+
+
+                        } catch (error) {
+
+                            console.error(
+                                error
+                            );
+
+                            workerError.style.display =
+                                'block';
+
+                        }
 
 
                         /*
-                            Показываем сообщение.
-                        */
+                         * Возвращаем кнопку
+                         */
 
-                        workerSuccess.style.display =
-                            'block';
-
-
-                        /*
-                            Меняем кнопку.
-                        */
+                        workerSubmitBtn.disabled =
+                            false;
 
                         workerSubmitBtn.innerHTML =
-                            '<i class="fab fa-whatsapp"></i> Открываем WhatsApp...';
+                            '<i class="fab fa-whatsapp"></i> Отправить в WhatsApp';
 
 
                         /*
-                            Открываем WhatsApp.
-                        */
-
-                        openWhatsApp(message);
-
-
-                        /*
-                            Возвращаем кнопку.
-                        */
+                         * Убираем сообщение
+                         */
 
                         setTimeout(
                             function () {
 
-                                workerSubmitBtn.innerHTML =
-                                    '<i class="fab fa-whatsapp"></i> Отправить в WhatsApp';
+                                workerSuccess.style.display =
+                                    'none';
 
                             },
-                            1500
+                            8000
                         );
 
                     }
                 );
+
             }
 
         }
     );
 
 </script>
+
 
 </body>
 </html>
