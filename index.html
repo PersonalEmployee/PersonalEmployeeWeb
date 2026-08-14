@@ -40,13 +40,7 @@
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background:
-                linear-gradient(
-                    145deg,
-                    #eef3fa 0%,
-                    #d9e2f0 100%
-                );
-
+            background: linear-gradient(145deg, #eef3fa 0%, #d9e2f0 100%);
             min-height: 100vh;
             color: #0b1e3a;
         }
@@ -68,25 +62,17 @@
         .main-wrapper {
             width: min(1440px, calc(100% - 32px));
             margin: 16px auto;
-
             background: #ffffff;
-
             border-radius: 32px;
-
-            box-shadow:
-                0 30px 70px rgba(0, 20, 40, 0.22);
-
+            box-shadow: 0 30px 70px rgba(0, 20, 40, 0.22);
             overflow: hidden;
-
             position: relative;
         }
 
         .container {
             width: 100%;
             max-width: 1400px;
-
             margin: 0 auto;
-
             padding: 20px 40px;
         }
 
@@ -98,15 +84,11 @@
         .top-bar {
             background: #0b1426;
             color: #e8edf5;
-
             padding: 12px 36px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             gap: 15px 30px;
-
             font-size: 14px;
             font-weight: 500;
         }
@@ -115,9 +97,7 @@
         .right-group {
             display: flex;
             align-items: center;
-
             flex-wrap: wrap;
-
             gap: 12px 28px;
         }
 
@@ -165,10 +145,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
             text-align: center;
-
-            padding: 18px 0 24px;
+            padding: 18px 0 0;
         }
 
 
@@ -179,32 +157,23 @@
         .brand-block {
             display: flex;
             flex-direction: column;
-
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             margin: 0 auto;
         }
 
         .agency-title {
             color: #71839c;
-
             font-size: clamp(13px, 1.5vw, 18px);
-
             font-weight: 800;
-
             letter-spacing: 7px;
-
             text-transform: uppercase;
-
             margin-bottom: 4px;
         }
 
         .brand-name {
             position: relative;
-
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -212,28 +181,21 @@
 
         .brand-mark {
             position: relative;
-
             display: inline-block;
-
             font-size: clamp(62px, 7vw, 94px);
-
             line-height: 0.9;
-
             font-weight: 900;
-
             letter-spacing: -5px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #143a65 0%,
-                    #1e4f8a 45%,
-                    #2f72ba 100%
-                );
+            background: linear-gradient(
+                135deg,
+                #143a65 0%,
+                #1e4f8a 45%,
+                #2f72ba 100%
+            );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
             background-clip: text;
 
             text-shadow:
@@ -253,7 +215,6 @@
             top: 5px;
 
             background: #f5b81b;
-
             border-radius: 50%;
 
             box-shadow:
@@ -262,22 +223,17 @@
 
         .brand-slogan {
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             gap: 13px;
-
             margin-top: 12px;
 
             color: #d49a00;
 
             font-size: clamp(14px, 1.7vw, 20px);
-
             font-weight: 800;
-
             letter-spacing: 1.2px;
-
             text-transform: uppercase;
         }
 
@@ -285,54 +241,54 @@
             display: block;
 
             width: clamp(35px, 6vw, 85px);
-
             height: 2px;
 
             border-radius: 10px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #f5b81b
-                );
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #f5b81b
+            );
         }
 
         .slogan-line:last-child {
-            background:
-                linear-gradient(
-                    90deg,
-                    #f5b81b,
-                    transparent
-                );
+            background: linear-gradient(
+                90deg,
+                #f5b81b,
+                transparent
+            );
         }
 
 
         /* =========================================================
            ФОТО
-           НА ВЕСЬ ЭКРАН ПО ШИРИНЕ
+           
+           Никакого дополнительного текста поверх картинки.
         ========================================================= */
 
         .header-image {
-            width: 100vw;
-            max-width: 100vw;
-
+            width: 100%;
             margin-top: 24px;
-
-            margin-left: calc(50% - 50vw);
-
             overflow: hidden;
-
             background: #f1f4f9;
-
-            border: none;
-            border-radius: 0;
-
-            box-shadow: none;
-
             line-height: 0;
-
             position: relative;
+        }
+
+        .header-image::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            pointer-events: none;
+
+            background: linear-gradient(
+                180deg,
+                rgba(255,255,255,0.02),
+                rgba(11,30,58,0.04)
+            );
         }
 
         .header-image img {
@@ -341,18 +297,13 @@
             width: 100%;
             height: auto;
 
-            min-height: 260px;
+            min-height: 250px;
 
             object-fit: cover;
             object-position: center;
 
             background: #ffffff;
         }
-
-        /* ВАЖНО:
-           Текст с картинки удалён.
-           Никакого текста поверх фотографии нет.
-        */
 
 
         /* =========================================================
@@ -367,12 +318,11 @@
             width: 100%;
             height: 100dvh;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(8, 18, 35, 0.96),
-                    rgba(30, 79, 138, 0.94)
-                );
+            background: linear-gradient(
+                135deg,
+                rgba(8, 18, 35, 0.96),
+                rgba(30, 79, 138, 0.94)
+            );
 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -427,13 +377,12 @@
             width: 100%;
             height: 5px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #1e4f8a,
-                    #f5b81b,
-                    #1e4f8a
-                );
+            background: linear-gradient(
+                90deg,
+                #1e4f8a,
+                #f5b81b,
+                #1e4f8a
+            );
         }
 
         .welcome-icon {
@@ -480,12 +429,11 @@
         }
 
         .welcome-card h1 span {
-            background:
-                linear-gradient(
-                    135deg,
-                    #1e4f8a,
-                    #f5b81b
-                );
+            background: linear-gradient(
+                135deg,
+                #1e4f8a,
+                #f5b81b
+            );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -493,15 +441,16 @@
             background-clip: text;
         }
 
-        /* НОВАЯ НАДПИСЬ */
-        .welcome-work-title {
-            color: #d49a00;
+        /* НОВАЯ НАДПИСЬ ПОД ЧиД */
 
-            font-size: clamp(14px, 2vw, 18px);
+        .welcome-work-title {
+            font-size: clamp(15px, 2vw, 19px);
 
             font-weight: 800;
 
-            margin-bottom: 14px;
+            color: #1e4f8a;
+
+            margin-bottom: 15px;
 
             letter-spacing: 0.3px;
         }
@@ -514,12 +463,11 @@
 
             border-radius: 10px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #1e4f8a,
-                    #f5b81b
-                );
+            background: linear-gradient(
+                90deg,
+                #1e4f8a,
+                #f5b81b
+            );
         }
 
         .welcome-subtitle {
@@ -598,7 +546,11 @@
         }
 
         .welcome-bottom {
-            display: none;
+            margin-top: 15px;
+
+            font-size: 12px;
+
+            color: #8a9bb5;
         }
 
 
@@ -631,7 +583,7 @@
 
 
         /* =========================================================
-           КОНТЕНТ ЗАКАЗЧИКА
+           ЗАКАЗЧИК
         ========================================================= */
 
         .customer-content {
@@ -872,7 +824,7 @@
 
             border-radius: 60px;
 
-            background: #1e4f8a;
+            background: #25d366;
 
             color: #ffffff;
 
@@ -893,25 +845,17 @@
         }
 
         .submit-btn:hover {
-            background: #143a65;
+            background: #1ebe5d;
 
             transform: translateY(-2px);
 
             box-shadow:
-                0 10px 25px rgba(30, 79, 138, 0.25);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.7;
-
-            cursor: not-allowed;
-
-            transform: none;
+                0 10px 25px rgba(37, 211, 102, 0.25);
         }
 
 
         /* =========================================================
-           СТРАНИЦА СОИСКАТЕЛЯ
+           СТРАНИЦА ИЩУ РАБОТУ
         ========================================================= */
 
         #workerContent {
@@ -1289,7 +1233,7 @@
 
 
         /* =========================================================
-           АДАПТИВ — ПЛАНШЕТ
+           ПЛАНШЕТ
         ========================================================= */
 
         @media (max-width: 900px) {
@@ -1332,17 +1276,13 @@
             }
 
             .header-image {
-                width: 100vw;
-
-                margin-left: calc(50% - 50vw);
-
-                border-radius: 0;
+                width: 100%;
             }
         }
 
 
         /* =========================================================
-           АДАПТИВ — ТЕЛЕФОН
+           ТЕЛЕФОН
         ========================================================= */
 
         @media (max-width: 650px) {
@@ -1410,24 +1350,19 @@
                 width: 24px;
             }
 
-            /* Картинка всегда во всю ширину */
             .header-image {
-                width: 100vw;
-
-                margin-left: calc(50% - 50vw);
-
                 margin-top: 17px;
+
+                width: 100%;
 
                 border-radius: 0;
             }
 
             .header-image img {
                 min-height: 200px;
+
                 object-fit: cover;
             }
-
-
-            /* Приветственное окно */
 
             .welcome-overlay {
                 padding: 10px;
@@ -1439,6 +1374,10 @@
                 padding: 24px 17px 20px;
 
                 border-radius: 22px;
+
+                max-height: none;
+
+                overflow: hidden;
             }
 
             .welcome-icon {
@@ -1457,8 +1396,9 @@
             }
 
             .welcome-work-title {
-                font-size: 13px;
-                margin-bottom: 11px;
+                font-size: 14px;
+
+                margin-bottom: 12px;
             }
 
             .divider {
@@ -1488,7 +1428,6 @@
 
                 font-size: 14px;
             }
-
 
             .services,
             .contact {
@@ -1548,24 +1487,51 @@
 
 
         /* =========================================================
-           РЕЖИМ "ИЩУ РАБОТУ"
+           МАЛЕНЬКАЯ ВЫСОТА
         ========================================================= */
 
-        /*
-           Когда пользователь выбирает "Ищу работу",
-           картинка полностью скрывается.
-        */
+        @media (max-height: 650px) {
 
-        body.worker-mode .header-image {
-            display: none;
-        }
+            .welcome-card {
+                padding: 20px 30px 17px;
+            }
 
-        body.worker-mode .header-content {
-            padding-bottom: 0;
-        }
+            .welcome-icon {
+                width: 45px;
+                height: 45px;
 
-        body.worker-mode .main-header {
-            border-bottom: 1px solid #eef2f8;
+                font-size: 24px;
+
+                margin-bottom: 5px;
+            }
+
+            .welcome-card h1 {
+                font-size: 27px;
+
+                margin-bottom: 5px;
+            }
+
+            .welcome-work-title {
+                font-size: 14px;
+
+                margin-bottom: 8px;
+            }
+
+            .divider {
+                margin-bottom: 10px;
+            }
+
+            .welcome-subtitle {
+                font-size: 13px;
+
+                line-height: 1.35;
+
+                margin-bottom: 12px;
+            }
+
+            .btn-choice {
+                padding: 11px 20px;
+            }
         }
 
     </style>
@@ -1659,11 +1625,12 @@
                 </div>
 
 
-                <!-- =================================================
-                     ФОТО
-                ================================================== -->
+                <!-- КАРТИНКА -->
 
-                <div class="header-image">
+                <div
+                    class="header-image"
+                    id="headerImage"
+                >
 
                     <img
                         src="WhatsApp Image 2026-08-11 at 11.36.55.jpeg"
@@ -1707,6 +1674,7 @@
 
 
             <!-- НОВАЯ НАДПИСЬ -->
+
             <div class="welcome-work-title">
                 Работа / услуги разнорабочих
             </div>
@@ -1814,37 +1782,27 @@
                     <div class="contact-options">
 
 
-                        <div
-                            class="contact-option"
-                            onclick="window.open('https://t.me/+77477891341', '_blank')"
-                        >
-
-                            <div class="icon icon-telegram">
-                                <i class="fab fa-telegram-plane"></i>
-                            </div>
-
-                            <div>
-                                Telegram
-                            </div>
-
-                        </div>
-
+                        <!-- WHATSAPP -->
 
                         <div
                             class="contact-option"
-                            onclick="window.open('https://wa.me/77477891341', '_blank')"
+                            onclick="openWhatsAppDirect()"
                         >
 
                             <div class="icon icon-whatsapp">
+
                                 <i class="fab fa-whatsapp"></i>
+
                             </div>
 
                             <div>
-                                WhatsApp
+                                Написать в WhatsApp
                             </div>
 
                         </div>
 
+
+                        <!-- EMAIL -->
 
                         <div
                             class="contact-option"
@@ -1852,15 +1810,19 @@
                         >
 
                             <div class="icon icon-email">
+
                                 <i class="fas fa-envelope"></i>
+
                             </div>
 
                             <div>
-                                Написать
+                                Написать на почту
                             </div>
 
                         </div>
 
+
+                        <!-- ФОРМА -->
 
                         <div
                             class="contact-option"
@@ -1868,7 +1830,9 @@
                         >
 
                             <div class="icon icon-phone">
+
                                 <i class="fas fa-pen"></i>
+
                             </div>
 
                             <div>
@@ -1887,11 +1851,11 @@
                         <h3>
 
                             <i
-                                class="fas fa-paper-plane"
-                                style="color:#1e4f8a; margin-right:7px;"
+                                class="fab fa-whatsapp"
+                                style="color:#25d366; margin-right:7px;"
                             ></i>
 
-                            Оставьте заявку — мы перезвоним
+                            Оставьте заявку — отправим в WhatsApp
 
                         </h3>
 
@@ -1912,7 +1876,6 @@
                                     type="text"
                                     id="fullName"
                                     placeholder="Иванов Иван"
-                                    autocomplete="name"
                                     required
                                 >
 
@@ -1933,7 +1896,6 @@
                                     type="tel"
                                     id="phone"
                                     placeholder="+7 (___) ___-__-__"
-                                    autocomplete="tel"
                                     required
                                 >
 
@@ -1946,9 +1908,9 @@
                                 id="submitBtn"
                             >
 
-                                <i class="fas fa-paper-plane"></i>
+                                <i class="fab fa-whatsapp"></i>
 
-                                Отправить заявку
+                                Отправить в WhatsApp
 
                             </button>
 
@@ -1962,27 +1924,13 @@
 
                             <i class="fas fa-check-circle"></i>
 
-                            <strong>Спасибо!</strong>
+                            <strong>Готово!</strong>
 
-                            Ваша заявка принята.
-                            Мы свяжемся с вами в ближайшее время.
-
-                        </div>
-
-
-                        <div
-                            class="error-message"
-                            id="customerError"
-                        >
-
-                            <i class="fas fa-exclamation-circle"></i>
-
-                            <strong>Ошибка!</strong>
-
-                            Не удалось отправить заявку.
-                            Проверьте настройки Telegram или позвоните нам.
+                            Сейчас откроется WhatsApp
+                            с подготовленной заявкой.
 
                         </div>
+
 
                     </div>
 
@@ -2069,6 +2017,7 @@
 
                 <div class="cases-grid">
 
+
                     <div class="case-item">
 
                         <strong>
@@ -2118,7 +2067,7 @@
 
                         <p>
                             Уборка помещений, квартир, подъездов после
-                            строительства и кап. ремонта.
+                            строительства и капитального ремонта.
                         </p>
 
                     </div>
@@ -2204,8 +2153,8 @@
 
                     <p>
 
-                        Заполните форму, и мы свяжемся с вами
-                        по поводу подходящих заказов.
+                        Заполните форму, и ваша заявка
+                        будет подготовлена для отправки в WhatsApp.
 
                     </p>
 
@@ -2215,6 +2164,7 @@
                 <div class="worker-form">
 
                     <form id="workerForm">
+
 
                         <div class="form-group">
 
@@ -2230,7 +2180,6 @@
                                 type="text"
                                 id="workerName"
                                 placeholder="Иванов Иван"
-                                autocomplete="name"
                                 required
                             >
 
@@ -2251,7 +2200,6 @@
                                 type="tel"
                                 id="workerPhone"
                                 placeholder="+7 (___) ___-__-__"
-                                autocomplete="tel"
                                 required
                             >
 
@@ -2284,9 +2232,9 @@
                             id="workerSubmitBtn"
                         >
 
-                            <i class="fas fa-paper-plane"></i>
+                            <i class="fab fa-whatsapp"></i>
 
-                            Отправить заявку
+                            Отправить в WhatsApp
 
                         </button>
 
@@ -2300,25 +2248,10 @@
 
                         <i class="fas fa-check-circle"></i>
 
-                        <strong>Спасибо!</strong>
+                        <strong>Готово!</strong>
 
-                        Ваша заявка принята.
-                        Мы свяжемся с вами по поводу работы.
-
-                    </div>
-
-
-                    <div
-                        class="error-message"
-                        id="workerError"
-                    >
-
-                        <i class="fas fa-exclamation-circle"></i>
-
-                        <strong>Ошибка!</strong>
-
-                        Не удалось отправить заявку.
-                        Проверьте настройки Telegram или попробуйте позже.
+                        Сейчас откроется WhatsApp
+                        с подготовленной заявкой.
 
                     </div>
 
@@ -2368,25 +2301,22 @@
                 <div class="footer-social">
 
                     <a
-                        href="https://t.me/+77477891341"
+                        href="https://wa.me/77477891341"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Telegram"
+                        aria-label="WhatsApp"
                     >
 
-                        <i class="fab fa-telegram-plane"></i>
+                        <i class="fab fa-whatsapp"></i>
 
                     </a>
 
 
                     <a
-                        href="https://wa.me/77477891341"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="WhatsApp"
+                        href="mailto:chid4145@gmail.com"
+                        aria-label="Email"
                     >
 
-                        <i class="fab fa-whatsapp"></i>
+                        <i class="fas fa-envelope"></i>
 
                     </a>
 
@@ -2556,129 +2486,51 @@
 <script>
 
     /* =========================================================
-       НАСТРОЙКИ TELEGRAM
+       WHATSAPP
 
-       ОБЯЗАТЕЛЬНО ЗАМЕНИ ЭТИ ДВА ЗНАЧЕНИЯ
+       НОМЕР, НА КОТОРЫЙ ПРИХОДЯТ ЗАЯВКИ
+
+       Формат:
+       77477891341
+
+       Без +, пробелов и скобок.
     ========================================================= */
 
-    const TELEGRAM_BOT_TOKEN =
-        'ВСТАВЬ_СЮДА_ТОКЕН_БОТА';
-
-    const TELEGRAM_CHAT_ID =
-        'ВСТАВЬ_СЮДА_CHAT_ID';
+    const WHATSAPP_NUMBER = '77477891341';
 
 
     /* =========================================================
-       ПРОВЕРКА НАСТРОЕК TELEGRAM
+       ОТКРЫТЬ WHATSAPP
     ========================================================= */
 
-    function telegramConfigured() {
+    function openWhatsApp(message) {
 
-        return (
-            TELEGRAM_BOT_TOKEN &&
-            TELEGRAM_CHAT_ID &&
-            !TELEGRAM_BOT_TOKEN.includes('ВСТАВЬ_СЮДА') &&
-            !TELEGRAM_CHAT_ID.includes('ВСТАВЬ_СЮДА')
+        const encodedMessage =
+            encodeURIComponent(message);
+
+        const whatsappUrl =
+            'https://wa.me/' +
+            WHATSAPP_NUMBER +
+            '?text=' +
+            encodedMessage;
+
+        window.open(
+            whatsappUrl,
+            '_blank'
         );
     }
 
 
     /* =========================================================
-       ОТПРАВКА В TELEGRAM
+       ПРОСТО ОТКРЫТЬ WHATSAPP
     ========================================================= */
 
-    async function sendToTelegram(
-        name,
-        phone,
-        city = '',
-        type = 'заявка'
-    ) {
-
-        if (!telegramConfigured()) {
-
-            console.error(
-                'Telegram не настроен. Укажите TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID.'
-            );
-
-            return false;
-        }
-
+    function openWhatsAppDirect() {
 
         const message =
-            `🔔 Новая ${type} с сайта ЧиД!\n\n` +
-            `👤 Имя: ${name}\n` +
-            `📞 Телефон: ${phone}\n` +
-            (city
-                ? `📍 Город: ${city}\n`
-                : '') +
-            `🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
+            'Здравствуйте! Хочу узнать подробнее об услугах ЧиД.';
 
-
-        const url =
-            `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
-
-        try {
-
-            const response = await fetch(
-                url,
-                {
-                    method: 'POST',
-
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: message
-                    })
-                }
-            );
-
-
-            const data =
-                await response.json();
-
-
-            console.log('Telegram response:', data);
-
-
-            return (
-                response.ok &&
-                data.ok === true
-            );
-
-        } catch (error) {
-
-            console.error(
-                'Telegram error:',
-                error
-            );
-
-            return false;
-        }
-    }
-
-
-    /* =========================================================
-       ПОКАЗАТЬ ОШИБКУ TELEGRAM
-    ========================================================= */
-
-    function showTelegramConfigError(element) {
-
-        if (!element) {
-            return;
-        }
-
-        element.innerHTML =
-            `
-            <i class="fas fa-exclamation-circle"></i>
-            <strong>Telegram не настроен.</strong><br>
-            В коде сайта необходимо указать BOT TOKEN и CHAT ID.
-            `;
-
-        element.style.display = 'block';
+        openWhatsApp(message);
     }
 
 
@@ -2720,6 +2572,11 @@
                     'mainFooter'
                 );
 
+            const headerImage =
+                document.getElementById(
+                    'headerImage'
+                );
+
             const btnCustomer =
                 document.getElementById(
                     'btnCustomer'
@@ -2732,26 +2589,14 @@
 
 
             /* =====================================================
-               НАВЕРХ СТРАНИЦЫ
-            ====================================================== */
-
-            function goToTop() {
-
-                window.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: 'auto'
-                });
-            }
-
-
-            /* =====================================================
                ПОКАЗ ЗАКАЗЧИКА
 
                ВАЖНО:
-               НЕ ПРОКРУЧИВАЕМ К ФОРМЕ.
+               Никакого scrollIntoView здесь нет.
 
-               Открываем сайт сверху, где находится картинка.
+               Поэтому после закрытия приветственного окна
+               пользователь остаётся сверху страницы,
+               прямо на картинке.
             ====================================================== */
 
             function showCustomer() {
@@ -2760,53 +2605,37 @@
                     'worker-mode'
                 );
 
-
                 overlay.classList.add(
                     'hidden'
                 );
-
 
                 mainContent.classList.add(
                     'active'
                 );
 
-
                 customerContent.style.display =
                     'block';
-
 
                 workerContent.style.display =
                     'none';
 
-
                 mainFooter.style.display =
                     'block';
 
+                headerImage.style.display =
+                    'block';
 
                 /*
-                 * Небольшая задержка нужна только для того,
-                 * чтобы браузер успел закрыть overlay.
-                 *
-                 * После этого возвращаем пользователя
-                 * в самый верх страницы.
-                 */
-
-                setTimeout(
-                    function () {
-
-                        goToTop();
-
-                    },
-                    50
-                );
+                    Не прокручиваем страницу.
+                    Она остаётся там, где была открыта.
+                */
             }
 
 
             /* =====================================================
                ПОКАЗ СОИСКАТЕЛЯ
 
-               КАРТИНКУ УБИРАЕМ.
-               ФОРМУ ПОКАЗЫВАЕМ.
+               Здесь картинку полностью убираем.
             ====================================================== */
 
             function showWorker() {
@@ -2815,51 +2644,51 @@
                     'worker-mode'
                 );
 
-
                 overlay.classList.add(
                     'hidden'
                 );
-
 
                 mainContent.classList.add(
                     'active'
                 );
 
-
                 customerContent.style.display =
                     'none';
-
 
                 workerContent.style.display =
                     'block';
 
-
                 mainFooter.style.display =
                     'block';
 
+                /*
+                    Убираем картинку.
+                */
+
+                headerImage.style.display =
+                    'none';
 
                 /*
-                 * Здесь картинка уже скрыта через CSS.
-                 *
-                 * Показываем начало формы соискателя.
-                 */
+                    Перемещаем пользователя к форме
+                    соискателя.
+                */
 
                 setTimeout(
                     function () {
 
                         workerContent.scrollIntoView({
-                            behavior: 'auto',
+                            behavior: 'smooth',
                             block: 'start'
                         });
 
                     },
-                    50
+                    350
                 );
             }
 
 
             /* =====================================================
-               КНОПКА "Я ЗАКАЗЧИК"
+               КНОПКА ЗАКАЗЧИКА
             ====================================================== */
 
             if (btnCustomer) {
@@ -2873,7 +2702,7 @@
 
 
             /* =====================================================
-               КНОПКА "ИЩУ РАБОТУ"
+               КНОПКА ИЩУ РАБОТУ
             ====================================================== */
 
             if (btnWorker) {
@@ -2905,17 +2734,12 @@
                     'customerSuccess'
                 );
 
-            const customerError =
-                document.getElementById(
-                    'customerError'
-                );
-
 
             if (customerForm) {
 
                 customerForm.addEventListener(
                     'submit',
-                    async function (e) {
+                    function (e) {
 
                         e.preventDefault();
 
@@ -2938,7 +2762,10 @@
                                 .trim();
 
 
-                        if (!name || !phone) {
+                        if (
+                            !name ||
+                            !phone
+                        ) {
 
                             alert(
                                 'Заполните имя и телефон.'
@@ -2948,76 +2775,62 @@
                         }
 
 
+                        /*
+                            Формируем заявку.
+                        */
+
+                        const message =
+                            '🔔 НОВАЯ ЗАЯВКА С САЙТА ЧиД\n\n' +
+
+                            '👤 Клиент: ' +
+                            name +
+                            '\n' +
+
+                            '📞 Телефон: ' +
+                            phone +
+                            '\n\n' +
+
+                            '💼 Тип заявки: Заказчик\n\n' +
+
+                            'Здравствуйте! Хочу заказать услуги разнорабочих.';
+
+
+                        /*
+                            Показываем сообщение.
+                        */
+
                         customerSuccess.style.display =
-                            'none';
-
-                        customerError.style.display =
-                            'none';
+                            'block';
 
 
-                        submitBtn.disabled =
-                            true;
+                        /*
+                            Меняем кнопку.
+                        */
 
                         submitBtn.innerHTML =
-                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+                            '<i class="fab fa-whatsapp"></i> Открываем WhatsApp...';
 
 
-                        const success =
-                            await sendToTelegram(
-                                name,
-                                phone,
-                                '',
-                                'заявка от заказчика'
-                            );
+                        /*
+                            Открываем WhatsApp.
+                        */
+
+                        openWhatsApp(message);
 
 
-                        if (success) {
+                        /*
+                            Возвращаем кнопку.
+                        */
 
-                            customerSuccess.style.display =
-                                'block';
+                        setTimeout(
+                            function () {
 
-                            customerForm.reset();
+                                submitBtn.innerHTML =
+                                    '<i class="fab fa-whatsapp"></i> Отправить в WhatsApp';
 
-
-                            customerSuccess.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center'
-                            });
-
-
-                            setTimeout(
-                                function () {
-
-                                    customerSuccess.style.display =
-                                        'none';
-
-                                },
-                                8000
-                            );
-
-                        } else {
-
-                            if (!telegramConfigured()) {
-
-                                showTelegramConfigError(
-                                    customerError
-                                );
-
-                            } else {
-
-                                customerError.style.display =
-                                    'block';
-
-                            }
-
-                        }
-
-
-                        submitBtn.disabled =
-                            false;
-
-                        submitBtn.innerHTML =
-                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
+                            },
+                            1500
+                        );
 
                     }
                 );
@@ -3043,17 +2856,12 @@
                     'workerSuccess'
                 );
 
-            const workerError =
-                document.getElementById(
-                    'workerError'
-                );
-
 
             if (workerForm) {
 
                 workerForm.addEventListener(
                     'submit',
-                    async function (e) {
+                    function (e) {
 
                         e.preventDefault();
 
@@ -3099,76 +2907,66 @@
                         }
 
 
+                        /*
+                            Формируем заявку работника.
+                        */
+
+                        const message =
+                            '🔔 НОВАЯ ЗАЯВКА С САЙТА ЧиД\n\n' +
+
+                            '👷 Соискатель: ' +
+                            name +
+                            '\n' +
+
+                            '📞 Телефон: ' +
+                            phone +
+                            '\n' +
+
+                            '📍 Город: ' +
+                            city +
+                            '\n\n' +
+
+                            '💼 Тип заявки: Ищу работу\n\n' +
+
+                            'Здравствуйте! Ищу работу разнорабочим.';
+
+
+                        /*
+                            Показываем сообщение.
+                        */
+
                         workerSuccess.style.display =
-                            'none';
-
-                        workerError.style.display =
-                            'none';
+                            'block';
 
 
-                        workerSubmitBtn.disabled =
-                            true;
+                        /*
+                            Меняем кнопку.
+                        */
 
                         workerSubmitBtn.innerHTML =
-                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+                            '<i class="fab fa-whatsapp"></i> Открываем WhatsApp...';
 
 
-                        const success =
-                            await sendToTelegram(
-                                name,
-                                phone,
-                                city,
-                                'заявка на работу'
-                            );
+                        /*
+                            Открываем WhatsApp.
+                        */
+
+                        openWhatsApp(message);
 
 
-                        if (success) {
+                        /*
+                            Возвращаем кнопку.
+                        */
 
-                            workerSuccess.style.display =
-                                'block';
+                        setTimeout(
+                            function () {
 
-                            workerForm.reset();
+                                workerSubmitBtn.innerHTML =
+                                    '<i class="fab fa-whatsapp"></i> Отправить в WhatsApp';
 
-
-                            workerSuccess.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center'
-                            });
-
-
-                            setTimeout(
-                                function () {
-
-                                    workerSuccess.style.display =
-                                        'none';
-
-                                },
-                                8000
-                            );
-
-                        } else {
-
-                            if (!telegramConfigured()) {
-
-                                showTelegramConfigError(
-                                    workerError
-                                );
-
-                            } else {
-
-                                workerError.style.display =
-                                    'block';
-
-                            }
-
-                        }
-
-
-                        workerSubmitBtn.disabled =
-                            false;
-
-                        workerSubmitBtn.innerHTML =
-                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
+                            },
+                            1500
+                        );
 
                     }
                 );
