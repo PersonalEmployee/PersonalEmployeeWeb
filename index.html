@@ -7,7 +7,7 @@
 
     <title>ЧиД — Нужные руки рядом!</title>
 
-    <!-- Шрифты -->
+    <!-- Шрифт -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -40,7 +40,6 @@
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-
             background:
                 linear-gradient(
                     145deg,
@@ -50,6 +49,10 @@
 
             min-height: 100vh;
             color: #0b1e3a;
+        }
+
+        body.worker-mode {
+            background: #ffffff;
         }
 
         button,
@@ -64,7 +67,6 @@
 
         .main-wrapper {
             width: min(1440px, calc(100% - 32px));
-
             margin: 16px auto;
 
             background: #ffffff;
@@ -138,7 +140,6 @@
         .right-group a {
             color: #e8edf5;
             text-decoration: none;
-
             transition: 0.2s ease;
         }
 
@@ -167,12 +168,12 @@
 
             text-align: center;
 
-            padding: 18px 0 0;
+            padding: 18px 0 24px;
         }
 
 
         /* =========================================================
-           БРЕНД ЧиД
+           БРЕНД
         ========================================================= */
 
         .brand-block {
@@ -308,66 +309,50 @@
 
 
         /* =========================================================
-           ФОТО — НА ВСЮ ШИРИНУ
+           ФОТО
+           НА ВЕСЬ ЭКРАН ПО ШИРИНЕ
         ========================================================= */
 
         .header-image {
             width: 100vw;
-            max-width: none;
+            max-width: 100vw;
 
             margin-top: 24px;
 
-            border-radius: 0;
+            margin-left: calc(50% - 50vw);
 
             overflow: hidden;
 
             background: #f1f4f9;
 
             border: none;
+            border-radius: 0;
 
             box-shadow: none;
 
             line-height: 0;
 
             position: relative;
-
-            transform: translateX(
-                calc(-50% + 50vw)
-            );
-        }
-
-        .header-image::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(255,255,255,0.04),
-                    rgba(11,30,58,0.04)
-                );
         }
 
         .header-image img {
             display: block;
 
             width: 100%;
-
             height: auto;
 
-            max-width: none;
+            min-height: 260px;
 
             object-fit: cover;
-
             object-position: center;
 
             background: #ffffff;
         }
+
+        /* ВАЖНО:
+           Текст с картинки удалён.
+           Никакого текста поверх фотографии нет.
+        */
 
 
         /* =========================================================
@@ -491,7 +476,7 @@
 
             color: #0b1e3a;
 
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .welcome-card h1 span {
@@ -508,23 +493,18 @@
             background-clip: text;
         }
 
-
-        /* НОВАЯ НАДПИСЬ ПОД ЧиД */
-
-        .welcome-service-title {
+        /* НОВАЯ НАДПИСЬ */
+        .welcome-work-title {
             color: #d49a00;
 
-            font-size: clamp(14px, 2vw, 19px);
+            font-size: clamp(14px, 2vw, 18px);
 
             font-weight: 800;
 
-            letter-spacing: 0.8px;
-
-            text-transform: uppercase;
-
             margin-bottom: 14px;
-        }
 
+            letter-spacing: 0.3px;
+        }
 
         .divider {
             width: 55px;
@@ -618,11 +598,7 @@
         }
 
         .welcome-bottom {
-            margin-top: 15px;
-
-            font-size: 12px;
-
-            color: #8a9bb5;
+            display: none;
         }
 
 
@@ -1356,18 +1332,11 @@
             }
 
             .header-image {
-                transform: none;
+                width: 100vw;
 
-                width: 100%;
+                margin-left: calc(50% - 50vw);
 
                 border-radius: 0;
-
-                margin-left: 0;
-                margin-right: 0;
-            }
-
-            .header-image img {
-                width: 100%;
             }
         }
 
@@ -1441,23 +1410,24 @@
                 width: 24px;
             }
 
+            /* Картинка всегда во всю ширину */
             .header-image {
+                width: 100vw;
+
+                margin-left: calc(50% - 50vw);
+
                 margin-top: 17px;
 
                 border-radius: 0;
-
-                transform: none;
-
-                width: 100%;
             }
 
             .header-image img {
-                width: 100%;
-
-                height: auto;
-
+                min-height: 200px;
                 object-fit: cover;
             }
+
+
+            /* Приветственное окно */
 
             .welcome-overlay {
                 padding: 10px;
@@ -1469,10 +1439,6 @@
                 padding: 24px 17px 20px;
 
                 border-radius: 22px;
-
-                max-height: none;
-
-                overflow: hidden;
             }
 
             .welcome-icon {
@@ -1490,12 +1456,9 @@
                 margin-bottom: 7px;
             }
 
-            .welcome-service-title {
-                font-size: 12px;
-
-                line-height: 1.3;
-
-                margin-bottom: 10px;
+            .welcome-work-title {
+                font-size: 13px;
+                margin-bottom: 11px;
             }
 
             .divider {
@@ -1526,13 +1489,6 @@
                 font-size: 14px;
             }
 
-            .welcome-bottom {
-                font-size: 10px;
-
-                line-height: 1.4;
-
-                margin-top: 11px;
-            }
 
             .services,
             .contact {
@@ -1592,55 +1548,24 @@
 
 
         /* =========================================================
-           МАЛЕНЬКАЯ ВЫСОТА ЭКРАНА
+           РЕЖИМ "ИЩУ РАБОТУ"
         ========================================================= */
 
-        @media (max-height: 650px) {
+        /*
+           Когда пользователь выбирает "Ищу работу",
+           картинка полностью скрывается.
+        */
 
-            .welcome-card {
-                padding: 20px 30px 17px;
-            }
+        body.worker-mode .header-image {
+            display: none;
+        }
 
-            .welcome-icon {
-                width: 45px;
-                height: 45px;
+        body.worker-mode .header-content {
+            padding-bottom: 0;
+        }
 
-                font-size: 24px;
-
-                margin-bottom: 5px;
-            }
-
-            .welcome-card h1 {
-                font-size: 27px;
-
-                margin-bottom: 5px;
-            }
-
-            .welcome-service-title {
-                font-size: 13px;
-
-                margin-bottom: 8px;
-            }
-
-            .divider {
-                margin-bottom: 10px;
-            }
-
-            .welcome-subtitle {
-                font-size: 13px;
-
-                line-height: 1.35;
-
-                margin-bottom: 12px;
-            }
-
-            .btn-choice {
-                padding: 11px 20px;
-            }
-
-            .welcome-bottom {
-                margin-top: 9px;
-            }
+        body.worker-mode .main-header {
+            border-bottom: 1px solid #eef2f8;
         }
 
     </style>
@@ -1781,9 +1706,9 @@
             </h1>
 
 
-            <!-- ДОБАВЛЕНО -->
-            <div class="welcome-service-title">
-                Работа / Услуги разнорабочих
+            <!-- НОВАЯ НАДПИСЬ -->
+            <div class="welcome-work-title">
+                Работа / услуги разнорабочих
             </div>
 
 
@@ -1888,6 +1813,7 @@
 
                     <div class="contact-options">
 
+
                         <div
                             class="contact-option"
                             onclick="window.open('https://t.me/+77477891341', '_blank')"
@@ -1986,6 +1912,7 @@
                                     type="text"
                                     id="fullName"
                                     placeholder="Иванов Иван"
+                                    autocomplete="name"
                                     required
                                 >
 
@@ -2006,6 +1933,7 @@
                                     type="tel"
                                     id="phone"
                                     placeholder="+7 (___) ___-__-__"
+                                    autocomplete="tel"
                                     required
                                 >
 
@@ -2052,7 +1980,7 @@
                             <strong>Ошибка!</strong>
 
                             Не удалось отправить заявку.
-                            Попробуйте позже или позвоните нам.
+                            Проверьте настройки Telegram или позвоните нам.
 
                         </div>
 
@@ -2190,7 +2118,7 @@
 
                         <p>
                             Уборка помещений, квартир, подъездов после
-                            строительства и кап.ремонта.
+                            строительства и кап. ремонта.
                         </p>
 
                     </div>
@@ -2254,7 +2182,9 @@
              ИЩУ РАБОТУ
         ====================================================== -->
 
-        <section id="workerContent">
+        <section
+            id="workerContent"
+        >
 
             <div class="worker-page">
 
@@ -2286,7 +2216,6 @@
 
                     <form id="workerForm">
 
-
                         <div class="form-group">
 
                             <label for="workerName">
@@ -2301,6 +2230,7 @@
                                 type="text"
                                 id="workerName"
                                 placeholder="Иванов Иван"
+                                autocomplete="name"
                                 required
                             >
 
@@ -2321,6 +2251,7 @@
                                 type="tel"
                                 id="workerPhone"
                                 placeholder="+7 (___) ___-__-__"
+                                autocomplete="tel"
                                 required
                             >
 
@@ -2387,7 +2318,7 @@
                         <strong>Ошибка!</strong>
 
                         Не удалось отправить заявку.
-                        Попробуйте позже.
+                        Проверьте настройки Telegram или попробуйте позже.
 
                     </div>
 
@@ -2439,6 +2370,7 @@
                     <a
                         href="https://t.me/+77477891341"
                         target="_blank"
+                        rel="noopener noreferrer"
                         aria-label="Telegram"
                     >
 
@@ -2450,6 +2382,7 @@
                     <a
                         href="https://wa.me/77477891341"
                         target="_blank"
+                        rel="noopener noreferrer"
                         aria-label="WhatsApp"
                     >
 
@@ -2623,14 +2556,31 @@
 <script>
 
     /* =========================================================
-       TELEGRAM
+       НАСТРОЙКИ TELEGRAM
+
+       ОБЯЗАТЕЛЬНО ЗАМЕНИ ЭТИ ДВА ЗНАЧЕНИЯ
     ========================================================= */
 
     const TELEGRAM_BOT_TOKEN =
-        'ВСТАВЬ_СЮДА_СВОЙ_ТОКЕН';
+        'ВСТАВЬ_СЮДА_ТОКЕН_БОТА';
 
     const TELEGRAM_CHAT_ID =
         'ВСТАВЬ_СЮДА_CHAT_ID';
+
+
+    /* =========================================================
+       ПРОВЕРКА НАСТРОЕК TELEGRAM
+    ========================================================= */
+
+    function telegramConfigured() {
+
+        return (
+            TELEGRAM_BOT_TOKEN &&
+            TELEGRAM_CHAT_ID &&
+            !TELEGRAM_BOT_TOKEN.includes('ВСТАВЬ_СЮДА') &&
+            !TELEGRAM_CHAT_ID.includes('ВСТАВЬ_СЮДА')
+        );
+    }
 
 
     /* =========================================================
@@ -2644,6 +2594,16 @@
         type = 'заявка'
     ) {
 
+        if (!telegramConfigured()) {
+
+            console.error(
+                'Telegram не настроен. Укажите TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID.'
+            );
+
+            return false;
+        }
+
+
         const message =
             `🔔 Новая ${type} с сайта ЧиД!\n\n` +
             `👤 Имя: ${name}\n` +
@@ -2651,9 +2611,7 @@
             (city
                 ? `📍 Город: ${city}\n`
                 : '') +
-            `🕐 Время: ${
-                new Date().toLocaleString('ru-RU')
-            }`;
+            `🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
 
 
         const url =
@@ -2668,18 +2626,12 @@
                     method: 'POST',
 
                     headers: {
-                        'Content-Type':
-                            'application/json'
+                        'Content-Type': 'application/json'
                     },
 
                     body: JSON.stringify({
-
-                        chat_id:
-                            TELEGRAM_CHAT_ID,
-
-                        text:
-                            message
-
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message
                     })
                 }
             );
@@ -2689,7 +2641,13 @@
                 await response.json();
 
 
-            return data.ok;
+            console.log('Telegram response:', data);
+
+
+            return (
+                response.ok &&
+                data.ok === true
+            );
 
         } catch (error) {
 
@@ -2704,6 +2662,27 @@
 
 
     /* =========================================================
+       ПОКАЗАТЬ ОШИБКУ TELEGRAM
+    ========================================================= */
+
+    function showTelegramConfigError(element) {
+
+        if (!element) {
+            return;
+        }
+
+        element.innerHTML =
+            `
+            <i class="fas fa-exclamation-circle"></i>
+            <strong>Telegram не настроен.</strong><br>
+            В коде сайта необходимо указать BOT TOKEN и CHAT ID.
+            `;
+
+        element.style.display = 'block';
+    }
+
+
+    /* =========================================================
        DOM READY
     ========================================================= */
 
@@ -2711,6 +2690,10 @@
         'DOMContentLoaded',
         function () {
 
+
+            /* =====================================================
+               ЭЛЕМЕНТЫ
+            ====================================================== */
 
             const overlay =
                 document.getElementById(
@@ -2749,73 +2732,134 @@
 
 
             /* =====================================================
+               НАВЕРХ СТРАНИЦЫ
+            ====================================================== */
+
+            function goToTop() {
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'auto'
+                });
+            }
+
+
+            /* =====================================================
                ПОКАЗ ЗАКАЗЧИКА
 
                ВАЖНО:
-               Здесь больше НЕТ scrollIntoView().
-               Поэтому после нажатия "Я заказчик"
-               страница остаётся сверху.
+               НЕ ПРОКРУЧИВАЕМ К ФОРМЕ.
+
+               Открываем сайт сверху, где находится картинка.
             ====================================================== */
 
             function showCustomer() {
+
+                document.body.classList.remove(
+                    'worker-mode'
+                );
+
 
                 overlay.classList.add(
                     'hidden'
                 );
 
+
                 mainContent.classList.add(
                     'active'
                 );
 
+
                 customerContent.style.display =
                     'block';
+
 
                 workerContent.style.display =
                     'none';
 
+
                 mainFooter.style.display =
                     'block';
 
-                /* Принудительно возвращаем страницу наверх */
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'instant'
-                });
+
+                /*
+                 * Небольшая задержка нужна только для того,
+                 * чтобы браузер успел закрыть overlay.
+                 *
+                 * После этого возвращаем пользователя
+                 * в самый верх страницы.
+                 */
+
+                setTimeout(
+                    function () {
+
+                        goToTop();
+
+                    },
+                    50
+                );
             }
 
 
             /* =====================================================
                ПОКАЗ СОИСКАТЕЛЯ
+
+               КАРТИНКУ УБИРАЕМ.
+               ФОРМУ ПОКАЗЫВАЕМ.
             ====================================================== */
 
             function showWorker() {
+
+                document.body.classList.add(
+                    'worker-mode'
+                );
+
 
                 overlay.classList.add(
                     'hidden'
                 );
 
+
                 mainContent.classList.add(
                     'active'
                 );
 
+
                 customerContent.style.display =
                     'none';
+
 
                 workerContent.style.display =
                     'block';
 
+
                 mainFooter.style.display =
                     'block';
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'instant'
-                });
+
+                /*
+                 * Здесь картинка уже скрыта через CSS.
+                 *
+                 * Показываем начало формы соискателя.
+                 */
+
+                setTimeout(
+                    function () {
+
+                        workerContent.scrollIntoView({
+                            behavior: 'auto',
+                            block: 'start'
+                        });
+
+                    },
+                    50
+                );
             }
 
 
             /* =====================================================
-               КНОПКИ
+               КНОПКА "Я ЗАКАЗЧИК"
             ====================================================== */
 
             if (btnCustomer) {
@@ -2827,6 +2871,10 @@
 
             }
 
+
+            /* =====================================================
+               КНОПКА "ИЩУ РАБОТУ"
+            ====================================================== */
 
             if (btnWorker) {
 
@@ -2890,10 +2938,7 @@
                                 .trim();
 
 
-                        if (
-                            !name ||
-                            !phone
-                        ) {
+                        if (!name || !phone) {
 
                             alert(
                                 'Заполните имя и телефон.'
@@ -2903,18 +2948,18 @@
                         }
 
 
-                        submitBtn.disabled =
-                            true;
-
-                        submitBtn.innerHTML =
-                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-
-
                         customerSuccess.style.display =
                             'none';
 
                         customerError.style.display =
                             'none';
+
+
+                        submitBtn.disabled =
+                            true;
+
+                        submitBtn.innerHTML =
+                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
 
 
                         const success =
@@ -2933,22 +2978,6 @@
 
                             customerForm.reset();
 
-                        } else {
-
-                            customerError.style.display =
-                                'block';
-
-                        }
-
-
-                        submitBtn.disabled =
-                            false;
-
-                        submitBtn.innerHTML =
-                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
-
-
-                        if (success) {
 
                             customerSuccess.scrollIntoView({
                                 behavior: 'smooth',
@@ -2965,7 +2994,30 @@
                                 },
                                 8000
                             );
+
+                        } else {
+
+                            if (!telegramConfigured()) {
+
+                                showTelegramConfigError(
+                                    customerError
+                                );
+
+                            } else {
+
+                                customerError.style.display =
+                                    'block';
+
+                            }
+
                         }
+
+
+                        submitBtn.disabled =
+                            false;
+
+                        submitBtn.innerHTML =
+                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
 
                     }
                 );
@@ -3047,18 +3099,18 @@
                         }
 
 
-                        workerSubmitBtn.disabled =
-                            true;
-
-                        workerSubmitBtn.innerHTML =
-                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-
-
                         workerSuccess.style.display =
                             'none';
 
                         workerError.style.display =
                             'none';
+
+
+                        workerSubmitBtn.disabled =
+                            true;
+
+                        workerSubmitBtn.innerHTML =
+                            '<i class="fas fa-spinner fa-spin"></i> Отправка...';
 
 
                         const success =
@@ -3077,22 +3129,6 @@
 
                             workerForm.reset();
 
-                        } else {
-
-                            workerError.style.display =
-                                'block';
-
-                        }
-
-
-                        workerSubmitBtn.disabled =
-                            false;
-
-                        workerSubmitBtn.innerHTML =
-                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
-
-
-                        if (success) {
 
                             workerSuccess.scrollIntoView({
                                 behavior: 'smooth',
@@ -3109,7 +3145,30 @@
                                 },
                                 8000
                             );
+
+                        } else {
+
+                            if (!telegramConfigured()) {
+
+                                showTelegramConfigError(
+                                    workerError
+                                );
+
+                            } else {
+
+                                workerError.style.display =
+                                    'block';
+
+                            }
+
                         }
+
+
+                        workerSubmitBtn.disabled =
+                            false;
+
+                        workerSubmitBtn.innerHTML =
+                            '<i class="fas fa-paper-plane"></i> Отправить заявку';
 
                     }
                 );
