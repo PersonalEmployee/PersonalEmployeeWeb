@@ -308,20 +308,16 @@
 
 
         /* =========================================================
-           ФОТО — НА ВСЮ ШИРИНУ САЙТА
+           ФОТО — НА ВСЮ ШИРИНУ
         ========================================================= */
 
-        /*
-            ВАЖНО:
-            Фото теперь находится не внутри .container.
-            Поэтому оно автоматически занимает всю ширину
-            .main-wrapper.
-        */
-
         .header-image {
-            width: 100%;
+            width: 100vw;
+            max-width: none;
 
             margin-top: 24px;
+
+            border-radius: 0;
 
             overflow: hidden;
 
@@ -334,6 +330,10 @@
             line-height: 0;
 
             position: relative;
+
+            transform: translateX(
+                calc(-50% + 50vw)
+            );
         }
 
         .header-image::after {
@@ -357,57 +357,16 @@
             display: block;
 
             width: 100%;
+
             height: auto;
 
             max-width: none;
 
             object-fit: cover;
+
             object-position: center;
 
             background: #ffffff;
-        }
-
-        .header-image-text {
-            position: absolute;
-
-            bottom: 30px;
-            left: 0;
-
-            width: 100%;
-
-            text-align: center;
-
-            font-size: clamp(18px, 3vw, 36px);
-
-            font-weight: 900;
-
-            color: #ffffff;
-
-            text-shadow:
-                0 4px 20px rgba(0,0,0,0.6);
-
-            pointer-events: none;
-
-            z-index: 2;
-
-            letter-spacing: 1px;
-
-            padding: 12px 0;
-        }
-
-        .header-image-text span {
-            display: inline-block;
-
-            background:
-                rgba(11, 30, 58, 0.55);
-
-            padding: 6px 24px;
-
-            border-radius: 40px;
-
-            backdrop-filter: blur(4px);
-
-            border: 1px solid rgba(255,255,255,0.2);
         }
 
 
@@ -449,9 +408,7 @@
 
         .welcome-overlay.hidden {
             opacity: 0;
-
             visibility: hidden;
-
             pointer-events: none;
         }
 
@@ -501,7 +458,6 @@
             margin: 0 auto 10px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
@@ -552,7 +508,9 @@
             background-clip: text;
         }
 
-        /* НОВАЯ НАДПИСЬ */
+
+        /* НОВАЯ НАДПИСЬ ПОД ЧиД */
+
         .welcome-service-title {
             color: #d49a00;
 
@@ -560,10 +518,13 @@
 
             font-weight: 800;
 
-            line-height: 1.4;
+            letter-spacing: 0.8px;
 
-            margin-bottom: 12px;
+            text-transform: uppercase;
+
+            margin-bottom: 14px;
         }
+
 
         .divider {
             width: 55px;
@@ -1352,7 +1313,7 @@
 
 
         /* =========================================================
-           ПЛАНШЕТ
+           АДАПТИВ — ПЛАНШЕТ
         ========================================================= */
 
         @media (max-width: 900px) {
@@ -1395,31 +1356,24 @@
             }
 
             .header-image {
+                transform: none;
+
                 width: 100%;
 
-                margin-top: 20px;
-
                 border-radius: 0;
+
+                margin-left: 0;
+                margin-right: 0;
             }
 
             .header-image img {
                 width: 100%;
             }
-
-            .header-image-text {
-                bottom: 16px;
-
-                font-size: clamp(14px, 2.5vw, 24px);
-            }
-
-            .header-image-text span {
-                padding: 4px 16px;
-            }
         }
 
 
         /* =========================================================
-           ТЕЛЕФОН
+           АДАПТИВ — ТЕЛЕФОН
         ========================================================= */
 
         @media (max-width: 650px) {
@@ -1487,34 +1441,23 @@
                 width: 24px;
             }
 
-            /* Фото полностью от края до края */
             .header-image {
-                width: 100%;
-
                 margin-top: 17px;
 
                 border-radius: 0;
+
+                transform: none;
+
+                width: 100%;
             }
 
             .header-image img {
                 width: 100%;
+
                 height: auto;
 
                 object-fit: cover;
             }
-
-            .header-image-text {
-                bottom: 10px;
-
-                font-size: clamp(12px, 3vw, 18px);
-            }
-
-            .header-image-text span {
-                padding: 3px 12px;
-            }
-
-
-            /* Приветственное окно */
 
             .welcome-overlay {
                 padding: 10px;
@@ -1526,6 +1469,10 @@
                 padding: 24px 17px 20px;
 
                 border-radius: 22px;
+
+                max-height: none;
+
+                overflow: hidden;
             }
 
             .welcome-icon {
@@ -1544,9 +1491,11 @@
             }
 
             .welcome-service-title {
-                font-size: 13px;
+                font-size: 12px;
 
-                margin-bottom: 9px;
+                line-height: 1.3;
+
+                margin-bottom: 10px;
             }
 
             .divider {
@@ -1575,6 +1524,14 @@
                 padding: 13px 18px;
 
                 font-size: 14px;
+            }
+
+            .welcome-bottom {
+                font-size: 10px;
+
+                line-height: 1.4;
+
+                margin-top: 11px;
             }
 
             .services,
@@ -1662,7 +1619,7 @@
             .welcome-service-title {
                 font-size: 13px;
 
-                margin-bottom: 6px;
+                margin-bottom: 8px;
             }
 
             .divider {
@@ -1679,6 +1636,10 @@
 
             .btn-choice {
                 padding: 11px 20px;
+            }
+
+            .welcome-bottom {
+                margin-top: 9px;
             }
         }
 
@@ -1751,9 +1712,11 @@
                     </div>
 
                     <div class="brand-name">
+
                         <div class="brand-mark">
                             ЧиД
                         </div>
+
                     </div>
 
                     <div class="brand-slogan">
@@ -1770,25 +1733,20 @@
 
                 </div>
 
-            </div>
 
-        </div>
+                <!-- =================================================
+                     ФОТО
+                ================================================== -->
 
+                <div class="header-image">
 
-        <!-- =====================================================
-             ФОТО — ТЕПЕРЬ ВНЕ .container
-             ПОЭТОМУ ОНО НА ВСЮ ШИРИНУ
-        ====================================================== -->
+                    <img
+                        src="WhatsApp Image 2026-08-11 at 11.36.55.jpeg"
+                        alt="ЧиД — Нужные руки рядом!"
+                    >
 
-        <div class="header-image">
+                </div>
 
-            <img
-                src="WhatsApp Image 2026-08-11 at 11.36.55.jpeg"
-                alt="ЧиД — Нужные руки рядом!"
-            >
-
-            <div class="header-image-text">
-                <span>Работа / Услуги разнорабочих</span>
             </div>
 
         </div>
@@ -1813,15 +1771,19 @@
 
 
             <h1>
+
                 Добро пожаловать в
+
                 <br>
+
                 <span>ЧиД</span>
+
             </h1>
 
 
-            <!-- НОВАЯ НАДПИСЬ -->
+            <!-- ДОБАВЛЕНО -->
             <div class="welcome-service-title">
-                Работа / услуги разнорабочих
+                Работа / Услуги разнорабочих
             </div>
 
 
@@ -1829,8 +1791,10 @@
 
 
             <p class="welcome-subtitle">
+
                 Платформа для быстрого поиска надёжных специалистов
                 и выгодных заказов. Выберите свою роль, чтобы начать.
+
             </p>
 
 
@@ -1841,8 +1805,11 @@
                     id="btnCustomer"
                     type="button"
                 >
+
                     <i class="fas fa-briefcase"></i>
+
                     Я заказчик
+
                 </button>
 
 
@@ -1851,8 +1818,11 @@
                     id="btnWorker"
                     type="button"
                 >
+
                     <i class="fas fa-hard-hat"></i>
+
                     Ищу работу
+
                 </button>
 
             </div>
@@ -1917,7 +1887,6 @@
                 <div class="contact">
 
                     <div class="contact-options">
-
 
                         <div
                             class="contact-option"
@@ -2006,8 +1975,11 @@
                             <div class="form-group">
 
                                 <label for="fullName">
+
                                     <i class="fas fa-user"></i>
+
                                     Ваше имя
+
                                 </label>
 
                                 <input
@@ -2023,8 +1995,11 @@
                             <div class="form-group">
 
                                 <label for="phone">
+
                                     <i class="fas fa-phone-alt"></i>
+
                                     Номер телефона
+
                                 </label>
 
                                 <input
@@ -2042,8 +2017,11 @@
                                 class="submit-btn"
                                 id="submitBtn"
                             >
+
                                 <i class="fas fa-paper-plane"></i>
+
                                 Отправить заявку
+
                             </button>
 
                         </form>
@@ -2053,12 +2031,14 @@
                             class="success-message"
                             id="customerSuccess"
                         >
+
                             <i class="fas fa-check-circle"></i>
 
                             <strong>Спасибо!</strong>
 
                             Ваша заявка принята.
                             Мы свяжемся с вами в ближайшее время.
+
                         </div>
 
 
@@ -2066,12 +2046,14 @@
                             class="error-message"
                             id="customerError"
                         >
+
                             <i class="fas fa-exclamation-circle"></i>
 
                             <strong>Ошибка!</strong>
 
                             Не удалось отправить заявку.
                             Попробуйте позже или позвоните нам.
+
                         </div>
 
                     </div>
@@ -2088,8 +2070,10 @@
             <section class="info-block">
 
                 <h2>
+
                     Аренда
                     <span>разнорабочих</span>
+
                 </h2>
 
 
@@ -2105,26 +2089,38 @@
                 <div class="info-features">
 
                     <div class="feature">
+
                         <i class="fas fa-user-check"></i>
+
                         Все сотрудники — граждане РК
+
                     </div>
 
 
                     <div class="feature">
+
                         <i class="fas fa-handshake"></i>
+
                         Работаем с физ. и юр. лицами
+
                     </div>
 
 
                     <div class="feature">
+
                         <i class="fas fa-lock"></i>
+
                         Цена фиксируется и не меняется
+
                     </div>
 
 
                     <div class="feature">
+
                         <i class="fas fa-credit-card"></i>
+
                         Оплата любым удобным способом
+
                     </div>
 
                 </div>
@@ -2194,7 +2190,7 @@
 
                         <p>
                             Уборка помещений, квартир, подъездов после
-                            строительства и кап. ремонта.
+                            строительства и кап.ремонта.
                         </p>
 
                     </div>
@@ -2265,7 +2261,9 @@
                 <div class="worker-title">
 
                     <div class="icon">
+
                         <i class="fas fa-hard-hat"></i>
+
                     </div>
 
 
@@ -2275,8 +2273,10 @@
 
 
                     <p>
+
                         Заполните форму, и мы свяжемся с вами
                         по поводу подходящих заказов.
+
                     </p>
 
                 </div>
@@ -2286,11 +2286,15 @@
 
                     <form id="workerForm">
 
+
                         <div class="form-group">
 
                             <label for="workerName">
+
                                 <i class="fas fa-user"></i>
+
                                 Ваше имя
+
                             </label>
 
                             <input
@@ -2306,8 +2310,11 @@
                         <div class="form-group">
 
                             <label for="workerPhone">
+
                                 <i class="fas fa-phone-alt"></i>
+
                                 Номер телефона
+
                             </label>
 
                             <input
@@ -2323,8 +2330,11 @@
                         <div class="form-group">
 
                             <label for="workerCity">
+
                                 <i class="fas fa-map-pin"></i>
+
                                 Город
+
                             </label>
 
                             <input
@@ -2342,8 +2352,11 @@
                             class="submit-btn"
                             id="workerSubmitBtn"
                         >
+
                             <i class="fas fa-paper-plane"></i>
+
                             Отправить заявку
+
                         </button>
 
                     </form>
@@ -2353,12 +2366,14 @@
                         class="success-message"
                         id="workerSuccess"
                     >
+
                         <i class="fas fa-check-circle"></i>
 
                         <strong>Спасибо!</strong>
 
                         Ваша заявка принята.
                         Мы свяжемся с вами по поводу работы.
+
                     </div>
 
 
@@ -2366,12 +2381,14 @@
                         class="error-message"
                         id="workerError"
                     >
+
                         <i class="fas fa-exclamation-circle"></i>
 
                         <strong>Ошибка!</strong>
 
                         Не удалось отправить заявку.
                         Попробуйте позже.
+
                     </div>
 
                 </div>
@@ -2394,20 +2411,26 @@
 
         <div class="footer-grid">
 
+
             <div class="footer-col">
 
                 <h4>
+
                     <i
                         class="fas fa-briefcase"
                         style="margin-right:7px;"
                     ></i>
+
                     ЧиД
+
                 </h4>
 
 
                 <p>
+
                     Агентство по подбору разнорабочих
                     и грузчиков в Усть-Каменогорске.
+
                 </p>
 
 
@@ -2418,7 +2441,9 @@
                         target="_blank"
                         aria-label="Telegram"
                     >
+
                         <i class="fab fa-telegram-plane"></i>
+
                     </a>
 
 
@@ -2427,7 +2452,9 @@
                         target="_blank"
                         aria-label="WhatsApp"
                     >
+
                         <i class="fab fa-whatsapp"></i>
+
                     </a>
 
 
@@ -2436,7 +2463,9 @@
                         aria-label="Instagram"
                         onclick="alert('Извините, Instagram аккаунт сейчас в доработке 🛠️'); return false;"
                     >
+
                         <i class="fab fa-instagram"></i>
+
                     </a>
 
                 </div>
@@ -2452,26 +2481,38 @@
 
 
                 <a href="tel:+77477891341">
+
                     <i class="fas fa-phone-alt"></i>
+
                     +7 (747) 789-13-41
+
                 </a>
 
 
                 <a href="mailto:chid4145@gmail.com">
+
                     <i class="fas fa-envelope"></i>
+
                     chid4145@gmail.com
+
                 </a>
 
 
                 <a href="#">
+
                     <i class="fas fa-map-marker-alt"></i>
+
                     Усть-Каменогорск, ВКО
+
                 </a>
 
 
                 <a href="#">
+
                     <i class="fas fa-clock"></i>
+
                     Пн-Пт: 08:00 – 20:00
+
                 </a>
 
             </div>
@@ -2485,26 +2526,38 @@
 
 
                 <a href="#">
+
                     <i class="fas fa-truck"></i>
+
                     Грузчики
+
                 </a>
 
 
                 <a href="#">
+
                     <i class="fas fa-hard-hat"></i>
+
                     Разнорабочие
+
                 </a>
 
 
                 <a href="#">
+
                     <i class="fas fa-building"></i>
+
                     Подсобные услуги
+
                 </a>
 
 
                 <a href="#">
+
                     <i class="fas fa-broom"></i>
+
                     Уборка помещений
+
                 </a>
 
             </div>
@@ -2518,14 +2571,20 @@
 
 
                 <a href="#">
+
                     <i class="fas fa-info-circle"></i>
+
                     О нас
+
                 </a>
 
 
                 <a href="#">
+
                     <i class="fas fa-file-contract"></i>
+
                     Договор
+
                 </a>
 
             </div>
@@ -2565,8 +2624,6 @@
 
     /* =========================================================
        TELEGRAM
-
-       ВСТАВЬ СЮДА СВОИ ДАННЫЕ
     ========================================================= */
 
     const TELEGRAM_BOT_TOKEN =
@@ -2591,21 +2648,13 @@
             `🔔 Новая ${type} с сайта ЧиД!\n\n` +
             `👤 Имя: ${name}\n` +
             `📞 Телефон: ${phone}\n` +
-            (
-                city
-                    ? `📍 Город: ${city}\n`
-                    : ''
-            ) +
+            (city
+                ? `📍 Город: ${city}\n`
+                : '') +
             `🕐 Время: ${
                 new Date().toLocaleString('ru-RU')
             }`;
 
-
-        /*
-            ВАЖНО:
-            Здесь должен быть обычный URL.
-            Никаких [текста](ссылки).
-        */
 
         const url =
             `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -2624,11 +2673,13 @@
                     },
 
                     body: JSON.stringify({
+
                         chat_id:
                             TELEGRAM_CHAT_ID,
 
                         text:
                             message
+
                     })
                 }
             );
@@ -2659,6 +2710,7 @@
     document.addEventListener(
         'DOMContentLoaded',
         function () {
+
 
             const overlay =
                 document.getElementById(
@@ -2698,13 +2750,22 @@
 
             /* =====================================================
                ПОКАЗ ЗАКАЗЧИКА
+
+               ВАЖНО:
+               Здесь больше НЕТ scrollIntoView().
+               Поэтому после нажатия "Я заказчик"
+               страница остаётся сверху.
             ====================================================== */
 
             function showCustomer() {
 
-                overlay.classList.add('hidden');
+                overlay.classList.add(
+                    'hidden'
+                );
 
-                mainContent.classList.add('active');
+                mainContent.classList.add(
+                    'active'
+                );
 
                 customerContent.style.display =
                     'block';
@@ -2715,17 +2776,11 @@
                 mainFooter.style.display =
                     'block';
 
-                setTimeout(
-                    function () {
-
-                        mainContent.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-
-                    },
-                    350
-                );
+                /* Принудительно возвращаем страницу наверх */
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
             }
 
 
@@ -2735,9 +2790,13 @@
 
             function showWorker() {
 
-                overlay.classList.add('hidden');
+                overlay.classList.add(
+                    'hidden'
+                );
 
-                mainContent.classList.add('active');
+                mainContent.classList.add(
+                    'active'
+                );
 
                 customerContent.style.display =
                     'none';
@@ -2748,17 +2807,10 @@
                 mainFooter.style.display =
                     'block';
 
-                setTimeout(
-                    function () {
-
-                        workerContent.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-
-                    },
-                    350
-                );
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
             }
 
 
